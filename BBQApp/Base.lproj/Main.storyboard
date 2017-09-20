@@ -20,11 +20,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1z-EF-Lnt">
                                 <rect key="frame" x="170.5" y="28" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.7375728627" green="0.015192351410000001" blue="0.085183678070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.80949845440000001" blue="0.5557044377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="o1z-EF-Lnt" firstAttribute="top" secondItem="NNh-OQ-ZlE" secondAttribute="top" constant="8" id="KPY-qN-gun"/>
                             <constraint firstItem="o1z-EF-Lnt" firstAttribute="centerX" secondItem="NNh-OQ-ZlE" secondAttribute="centerX" id="Nfu-ZZ-8tA"/>
@@ -48,11 +48,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYZ-xW-qdo">
                                 <rect key="frame" x="160" y="28" width="55" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.7375728627" green="0.015192351410000001" blue="0.085183678070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.80949845440000001" blue="0.5557044377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wYZ-xW-qdo" firstAttribute="centerX" secondItem="GU1-3j-esV" secondAttribute="centerX" id="7gn-59-I1P"/>
                             <constraint firstItem="wYZ-xW-qdo" firstAttribute="top" secondItem="GU1-3j-esV" secondAttribute="top" constant="8" id="wRV-nc-ghw"/>
@@ -76,11 +76,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IG2-mv-Y0u">
                                 <rect key="frame" x="157" y="28" width="61" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.7375728627" green="0.015192351410000001" blue="0.085183678070000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.80949845439790313" blue="0.55570443771154054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="IG2-mv-Y0u" firstAttribute="top" secondItem="gWo-7B-kke" secondAttribute="top" constant="8" id="Jya-Sn-h6k"/>
                             <constraint firstItem="IG2-mv-Y0u" firstAttribute="centerX" secondItem="gWo-7B-kke" secondAttribute="centerX" id="dT0-Nv-z9i"/>
@@ -101,14 +101,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nff-Q2-3DC">
-                                <rect key="frame" x="166" y="28" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nff-Q2-3DC">
+                                <rect key="frame" x="155.5" y="28" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.73757286269430056" green="0.015192351413554765" blue="0.085183678067068447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.80949845440000001" blue="0.5557044377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nff-Q2-3DC" firstAttribute="centerX" secondItem="w4C-aX-w6T" secondAttribute="centerX" id="Ng2-ml-DED"/>
                             <constraint firstItem="nff-Q2-3DC" firstAttribute="top" secondItem="w4C-aX-w6T" secondAttribute="top" constant="8" id="Nn4-49-oXS"/>
