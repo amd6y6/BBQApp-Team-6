@@ -24,6 +24,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="o1z-EF-Lnt" firstAttribute="top" secondItem="NNh-OQ-ZlE" secondAttribute="top" constant="8" id="KPY-qN-gun"/>
                             <constraint firstItem="o1z-EF-Lnt" firstAttribute="centerX" secondItem="NNh-OQ-ZlE" secondAttribute="centerX" id="Nfu-ZZ-8tA"/>
@@ -51,6 +52,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wYZ-xW-qdo" firstAttribute="centerX" secondItem="GU1-3j-esV" secondAttribute="centerX" id="7gn-59-I1P"/>
                             <constraint firstItem="wYZ-xW-qdo" firstAttribute="top" secondItem="GU1-3j-esV" secondAttribute="top" constant="8" id="wRV-nc-ghw"/>
@@ -78,6 +80,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IG2-mv-Y0u" firstAttribute="top" secondItem="gWo-7B-kke" secondAttribute="top" constant="8" id="Jya-Sn-h6k"/>
                             <constraint firstItem="IG2-mv-Y0u" firstAttribute="centerX" secondItem="gWo-7B-kke" secondAttribute="centerX" id="dT0-Nv-z9i"/>
@@ -105,6 +108,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nff-Q2-3DC" firstAttribute="centerX" secondItem="w4C-aX-w6T" secondAttribute="centerX" id="Ng2-ml-DED"/>
                             <constraint firstItem="nff-Q2-3DC" firstAttribute="top" secondItem="w4C-aX-w6T" secondAttribute="top" constant="8" id="Nn4-49-oXS"/>
