@@ -16,14 +16,26 @@
                     <view key="view" contentMode="scaleToFill" id="OTf-U0-VG6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1z-EF-Lnt">
+                                <rect key="frame" x="170.5" y="28" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o1z-EF-Lnt" firstAttribute="top" secondItem="NNh-OQ-ZlE" secondAttribute="top" constant="8" id="KPY-qN-gun"/>
+                            <constraint firstItem="o1z-EF-Lnt" firstAttribute="centerX" secondItem="NNh-OQ-ZlE" secondAttribute="centerX" id="Nfu-ZZ-8tA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NNh-OQ-ZlE"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="O5y-SH-bL5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aC5-zy-ae9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-134" y="-484"/>
+            <point key="canvasLocation" x="-135.19999999999999" y="-484.40779610194909"/>
         </scene>
         <!--History-->
         <scene sceneID="Z4b-8n-gsp">
@@ -32,7 +44,19 @@
                     <view key="view" contentMode="scaleToFill" id="9Ti-On-ptB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYZ-xW-qdo">
+                                <rect key="frame" x="160" y="28" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wYZ-xW-qdo" firstAttribute="centerX" secondItem="GU1-3j-esV" secondAttribute="centerX" id="7gn-59-I1P"/>
+                            <constraint firstItem="wYZ-xW-qdo" firstAttribute="top" secondItem="GU1-3j-esV" secondAttribute="top" constant="8" id="wRV-nc-ghw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GU1-3j-esV"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" id="rPs-TN-3Oh"/>
@@ -48,7 +72,19 @@
                     <view key="view" contentMode="scaleToFill" id="9fB-KL-iGc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IG2-mv-Y0u">
+                                <rect key="frame" x="157" y="28" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IG2-mv-Y0u" firstAttribute="top" secondItem="gWo-7B-kke" secondAttribute="top" constant="8" id="Jya-Sn-h6k"/>
+                            <constraint firstItem="IG2-mv-Y0u" firstAttribute="centerX" secondItem="gWo-7B-kke" secondAttribute="centerX" id="dT0-Nv-z9i"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gWo-7B-kke"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Recipes" id="pvY-gm-msS"/>
@@ -64,7 +100,19 @@
                     <view key="view" contentMode="scaleToFill" id="Ck1-go-ytO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nff-Q2-3DC">
+                                <rect key="frame" x="166" y="28" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nff-Q2-3DC" firstAttribute="centerX" secondItem="w4C-aX-w6T" secondAttribute="centerX" id="Ng2-ml-DED"/>
+                            <constraint firstItem="nff-Q2-3DC" firstAttribute="top" secondItem="w4C-aX-w6T" secondAttribute="top" constant="8" id="Nn4-49-oXS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="w4C-aX-w6T"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" id="VHv-7k-Auy"/>
