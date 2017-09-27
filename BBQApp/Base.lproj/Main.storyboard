@@ -79,10 +79,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="os2-Z8-21x">
+                                <rect key="frame" x="164" y="149" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IG2-mv-Y0u" firstAttribute="top" secondItem="gWo-7B-kke" secondAttribute="top" constant="8" id="Jya-Sn-h6k"/>
+                            <constraint firstItem="os2-Z8-21x" firstAttribute="top" secondItem="IG2-mv-Y0u" secondAttribute="bottom" constant="100" id="WuN-Bn-IMj"/>
                             <constraint firstItem="IG2-mv-Y0u" firstAttribute="centerX" secondItem="gWo-7B-kke" secondAttribute="centerX" id="dT0-Nv-z9i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gWo-7B-kke"/>
