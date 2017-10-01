@@ -1,4 +1,4 @@
-/*
+  /*
  * Copyright 2016 Google Inc. All rights reserved.
  *
  *
@@ -16,38 +16,40 @@
 import UIKit
 import GoogleMaps
 
-class ViewController: UIViewController, GMSMapViewDelegate {
+class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
 
   override func loadView() {
 
-/*    var locationManager = CLLocationManager()
+    var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
-    var mapView: GMSMapView!
-    var placesClient: GMSPlacesClient!
-    var zoomLevel: Float = 15.0
-    */
+//    var mapView: GMSMapView!
+//    var placesClient: GMSPlacesClient!
+//    var zoomLevel: Float = 15.0
     
-    let camera = GMSCameraPosition.camera(withLatitude: 38.5767, longitude: 92.1735, zoom: 6.0) //Jefferson City's coordinates
+    let camera = GMSCameraPosition.camera(withLatitude: 38.5767, longitude: -92.1735, zoom: 12.0) //Jefferson City's coordinates
     let mapView = GMSMapView.map(withFrame: .zero, camera: camera) //CGRect
     self.view = mapView
-    // mapView.mapType = kGMSTypeSatellite //Makes the map look normal (This is used for directions
+//    mapView.mapType = kGMSTypeSatellite //Makes the map look normal (This is used for directions)
     
     // Creates a marker in the center of the map.
     let marker = GMSMarker()
-    marker.position = CLLocationCoordinate2D(latitude: 38.5767, longitude: 92.1735)
+    marker.position = CLLocationCoordinate2D(latitude: 38.5767, longitude: -92.1735)
     marker.title = "Jefferson City"
     marker.snippet = "Missouri"
     marker.map = mapView
 
-    /* Accessability elements
+    //Accessability elements
     mapView.accessibilityElementsHidden = false
-    My location - A blue dot which shows where I am
-    */
+    //My location - A blue dot which shows where I am
+   
 
     mapView.isMyLocationEnabled = true //This allows a blue dot to appear on Google Maps to showcase the user's location
+
     if let mylocation = mapView.myLocation {
+        //User starts at Jefferson City
         print("User's location: \(mylocation)")
     } else {
+        //User starts at their location
         print("User's location is unknown")
     }
     // >>> IMPORTANT <<< Learn how users may give or revoke consent
@@ -61,8 +63,8 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     
     func loadView() {
         let camera = GMSCameraPosition.camera(withLatitude: 38.5767,
-                                              longitude:92.1735,
-                                              zoom:14)
+                                              longitude: -92.1735,
+                                              zoom:12)
         let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
         mapView.delegate = self
         self.view = mapView
