@@ -107,7 +107,7 @@
         <!--Settings-->
         <scene sceneID="gAM-P4-foh">
             <objects>
-                <viewController id="Jk8-lq-Dm7" sceneMemberID="viewController">
+                <viewController id="Jk8-lq-Dm7" customClass="SettingsViewController" customModule="BBQApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ck1-go-ytO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,11 +118,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdO-h7-Wp9">
-                                <rect key="frame" x="169" y="318" width="38" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -135,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSC-E9-82f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1314" y="-484"/>
+            <point key="canvasLocation" x="-956" y="287"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PQh-xs-Jjc">

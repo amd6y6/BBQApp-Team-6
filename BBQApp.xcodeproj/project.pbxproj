@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0BF4AA1F83F0F50050B97D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0BF4A91F83F0F50050B97D /* SettingsViewController.swift */; };
+		3F0BF4AB1F83F3690050B97D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0BF4A81F83EF150050B97D /* FBSDKCoreKit.framework */; };
+		3F0BF4AC1F83F36C0050B97D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0BF4A71F83EF040050B97D /* FBSDKLoginKit.framework */; };
 		3F5BD4C01F69BF2500818174 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BD4BF1F69BF2500818174 /* AppDelegate.swift */; };
 		3F5BD4C21F69BF2500818174 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BD4C11F69BF2500818174 /* ViewController.swift */; };
 		3F5BD4C51F69BF2500818174 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BD4C31F69BF2500818174 /* Main.storyboard */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F0BF4A71F83EF040050B97D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		3F0BF4A81F83EF150050B97D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		3F0BF4A91F83F0F50050B97D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3F5BD4BC1F69BF2400818174 /* BBQApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBQApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5BD4BF1F69BF2500818174 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F5BD4C11F69BF2500818174 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F0BF4AC1F83F36C0050B97D /* FBSDKLoginKit.framework in Frameworks */,
+				3F0BF4AB1F83F3690050B97D /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,8 +69,11 @@
 				3F5BD4C91F69BF2500818174 /* Assets.xcassets */,
 				3F5BD4C31F69BF2500818174 /* Main.storyboard */,
 				3F5BD4CB1F69BF2500818174 /* LaunchScreen.storyboard */,
+				3F0BF4A91F83F0F50050B97D /* SettingsViewController.swift */,
 				3F5BD4CE1F69BF2500818174 /* Info.plist */,
 				3F5BD4C61F69BF2500818174 /* BBQApp.xcdatamodeld */,
+				3F0BF4A81F83EF150050B97D /* FBSDKCoreKit.framework */,
+				3F0BF4A71F83EF040050B97D /* FBSDKLoginKit.framework */,
 			);
 			path = BBQApp;
 			sourceTree = "<group>";
@@ -142,6 +153,7 @@
 				3F5BD4C81F69BF2500818174 /* BBQApp.xcdatamodeld in Sources */,
 				3F5BD4C21F69BF2500818174 /* ViewController.swift in Sources */,
 				3F5BD4C01F69BF2500818174 /* AppDelegate.swift in Sources */,
+				3F0BF4AA1F83F0F50050B97D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +292,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5MXBZ7WFSS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"~/Documents/FacebookSDK",
+					"$(PROJECT_DIR)/BBQApp",
+				);
 				INFOPLIST_FILE = BBQApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JaredBruemmer.BBQApp;
@@ -295,6 +311,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5MXBZ7WFSS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"~/Documents/FacebookSDK",
+					"$(PROJECT_DIR)/BBQApp",
+				);
 				INFOPLIST_FILE = BBQApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JaredBruemmer.BBQApp;
