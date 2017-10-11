@@ -31,7 +31,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NNh-OQ-ZlE"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="O5y-SH-bL5"/>
+                    <tabBarItem key="tabBarItem" title="Map" selectedImage="MapIcon.png" id="O5y-SH-bL5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aC5-zy-ae9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,7 +59,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GU1-3j-esV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" id="rPs-TN-3Oh"/>
+                    <tabBarItem key="tabBarItem" title="History" selectedImage="HistoryIcon.png" id="rPs-TN-3Oh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6B-ls-tli" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,7 +98,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gWo-7B-kke"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Recipes" id="pvY-gm-msS"/>
+                    <tabBarItem key="tabBarItem" title="Recipes" selectedImage="RecipesIcon.png" id="pvY-gm-msS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8tY-aR-h9T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,7 +126,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w4C-aX-w6T"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="VHv-7k-Auy"/>
+                    <tabBarItem key="tabBarItem" title="Settings" selectedImage="SettingsIcon.png" id="VHv-7k-Auy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSC-E9-82f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -153,4 +153,10 @@
             <point key="canvasLocation" x="-1721" y="-484"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="HistoryIcon.png" width="32" height="32"/>
+        <image name="MapIcon.png" width="32" height="32"/>
+        <image name="RecipesIcon.png" width="32" height="32"/>
+        <image name="SettingsIcon.png" width="32" height="32"/>
+    </resources>
 </document>
