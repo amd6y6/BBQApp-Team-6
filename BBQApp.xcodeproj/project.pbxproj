@@ -10,18 +10,21 @@
 		3F0BF4AA1F83F0F50050B97D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0BF4A91F83F0F50050B97D /* SettingsViewController.swift */; };
 		3F0BF4AB1F83F3690050B97D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0BF4A81F83EF150050B97D /* FBSDKCoreKit.framework */; };
 		3F0BF4AC1F83F36C0050B97D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0BF4A71F83EF040050B97D /* FBSDKLoginKit.framework */; };
+		3F59CBCF1F8E9C6E00331B64 /* FacebookSDK in Resources */ = {isa = PBXBuildFile; fileRef = 3F59CBCE1F8E9C6D00331B64 /* FacebookSDK */; };
 		3F5BD4C01F69BF2500818174 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BD4BF1F69BF2500818174 /* AppDelegate.swift */; };
 		3F5BD4C21F69BF2500818174 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BD4C11F69BF2500818174 /* ViewController.swift */; };
 		3F5BD4C51F69BF2500818174 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BD4C31F69BF2500818174 /* Main.storyboard */; };
 		3F5BD4C81F69BF2500818174 /* BBQApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BD4C61F69BF2500818174 /* BBQApp.xcdatamodeld */; };
 		3F5BD4CA1F69BF2500818174 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BD4C91F69BF2500818174 /* Assets.xcassets */; };
 		3F5BD4CD1F69BF2500818174 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BD4CB1F69BF2500818174 /* LaunchScreen.storyboard */; };
+		3F691DE21F8E935A0032B496 /* SettingsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F691DE11F8E935A0032B496 /* SettingsIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3F0BF4A71F83EF040050B97D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3F0BF4A81F83EF150050B97D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3F0BF4A91F83F0F50050B97D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3F59CBCE1F8E9C6D00331B64 /* FacebookSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FacebookSDK; sourceTree = "<group>"; };
 		3F5BD4BC1F69BF2400818174 /* BBQApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBQApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5BD4BF1F69BF2500818174 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F5BD4C11F69BF2500818174 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +33,10 @@
 		3F5BD4C91F69BF2500818174 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F5BD4CC1F69BF2500818174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F5BD4CE1F69BF2500818174 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F691DE11F8E935A0032B496 /* SettingsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsIcon.png; sourceTree = "<group>"; };
+		3F691DE41F8E94410032B496 /* RecipesIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipesIcon.png; sourceTree = "<group>"; };
+		3F691DE61F8E94DC0032B496 /* MapIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapIcon.png; sourceTree = "<group>"; };
+		3F691DE71F8E95830032B496 /* HistoryIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HistoryIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +55,8 @@
 		3F5BD4B31F69BF2400818174 = {
 			isa = PBXGroup;
 			children = (
+				3F59CBCE1F8E9C6D00331B64 /* FacebookSDK */,
+				3F691DE31F8E93EB0032B496 /* Icons */,
 				3F5BD4BE1F69BF2400818174 /* BBQApp */,
 				3F5BD4BD1F69BF2400818174 /* Products */,
 			);
@@ -76,6 +85,17 @@
 				3F0BF4A71F83EF040050B97D /* FBSDKLoginKit.framework */,
 			);
 			path = BBQApp;
+			sourceTree = "<group>";
+		};
+		3F691DE31F8E93EB0032B496 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				3F691DE11F8E935A0032B496 /* SettingsIcon.png */,
+				3F691DE41F8E94410032B496 /* RecipesIcon.png */,
+				3F691DE61F8E94DC0032B496 /* MapIcon.png */,
+				3F691DE71F8E95830032B496 /* HistoryIcon.png */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +158,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F5BD4CD1F69BF2500818174 /* LaunchScreen.storyboard in Resources */,
+				3F691DE21F8E935A0032B496 /* SettingsIcon.png in Resources */,
 				3F5BD4CA1F69BF2500818174 /* Assets.xcassets in Resources */,
+				3F59CBCF1F8E9C6E00331B64 /* FacebookSDK in Resources */,
 				3F5BD4C51F69BF2500818174 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
