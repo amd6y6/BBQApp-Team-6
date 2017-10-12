@@ -50,7 +50,7 @@ class ViewController: UIViewController {
        //Map Bounderies
        let mapInsets = UIEdgeInsets(top: 40.630114, left: -95.790173, bottom: 35.989040, -89.094006)
        
-       let infoMarker = GMSMarker() //Declaration of markers    
+       let infoMarker = GMSMarker() //Declaration of markers
        func mapView(_ mapview: GMSMapView, didTapPOIWithPlaceID placeID: String,
                     name: String, location: CLLocationCoordinate2D) {
            infoMarker.snippet = placeID
@@ -60,7 +60,8 @@ class ViewController: UIViewController {
            infoMarker.infoWindowAnchor.y = 1
            infoMarker.map = mapView
        }
-    } //END override func loadView 
+    } //END override func loadView
     
 }
+
 
