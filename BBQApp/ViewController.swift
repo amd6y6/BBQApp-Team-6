@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         var locationManager = CCLocationManager()
         var currentLocation: CCLocation?
         
-        let camera = GMSCameraPosition.camera(withLatitude: 38.5767, longitude: -92.1735, zoom 12.0) //Jefferson City's coordinates
+        let camera = GMSCameraPosition.camera(withLatitude: 38.5767, longitude: -92.1735, zoom: 12.0) //Jefferson City's coordinates
         let mapView = GMSMapView.map(withFrame: .zero, camera: camera) //CGRect
         self.view = mapView
         mapView.setMinZoom(10, maxZoom:15)
