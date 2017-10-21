@@ -16,8 +16,8 @@
 		3F5BD4C51F69BF2500818174 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BD4C31F69BF2500818174 /* Main.storyboard */; };
 		3F5BD4C81F69BF2500818174 /* BBQApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BD4C61F69BF2500818174 /* BBQApp.xcdatamodeld */; };
 		3F5BD4CA1F69BF2500818174 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BD4C91F69BF2500818174 /* Assets.xcassets */; };
-		3F5BD4CD1F69BF2500818174 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BD4CB1F69BF2500818174 /* LaunchScreen.storyboard */; };
 		3F691DE21F8E935A0032B496 /* SettingsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F691DE11F8E935A0032B496 /* SettingsIcon.png */; };
+		BBC295141F969085005CECCA /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC295121F969085005CECCA /* GoogleMapsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,12 +31,14 @@
 		3F5BD4C41F69BF2500818174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F5BD4C71F69BF2500818174 /* BBQApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BBQApp.xcdatamodel; sourceTree = "<group>"; };
 		3F5BD4C91F69BF2500818174 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3F5BD4CC1F69BF2500818174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F5BD4CE1F69BF2500818174 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F691DE11F8E935A0032B496 /* SettingsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsIcon.png; sourceTree = "<group>"; };
 		3F691DE41F8E94410032B496 /* RecipesIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipesIcon.png; sourceTree = "<group>"; };
 		3F691DE61F8E94DC0032B496 /* MapIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapIcon.png; sourceTree = "<group>"; };
 		3F691DE71F8E95830032B496 /* HistoryIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HistoryIcon.png; sourceTree = "<group>"; };
+		BB2FE1F41F981813008EDE5A /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Pods; path = GoogleMapsSDK/Pods; sourceTree = "<group>"; };
+		BBC295101F968E22005CECCA /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BBC295121F969085005CECCA /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoogleMapsViewController.swift; path = "../../../maps-sdk-for-ios-samples/tutorials/map-with-marker/map-with-marker/GoogleMapsViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +57,12 @@
 		3F5BD4B31F69BF2400818174 = {
 			isa = PBXGroup;
 			children = (
+				BBC295101F968E22005CECCA /* Podfile */,
 				3F59CBCE1F8E9C6D00331B64 /* FacebookSDK */,
 				3F691DE31F8E93EB0032B496 /* Icons */,
 				3F5BD4BE1F69BF2400818174 /* BBQApp */,
 				3F5BD4BD1F69BF2400818174 /* Products */,
+				BB2FE1F41F981813008EDE5A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,11 +77,11 @@
 		3F5BD4BE1F69BF2400818174 /* BBQApp */ = {
 			isa = PBXGroup;
 			children = (
+				BBC295121F969085005CECCA /* GoogleMapsViewController.swift */,
 				3F5BD4BF1F69BF2500818174 /* AppDelegate.swift */,
 				3F5BD4C11F69BF2500818174 /* ViewController.swift */,
 				3F5BD4C91F69BF2500818174 /* Assets.xcassets */,
 				3F5BD4C31F69BF2500818174 /* Main.storyboard */,
-				3F5BD4CB1F69BF2500818174 /* LaunchScreen.storyboard */,
 				3F0BF4A91F83F0F50050B97D /* SettingsViewController.swift */,
 				3F5BD4CE1F69BF2500818174 /* Info.plist */,
 				3F5BD4C61F69BF2500818174 /* BBQApp.xcdatamodeld */,
@@ -157,7 +161,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F5BD4CD1F69BF2500818174 /* LaunchScreen.storyboard in Resources */,
 				3F691DE21F8E935A0032B496 /* SettingsIcon.png in Resources */,
 				3F5BD4CA1F69BF2500818174 /* Assets.xcassets in Resources */,
 				3F59CBCF1F8E9C6E00331B64 /* FacebookSDK in Resources */,
@@ -174,6 +177,7 @@
 			files = (
 				3F5BD4C81F69BF2500818174 /* BBQApp.xcdatamodeld in Sources */,
 				3F5BD4C21F69BF2500818174 /* ViewController.swift in Sources */,
+				BBC295141F969085005CECCA /* GoogleMapsViewController.swift in Sources */,
 				3F5BD4C01F69BF2500818174 /* AppDelegate.swift in Sources */,
 				3F0BF4AA1F83F0F50050B97D /* SettingsViewController.swift in Sources */,
 			);
@@ -188,14 +192,6 @@
 				3F5BD4C41F69BF2500818174 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3F5BD4CB1F69BF2500818174 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3F5BD4CC1F69BF2500818174 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -318,9 +314,48 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FacebookSDK/**",
 					"$(PROJECT_DIR)/BBQApp",
+					"$(PROJECT_DIR)/Pods/**",
 				);
 				INFOPLIST_FILE = BBQApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"GoogleMaps\"",
+					"-framework",
+					"\"GoogleMapsBase\"",
+					"-framework",
+					"\"GoogleMapsCore\"",
+					"-framework",
+					"\"GooglePlaces\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.JaredBruemmer.BBQApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -338,9 +373,48 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FacebookSDK/**",
 					"$(PROJECT_DIR)/BBQApp",
+					"$(PROJECT_DIR)/Pods/**",
 				);
 				INFOPLIST_FILE = BBQApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"GoogleMaps\"",
+					"-framework",
+					"\"GoogleMapsBase\"",
+					"-framework",
+					"\"GoogleMapsCore\"",
+					"-framework",
+					"\"GooglePlaces\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.JaredBruemmer.BBQApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
