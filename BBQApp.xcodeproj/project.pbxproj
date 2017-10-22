@@ -18,6 +18,7 @@
 		3F5BD4CA1F69BF2500818174 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BD4C91F69BF2500818174 /* Assets.xcassets */; };
 		3F691DE21F8E935A0032B496 /* SettingsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F691DE11F8E935A0032B496 /* SettingsIcon.png */; };
 		BB2FE1F51F9D4490008EDE5A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BBC295101F968E22005CECCA /* Podfile */; };
+		BB2FE1F61F9D4667008EDE5A /* Pods in Resources */ = {isa = PBXBuildFile; fileRef = BB2FE1F41F981813008EDE5A /* Pods */; };
 		BBC295141F969085005CECCA /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC295121F969085005CECCA /* GoogleMapsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -164,6 +165,7 @@
 			files = (
 				BB2FE1F51F9D4490008EDE5A /* Podfile in Resources */,
 				3F691DE21F8E935A0032B496 /* SettingsIcon.png in Resources */,
+				BB2FE1F61F9D4667008EDE5A /* Pods in Resources */,
 				3F5BD4CA1F69BF2500818174 /* Assets.xcassets in Resources */,
 				3F59CBCF1F8E9C6E00331B64 /* FacebookSDK in Resources */,
 				3F5BD4C51F69BF2500818174 /* Main.storyboard in Resources */,
