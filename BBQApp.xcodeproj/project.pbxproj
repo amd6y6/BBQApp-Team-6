@@ -18,6 +18,7 @@
 		3F5BD4CA1F69BF2500818174 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BD4C91F69BF2500818174 /* Assets.xcassets */; };
 		3F5BD4CD1F69BF2500818174 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BD4CB1F69BF2500818174 /* LaunchScreen.storyboard */; };
 		3F691DE21F8E935A0032B496 /* SettingsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F691DE11F8E935A0032B496 /* SettingsIcon.png */; };
+		BB2315FE1F9D5ABA009C46BC /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2315FD1F9D5ABA009C46BC /* GoogleMapsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		3F691DE41F8E94410032B496 /* RecipesIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipesIcon.png; sourceTree = "<group>"; };
 		3F691DE61F8E94DC0032B496 /* MapIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapIcon.png; sourceTree = "<group>"; };
 		3F691DE71F8E95830032B496 /* HistoryIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HistoryIcon.png; sourceTree = "<group>"; };
+		BB2315FD1F9D5ABA009C46BC /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				3F5BD4C11F69BF2500818174 /* ViewController.swift */,
 				3F5BD4C91F69BF2500818174 /* Assets.xcassets */,
 				3F5BD4C31F69BF2500818174 /* Main.storyboard */,
+				BB2315FD1F9D5ABA009C46BC /* GoogleMapsViewController.swift */,
 				3F5BD4CB1F69BF2500818174 /* LaunchScreen.storyboard */,
 				3F0BF4A91F83F0F50050B97D /* SettingsViewController.swift */,
 				3F5BD4CE1F69BF2500818174 /* Info.plist */,
@@ -173,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F5BD4C81F69BF2500818174 /* BBQApp.xcdatamodeld in Sources */,
+				BB2315FE1F9D5ABA009C46BC /* GoogleMapsViewController.swift in Sources */,
 				3F5BD4C21F69BF2500818174 /* ViewController.swift in Sources */,
 				3F5BD4C01F69BF2500818174 /* AppDelegate.swift in Sources */,
 				3F0BF4AA1F83F0F50050B97D /* SettingsViewController.swift in Sources */,
