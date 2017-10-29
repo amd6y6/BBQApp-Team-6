@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,16 +45,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYZ-xW-qdo">
-                                <rect key="frame" x="160" y="28" width="55" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History of Missouri BBQ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYZ-xW-qdo">
+                                <rect key="frame" x="96.5" y="28" width="182" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bbq logo 161px" translatesAutoresizingMaskIntoConstraints="NO" id="bhV-oD-vod">
+                                <rect key="frame" x="106.5" y="59" width="161" height="161"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="161" id="Gxn-Db-fEU"/>
+                                    <constraint firstAttribute="width" constant="161" id="uKV-He-yhO"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hK0-4Z-Xt0">
+                                <rect key="frame" x="8" y="230" width="359" height="388"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                </accessibility>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <mutableString key="content">          Barbeque is showcased all around the globe, but if you’re looking for a variety of sauces and meats, Missouri barbeque is the place to be.  This variety comes from a combination of cooking techniques brought to the cities by freed slaves and Texas cattle drives during the late nineteenth century.  This has led to the region's distinctive barbecue styles in Kansas City, St. Louis, and mid-Missouri (Garbarino).  Missouri owes its unique style of barbecue to a man named Henry Perry who settled in Kansas City. A Memphis-born man, Perry opened a barbecue restaurant in Kansas City and followed the style of his Memphis roots, using a sweet and spicy barbecue sauce. When Perry died in 1940, Charlie Bryant inherited the restaurant and sold it to his brother Arthur in 1946 (Garbarino). He tweaked the sauce and changed the name to Arthur Bryant’s. The sauce and restaurant saw wide success and became known as one of the best barbecue places in the United States. 
+          Around the same time, George Gates opened his own barbecue restaurant in 1946 in which he also drew inspiration from Henry Perry. While Perry is credited with first bringing barbecue to Kansas City and Missouri, Bryant and Gates have solidified their place in history as well by adding their unique touches to the sauces and meats. Later, Rich Davis used the reputation of Kansas City to form KC Masterpiece. He used extra molasses to create a sauce which is thicker and sweeter than many traditional sauces.  Kansas City Barbecue is considered a melting pot due to the wide number of influences from all the major barbecue regions. 
+          Across the state, St. Louis developed its own unique way to prepare pork dishes. It is unique in that most dishes are grilled rather than cooked over indirect heat and smoke that is typically associated with barbecuing. The dishes are heavily sauced, and St. Louis is known to consume more barbecue sauce per capita than any other city in the United States (Mahe). Along with that, a staple of grilling in St. Louis is the pork steak and crispy snoots. Drawing from its German roots, bratwurst is another popular dish grilled. Finally, the city provides the name of St. Louis-style ribs, which are spare ribs with the sternum bone, cartilage, and rib tips removed to create a rectangular-shaped rack. 
+          In mid-Missouri, the styles of St. Louis, Kansas City, and other states come together to form a vast swath of different barbecue joints. From award-winning Lutz’s BBQ in Jefferson City and Columbia to Big’s in Columbia, each offer their own unique twist on Missouri’s famous barbecue style. On top of Missouri’s barbecue heritage, it is host to a plethora of barbecue competitions and festivals. Perhaps one of the most notable competitions is the American Royal World Series of Barbecue competition held annually in Kansas City. The World Series of Barbecue is the largest competition in the world, bringing together teams from over ten countries. In 2016, attendance records were set at over forty thousand (BBQ). In Columbia, the Roots N Blues N BBQ Festival brings together some of the country’s finest Jazz and Blues artists to Central Missouri. Additionally, festival-goers can try barbecue from local providers and participate in a race for charity. In St. Louis, the most popular competition is the Q in the Lou, which features nine legendary pit masters, cooking tutorials, an innovation expo, and live music.  
+</mutableString>
+                                        <attributes>
+                                            <font key="NSFont" size="18" name=".SFNSText"/>
+                                            <font key="NSOriginalFont" size="18" name=".SFNSText"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wYZ-xW-qdo" firstAttribute="centerX" secondItem="GU1-3j-esV" secondAttribute="centerX" id="7gn-59-I1P"/>
+                            <constraint firstItem="GU1-3j-esV" firstAttribute="bottom" secondItem="hK0-4Z-Xt0" secondAttribute="bottom" id="Q0m-Xw-mep"/>
+                            <constraint firstItem="hK0-4Z-Xt0" firstAttribute="top" secondItem="bhV-oD-vod" secondAttribute="bottom" constant="10" id="Rhb-R3-myy"/>
+                            <constraint firstItem="hK0-4Z-Xt0" firstAttribute="leading" secondItem="GU1-3j-esV" secondAttribute="leading" constant="8" id="cew-dW-Lyr"/>
+                            <constraint firstItem="bhV-oD-vod" firstAttribute="centerX" secondItem="GU1-3j-esV" secondAttribute="centerX" id="d8q-LU-3hl"/>
+                            <constraint firstItem="bhV-oD-vod" firstAttribute="top" secondItem="wYZ-xW-qdo" secondAttribute="bottom" constant="10" id="eBj-Tg-Jq0"/>
+                            <constraint firstItem="GU1-3j-esV" firstAttribute="trailing" secondItem="hK0-4Z-Xt0" secondAttribute="trailing" constant="8" id="mld-Vv-Ue7"/>
                             <constraint firstItem="wYZ-xW-qdo" firstAttribute="top" secondItem="GU1-3j-esV" secondAttribute="top" constant="8" id="wRV-nc-ghw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GU1-3j-esV"/>
@@ -79,21 +116,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="os2-Z8-21x">
-                                <rect key="frame" x="164" y="149" width="51" height="31"/>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oc0-wN-aOH">
-                                <rect key="frame" x="157" y="367" width="33" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IG2-mv-Y0u" firstAttribute="top" secondItem="gWo-7B-kke" secondAttribute="top" constant="8" id="Jya-Sn-h6k"/>
-                            <constraint firstItem="os2-Z8-21x" firstAttribute="top" secondItem="IG2-mv-Y0u" secondAttribute="bottom" constant="100" id="WuN-Bn-IMj"/>
                             <constraint firstItem="IG2-mv-Y0u" firstAttribute="centerX" secondItem="gWo-7B-kke" secondAttribute="centerX" id="dT0-Nv-z9i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gWo-7B-kke"/>
@@ -130,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSC-E9-82f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-956" y="287"/>
+            <point key="canvasLocation" x="-1722" y="333"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PQh-xs-Jjc">
@@ -158,5 +184,6 @@
         <image name="MapIcon.png" width="32" height="32"/>
         <image name="RecipesIcon.png" width="32" height="32"/>
         <image name="SettingsIcon.png" width="32" height="32"/>
+        <image name="bbq logo 161px" width="161" height="161"/>
     </resources>
 </document>
