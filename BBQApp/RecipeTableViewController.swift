@@ -30,7 +30,8 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating 
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipecell", for: indexPath) as! RecipeTableViewCell
         
-        cell.recipeTitle?.text = recipeTitle1[indexPath.row]
+        cell.recipeTitle?.text = self.recipeTitle1[indexPath.row]
+        print(indexPath.row)
        // cell.recipeRank?.text = recipeRank[indexPath.row]
         
         return cell
