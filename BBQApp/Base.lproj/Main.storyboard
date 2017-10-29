@@ -4,39 +4,11 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map-->
-        <scene sceneID="tJv-Tw-6fW">
-            <objects>
-                <viewController id="rar-16-q8d" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="OTf-U0-VG6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1z-EF-Lnt">
-                                <rect key="frame" x="170.5" y="28" width="34" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="o1z-EF-Lnt" firstAttribute="top" secondItem="NNh-OQ-ZlE" secondAttribute="top" constant="8" id="KPY-qN-gun"/>
-                            <constraint firstItem="o1z-EF-Lnt" firstAttribute="centerX" secondItem="NNh-OQ-ZlE" secondAttribute="centerX" id="Nfu-ZZ-8tA"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="NNh-OQ-ZlE"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Map" selectedImage="MapIcon.png" id="O5y-SH-bL5"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aC5-zy-ae9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-135.19999999999999" y="-484.40779610194909"/>
-        </scene>
         <!--History-->
         <scene sceneID="Z4b-8n-gsp">
             <objects>
@@ -45,64 +17,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYZ-xW-qdo">
-                                <rect key="frame" x="160" y="28" width="55" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History of Missouri BBQ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYZ-xW-qdo">
+                                <rect key="frame" x="96.5" y="28" width="182" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bbq logo 161px" translatesAutoresizingMaskIntoConstraints="NO" id="bhV-oD-vod">
+                                <rect key="frame" x="106.5" y="59" width="161" height="161"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="161" id="Gxn-Db-fEU"/>
+                                    <constraint firstAttribute="width" constant="161" id="uKV-He-yhO"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hK0-4Z-Xt0">
+                                <rect key="frame" x="8" y="230" width="359" height="388"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                </accessibility>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">          Barbeque is showcased all around the globe, but if you’re looking for a variety of sauces and meats, Missouri barbeque is the place to be.  This variety comes from a combination of cooking techniques brought to the cities by freed slaves and Texas cattle drives during the late nineteenth century.  This has led to the region's distinctive barbecue styles in Kansas City, St. Louis, and mid-Missouri (Garbarino).  Missouri owes its unique style of barbecue to a man named Henry Perry who settled in Kansas City. A Memphis-born man, Perry opened a barbecue restaurant in Kansas City and followed the style of his Memphis roots, using a sweet and spicy barbecue sauce. When Perry died in 1940, Charlie Bryant inherited the restaurant and sold it to his brother Arthur in 1946 (Garbarino). He tweaked the sauce and changed the name to Arthur Bryant’s. The sauce and restaurant saw wide success and became known as one of the best barbecue places in the United States. 
+          Around the same time, George Gates opened his own barbecue restaurant in 1946 in which he also drew inspiration from Henry Perry. While Perry is credited with first bringing barbecue to Kansas City and Missouri, Bryant and Gates have solidified their place in history as well by adding their unique touches to the sauces and meats. Later, Rich Davis used the reputation of Kansas City to form KC Masterpiece. He used extra molasses to create a sauce which is thicker and sweeter than many traditional sauces.  Kansas City Barbecue is considered a melting pot due to the wide number of influences from all the major barbecue regions. 
+          Across the state, St. Louis developed its own unique way to prepare pork dishes. It is unique in that most dishes are grilled rather than cooked over indirect heat and smoke that is typically associated with barbecuing. The dishes are heavily sauced, and St. Louis is known to consume more barbecue sauce per capita than any other city in the United States (Mahe). Along with that, a staple of grilling in St. Louis is the pork steak and crispy snoots. Drawing from its German roots, bratwurst is another popular dish grilled. Finally, the city provides the name of St. Louis-style ribs, which are spare ribs with the sternum bone, cartilage, and rib tips removed to create a rectangular-shaped rack. 
+          In mid-Missouri, the styles of St. Louis, Kansas City, and other states come together to form a vast swath of different barbecue joints. From award-winning Lutz’s BBQ in Jefferson City and Columbia to Big’s in Columbia, each offer their own unique twist on Missouri’s famous barbecue style. On top of Missouri’s barbecue heritage, it is host to a plethora of barbecue competitions and festivals. Perhaps one of the most notable competitions is the American Royal World Series of Barbecue competition held annually in Kansas City. The World Series of Barbecue is the largest competition in the world, bringing together teams from over ten countries. In 2016, attendance records were set at over forty thousand (BBQ). In Columbia, the Roots N Blues N BBQ Festival brings together some of the country’s finest Jazz and Blues artists to Central Missouri. Additionally, festival-goers can try barbecue from local providers and participate in a race for charity. In St. Louis, the most popular competition is the Q in the Lou, which features nine legendary pit masters, cooking tutorials, an innovation expo, and live music.  
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="18" name=".SFNSText"/>
+                                            <font key="NSOriginalFont" size="18" name=".SFNSText"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wYZ-xW-qdo" firstAttribute="centerX" secondItem="GU1-3j-esV" secondAttribute="centerX" id="7gn-59-I1P"/>
+                            <constraint firstItem="GU1-3j-esV" firstAttribute="bottom" secondItem="hK0-4Z-Xt0" secondAttribute="bottom" id="Q0m-Xw-mep"/>
+                            <constraint firstItem="hK0-4Z-Xt0" firstAttribute="top" secondItem="bhV-oD-vod" secondAttribute="bottom" constant="10" id="Rhb-R3-myy"/>
+                            <constraint firstItem="hK0-4Z-Xt0" firstAttribute="leading" secondItem="GU1-3j-esV" secondAttribute="leading" constant="8" id="cew-dW-Lyr"/>
+                            <constraint firstItem="bhV-oD-vod" firstAttribute="centerX" secondItem="GU1-3j-esV" secondAttribute="centerX" id="d8q-LU-3hl"/>
+                            <constraint firstItem="bhV-oD-vod" firstAttribute="top" secondItem="wYZ-xW-qdo" secondAttribute="bottom" constant="10" id="eBj-Tg-Jq0"/>
+                            <constraint firstItem="GU1-3j-esV" firstAttribute="trailing" secondItem="hK0-4Z-Xt0" secondAttribute="trailing" constant="8" id="mld-Vv-Ue7"/>
                             <constraint firstItem="wYZ-xW-qdo" firstAttribute="top" secondItem="GU1-3j-esV" secondAttribute="top" constant="8" id="wRV-nc-ghw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GU1-3j-esV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" selectedImage="HistoryIcon.png" id="rPs-TN-3Oh"/>
+                    <tabBarItem key="tabBarItem" title="History" image="HistoryIcon.png" selectedImage="HistoryIcon.png" id="rPs-TN-3Oh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6B-ls-tli" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="591" y="-484"/>
-        </scene>
-        <!--Recipes-->
-        <scene sceneID="1Qc-jN-1em">
-            <objects>
-                <viewController id="a1I-F7-huW" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9fB-KL-iGc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IG2-mv-Y0u">
-                                <rect key="frame" x="157" y="28" width="61" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="os2-Z8-21x">
-                                <rect key="frame" x="164" y="149" width="51" height="31"/>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oc0-wN-aOH">
-                                <rect key="frame" x="157" y="367" width="33" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="IG2-mv-Y0u" firstAttribute="top" secondItem="gWo-7B-kke" secondAttribute="top" constant="8" id="Jya-Sn-h6k"/>
-                            <constraint firstItem="os2-Z8-21x" firstAttribute="top" secondItem="IG2-mv-Y0u" secondAttribute="bottom" constant="100" id="WuN-Bn-IMj"/>
-                            <constraint firstItem="IG2-mv-Y0u" firstAttribute="centerX" secondItem="gWo-7B-kke" secondAttribute="centerX" id="dT0-Nv-z9i"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="gWo-7B-kke"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Recipes" selectedImage="RecipesIcon.png" id="pvY-gm-msS"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8tY-aR-h9T" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-956" y="-484"/>
+            <point key="canvasLocation" x="-959" y="303"/>
         </scene>
         <!--Settings-->
         <scene sceneID="gAM-P4-foh">
@@ -126,11 +96,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w4C-aX-w6T"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" selectedImage="SettingsIcon.png" id="VHv-7k-Auy"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="SettingsIcon.png" selectedImage="SettingsIcon.png" id="VHv-7k-Auy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSC-E9-82f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-956" y="287"/>
+            <point key="canvasLocation" x="-959" y="1041"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PQh-xs-Jjc">
@@ -142,21 +112,231 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="a1I-F7-huW" kind="relationship" relationship="viewControllers" id="LKK-87-EWD"/>
-                        <segue destination="rar-16-q8d" kind="relationship" relationship="viewControllers" id="i4g-2y-9Tx"/>
                         <segue destination="Dbp-XL-Ug9" kind="relationship" relationship="viewControllers" id="tgH-xy-XTh"/>
+                        <segue destination="uWa-wf-Jxs" kind="relationship" relationship="viewControllers" id="TuC-qs-ptp"/>
                         <segue destination="Jk8-lq-Dm7" kind="relationship" relationship="viewControllers" id="J66-yo-dVa"/>
+                        <segue destination="c0y-Eq-OHs" kind="relationship" relationship="viewControllers" id="8HT-t7-cvW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jiB-M0-ghH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1721" y="-484"/>
         </scene>
+        <!--Recipes-->
+        <scene sceneID="OPt-Q4-Y74">
+            <objects>
+                <tableViewController id="uWa-wf-Jxs" customClass="RecipeTableViewController" customModule="BBQApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="o9K-6f-bCc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="recipecell" textLabel="RtX-IF-bEC" detailTextLabel="jLh-79-ECj" rowHeight="61" style="IBUITableViewCellStyleSubtitle" id="fXk-yq-07A" customClass="RecipeTableViewCell" customModule="BBQApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="61"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fXk-yq-07A" id="sfE-Ut-QVV">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="60.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RtX-IF-bEC">
+                                            <rect key="frame" x="16" y="10" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jLh-79-ECj">
+                                            <rect key="frame" x="16" y="33.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="xiv-eH-IzS" kind="show" id="fpZ-eL-J2t"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uWa-wf-Jxs" id="FvP-Bs-x5a"/>
+                            <outlet property="delegate" destination="uWa-wf-Jxs" id="yje-Gj-Cur"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Recipes" image="RecipesIcon" selectedImage="RecipesIcon" id="Wfo-N7-6Vh"/>
+                    <connections>
+                        <outlet property="recipeTable" destination="o9K-6f-bCc" id="iyb-ei-RDu"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tZj-7w-K2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1887" y="-1305"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LEI-1g-EaP">
+            <objects>
+                <viewController id="xiv-eH-IzS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nmu-my-AmY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9Z-sL-oTW">
+                                <rect key="frame" x="43" y="86" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrr-rt-Aia">
+                                <rect key="frame" x="43" y="167" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPY-Tr-mw1">
+                                <rect key="frame" x="22" y="20" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="uWa-wf-Jxs" kind="show" id="afE-UX-1tv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="WXy-KO-5kq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XNI-TO-x5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1066" y="-1306"/>
+        </scene>
+        <!--Locator-->
+        <scene sceneID="QPV-9v-PTo">
+            <objects>
+                <tableViewController id="c0y-Eq-OHs" customClass="YLPSearchViewController" customModule="BBQApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Ru-uJ-ZIH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" textLabel="RwC-Xv-qxW" style="IBUITableViewCellStyleDefault" id="5R6-Qs-Zlq">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5R6-Qs-Zlq" id="4dL-Se-QLC">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RwC-Xv-qxW">
+                                            <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="c0y-Eq-OHs" id="AoD-5F-9i0"/>
+                            <outlet property="delegate" destination="c0y-Eq-OHs" id="iwU-sJ-Jxo"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Locator" image="MapIcon" id="DN4-Y7-pGw"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BWR-iE-exq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-644" y="-484"/>
+        </scene>
+        <!--Detail Business View Controller-->
+        <scene sceneID="Qj7-WW-6kC">
+            <objects>
+                <viewController storyboardIdentifier="YLPDetailBusinessViewController" id="Tdo-SB-MJs" customClass="YLPDetailBusinessViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Owg-qd-UtC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xfk-A6-eef"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="URM-N4-vif">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kps-DU-b82">
+                                <rect key="frame" x="20" y="126" width="45" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qa-fX-U9Y">
+                                <rect key="frame" x="20" y="191" width="63" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="weL-P9-z4T">
+                                <rect key="frame" x="109" y="191" width="266" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ucO-WM-B44">
+                                <rect key="frame" x="109" y="257" width="266" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDA-1p-0Eu">
+                                <rect key="frame" x="20" y="257" width="49" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="RZb-Qb-vfY">
+                                <rect key="frame" x="109" y="126" width="171" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="JrQ-w9-mel"/>
+                    </view>
+                    <connections>
+                        <outlet property="businessAddress" destination="weL-P9-z4T" id="KRT-eN-GE2"/>
+                        <outlet property="businessName" destination="RZb-Qb-vfY" id="LSR-rS-lDc"/>
+                        <outlet property="businessPhone" destination="ucO-WM-B44" id="ld6-dY-Xnn"/>
+                        <outlet property="view" destination="URM-N4-vif" id="VDJ-YH-spy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HG3-BJ-5Sa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="273" y="-484"/>
+        </scene>
     </scenes>
     <resources>
         <image name="HistoryIcon.png" width="32" height="32"/>
-        <image name="MapIcon.png" width="32" height="32"/>
-        <image name="RecipesIcon.png" width="32" height="32"/>
+        <image name="MapIcon" width="32" height="32"/>
+        <image name="RecipesIcon" width="32" height="32"/>
         <image name="SettingsIcon.png" width="32" height="32"/>
+        <image name="bbq logo 161px" width="161" height="161"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="TuC-qs-ptp"/>
+    </inferredMetricsTieBreakers>
 </document>
