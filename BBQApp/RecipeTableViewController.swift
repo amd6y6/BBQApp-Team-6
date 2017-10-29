@@ -10,6 +10,8 @@ import UIKit
 
 class RecipeTableViewController: UITableViewController, UISearchResultsUpdating {
 
+    @IBOutlet var recipeTable: UITableView!
+    
     var socialRank = [Double]()
     var recipeTitle1 = [String]()
     var recipeURL = [String]()
@@ -30,14 +32,23 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating 
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipecell", for: indexPath) as! RecipeTableViewCell
         
-        cell.recipeTitle?.text = recipeTitle1[indexPath.row]
-       // cell.recipeRank?.text = recipeRank[indexPath.row]
+        
+
+        
+
+        cell.textLabel?.text = recipeTitle1[indexPath.row]
+        cell.detailTextLabel?.text = String(socialRank[indexPath.row])
+//        cell.imageView?.image = String(recipeImage1[indexPath.row])
         
         return cell
     }
     
      override func viewDidLoad() {
         super.viewDidLoad()
+        
+        recipeTable.delegate = self
+        recipeTable.dataSource = self
+        
 
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
@@ -57,8 +68,11 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating 
         // Dispose of any resources that can be recreated.
     }
 
-    func updateSearchResults(for searchController: UISearchController) {
-        if let searchText = searchController.searchBar.text {
+   func updateSearchResults(for searchController: UISearchController) {
+    if let searchBar = searchController.searchBar.text {
+//            let scope = searchBar[searchBar.selectedScopeButtonIndex]
+//            filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+        
             let url = URL (string: "http://food2fork.com/api/search?key=6fb8c103dfd7f27b64b5feaf97e65afc&q=pizza")!
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if error != nil {
@@ -74,6 +88,8 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating 
                                 var recipeURL = ((jsonResult["recipes"] as? NSArray)?[counter] as? NSDictionary)?["f2f_url"] as? String;
                                 var recipeImage1 = ((jsonResult["recipes"] as? NSArray)?[counter] as? NSDictionary)?["image_url"] as? String;
                                 do {
+                                    
+                                    print(recipeTitle1)
                                     counter = counter + 1
                                 }
                             }
@@ -83,11 +99,12 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating 
                     }
                 }
             }
+        
             task.resume()
-      
                 self.tableView.reloadData()
             }
-        }
+        
+    }
     // MARK: - Table view data source
 
     
@@ -138,5 +155,4 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating 
         // Pass the selected object to the new view controller.
     }
     */
-
 }

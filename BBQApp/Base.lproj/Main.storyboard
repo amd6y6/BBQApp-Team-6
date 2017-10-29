@@ -159,37 +159,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="recipecell" rowHeight="127" id="fXk-yq-07A" customClass="RecipeTableViewCell" customModule="BBQApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="127"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="recipecell" textLabel="RtX-IF-bEC" detailTextLabel="jLh-79-ECj" rowHeight="61" style="IBUITableViewCellStyleSubtitle" id="fXk-yq-07A" customClass="RecipeTableViewCell" customModule="BBQApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fXk-yq-07A" id="sfE-Ut-QVV">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="126.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="60.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wjk-ix-5lA">
-                                            <rect key="frame" x="8" y="0.0" width="178" height="119"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyc-oe-Cek">
-                                            <rect key="frame" x="194" y="77" width="42" height="42"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RtX-IF-bEC">
+                                            <rect key="frame" x="16" y="10" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wb1-Jh-bRZ">
-                                            <rect key="frame" x="194" y="16" width="53" height="41"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jLh-79-ECj">
+                                            <rect key="frame" x="16" y="33.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="recipeImage" destination="wjk-ix-5lA" id="eQq-QI-tN8"/>
-                                    <outlet property="recipeRank" destination="zyc-oe-Cek" id="q9Q-gR-7Gk"/>
-                                    <outlet property="recipeTitle" destination="wb1-Jh-bRZ" id="Ffs-Zv-vPS"/>
                                     <segue destination="xiv-eH-IzS" kind="show" id="fpZ-eL-J2t"/>
                                 </connections>
                             </tableViewCell>
@@ -200,6 +193,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Recipes" image="RecipesIcon" selectedImage="RecipesIcon" id="Wfo-N7-6Vh"/>
+                    <connections>
+                        <outlet property="recipeTable" destination="o9K-6f-bCc" id="iyb-ei-RDu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZj-7w-K2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -253,6 +249,7 @@
         <image name="bbq logo 161px" width="161" height="161"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="fpZ-eL-J2t"/>
         <segue reference="afE-UX-1tv"/>
     </inferredMetricsTieBreakers>
 </document>
