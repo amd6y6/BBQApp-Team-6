@@ -9,10 +9,13 @@
 #import "YLPSearchTableViewController.h"
 #import "YLPDetailBusinessViewController.h"
 #import "YLPAppDelegate.h"
-#import <YelpAPI/YLPClient+Search.h>
-#import <YelpAPI/YLPSortType.h>
-#import <YelpAPI/YLPSearch.h>
-#import <YelpAPI/YLPBusiness.h>
+
+#import "BBQApp-Swift.h"
+
+#import "YLPClient+Search.h"
+#import "YLPSortType.h"
+#import "YLPSearch.h"
+#import "YLPBusiness.h"
 
 @interface YLPSearchTableViewController ()
 @property (nonatomic) YLPSearch *search;
