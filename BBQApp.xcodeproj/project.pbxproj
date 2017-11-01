@@ -13,10 +13,6 @@
 		3F11A4861FA6489A00F4D047 /* bbq logo 161px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F11A4851FA6489A00F4D047 /* bbq logo 161px.jpg */; };
 		3F11A4891FA64F9B00F4D047 /* RecipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F11A4881FA64F9B00F4D047 /* RecipeTableViewController.swift */; };
 		3F11A48B1FA64FAF00F4D047 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F11A48A1FA64FAF00F4D047 /* RecipeTableViewCell.swift */; };
-		3F11A5451FA684E000F4D047 /* YelpAPITests in Resources */ = {isa = PBXBuildFile; fileRef = 3F11A5441FA684E000F4D047 /* YelpAPITests */; };
-		3F11A5471FA6851A00F4D047 /* Classes in Resources */ = {isa = PBXBuildFile; fileRef = 3F11A5461FA6851A00F4D047 /* Classes */; };
-		3F11A5491FA6853E00F4D047 /* YelpAPI in Resources */ = {isa = PBXBuildFile; fileRef = 3F11A5481FA6853E00F4D047 /* YelpAPI */; };
-		3F11A5571FA6911C00F4D047 /* YLPSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F11A5561FA6911C00F4D047 /* YLPSearchViewController.swift */; };
 		3F59CBCF1F8E9C6E00331B64 /* FacebookSDK in Resources */ = {isa = PBXBuildFile; fileRef = 3F59CBCE1F8E9C6D00331B64 /* FacebookSDK */; };
 		3F5BD4C01F69BF2500818174 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BD4BF1F69BF2500818174 /* AppDelegate.swift */; };
 		3F5BD4C21F69BF2500818174 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BD4C11F69BF2500818174 /* ViewController.swift */; };
@@ -26,6 +22,33 @@
 		3F5BD4CD1F69BF2500818174 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BD4CB1F69BF2500818174 /* LaunchScreen.storyboard */; };
 		3F691DE21F8E935A0032B496 /* SettingsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F691DE11F8E935A0032B496 /* SettingsIcon.png */; };
 		546BD6F69D87E3A5952A2BDF /* Pods_BBQApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4CED15292BC1FCB298D4FE /* Pods_BBQApp.framework */; };
+		9D7B4F291FA92C1F00FCABAC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D7B4F161FA92C1F00FCABAC /* InfoPlist.strings */; };
+		9D7B4F2A1FA92C1F00FCABAC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7B4F181FA92C1F00FCABAC /* Images.xcassets */; };
+		9D7B4F2B1FA92C1F00FCABAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F191FA92C1F00FCABAC /* main.m */; };
+		9D7B4F2C1FA92C1F00FCABAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D7B4F1A1FA92C1F00FCABAC /* Main.storyboard */; };
+		9D7B4F2D1FA92C1F00FCABAC /* YelpAPI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D7B4F1B1FA92C1F00FCABAC /* YelpAPI-Info.plist */; };
+		9D7B4F2E1FA92C1F00FCABAC /* YLPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F1E1FA92C1F00FCABAC /* YLPAppDelegate.m */; };
+		9D7B4F2F1FA92C1F00FCABAC /* YLPBusinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F201FA92C1F00FCABAC /* YLPBusinessViewController.m */; };
+		9D7B4F301FA92C1F00FCABAC /* YLPDetailBusinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F221FA92C1F00FCABAC /* YLPDetailBusinessViewController.m */; };
+		9D7B4F311FA92C1F00FCABAC /* YLPPhoneSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F241FA92C1F00FCABAC /* YLPPhoneSearchTableViewController.m */; };
+		9D7B4F321FA92C1F00FCABAC /* YLPSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F261FA92C1F00FCABAC /* YLPSearchTableViewController.m */; };
+		9D7B4F331FA92C1F00FCABAC /* YLPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F281FA92C1F00FCABAC /* YLPViewController.m */; };
+		9D7B4F5B1FA92C3700FCABAC /* YLPClient+Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F371FA92C3600FCABAC /* YLPClient+Business.m */; };
+		9D7B4F5C1FA92C3700FCABAC /* YLPClient+PhoneSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F391FA92C3600FCABAC /* YLPClient+PhoneSearch.m */; };
+		9D7B4F5D1FA92C3700FCABAC /* YLPClient+Reviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F3B1FA92C3600FCABAC /* YLPClient+Reviews.m */; };
+		9D7B4F5E1FA92C3700FCABAC /* YLPClient+Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F3D1FA92C3600FCABAC /* YLPClient+Search.m */; };
+		9D7B4F5F1FA92C3700FCABAC /* YLPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F3F1FA92C3600FCABAC /* YLPClient.m */; };
+		9D7B4F601FA92C3700FCABAC /* YLPCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F431FA92C3600FCABAC /* YLPCoordinate.m */; };
+		9D7B4F611FA92C3700FCABAC /* YLPQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F461FA92C3600FCABAC /* YLPQuery.m */; };
+		9D7B4F621FA92C3700FCABAC /* NSDictionary+YLPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F4A1FA92C3600FCABAC /* NSDictionary+YLPUtils.m */; };
+		9D7B4F631FA92C3700FCABAC /* YLPBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F4C1FA92C3600FCABAC /* YLPBusiness.m */; };
+		9D7B4F641FA92C3700FCABAC /* YLPBusinessReviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F4E1FA92C3600FCABAC /* YLPBusinessReviews.m */; };
+		9D7B4F651FA92C3700FCABAC /* YLPCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F501FA92C3600FCABAC /* YLPCategory.m */; };
+		9D7B4F661FA92C3700FCABAC /* YLPLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F521FA92C3600FCABAC /* YLPLocation.m */; };
+		9D7B4F671FA92C3700FCABAC /* YLPReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F551FA92C3600FCABAC /* YLPReview.m */; };
+		9D7B4F681FA92C3700FCABAC /* YLPSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F571FA92C3600FCABAC /* YLPSearch.m */; };
+		9D7B4F691FA92C3700FCABAC /* YLPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B4F591FA92C3600FCABAC /* YLPUser.m */; };
+		B3E730B79C822C3979705695 /* Pods_BBQApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACED22EAE0911D4B05CF443 /* Pods_BBQApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,10 +60,6 @@
 		3F11A4871FA6495200F4D047 /* bbq logo 120x120.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bbq logo 120x120.jpg"; sourceTree = "<group>"; };
 		3F11A4881FA64F9B00F4D047 /* RecipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewController.swift; sourceTree = "<group>"; };
 		3F11A48A1FA64FAF00F4D047 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
-		3F11A5441FA684E000F4D047 /* YelpAPITests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YelpAPITests; sourceTree = "<group>"; };
-		3F11A5461FA6851A00F4D047 /* Classes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Classes; sourceTree = "<group>"; };
-		3F11A5481FA6853E00F4D047 /* YelpAPI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YelpAPI; sourceTree = "<group>"; };
-		3F11A5561FA6911C00F4D047 /* YLPSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLPSearchViewController.swift; sourceTree = "<group>"; };
 		3F59CBCE1F8E9C6D00331B64 /* FacebookSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FacebookSDK; sourceTree = "<group>"; };
 		3F5BD4BC1F69BF2400818174 /* BBQApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBQApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5BD4BF1F69BF2500818174 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +74,61 @@
 		3F691DE61F8E94DC0032B496 /* MapIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapIcon.png; sourceTree = "<group>"; };
 		3F691DE71F8E95830032B496 /* HistoryIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HistoryIcon.png; sourceTree = "<group>"; };
 		7A4430A820FBA18FBD46AB0C /* Pods-BBQApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBQApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BBQApp/Pods-BBQApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9D7B4F141FA9279100FCABAC /* BBQApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BBQApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		9D7B4F171FA92C1F00FCABAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9D7B4F181FA92C1F00FCABAC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9D7B4F191FA92C1F00FCABAC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9D7B4F1A1FA92C1F00FCABAC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9D7B4F1B1FA92C1F00FCABAC /* YelpAPI-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "YelpAPI-Info.plist"; sourceTree = "<group>"; };
+		9D7B4F1C1FA92C1F00FCABAC /* YelpAPI-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YelpAPI-Prefix.pch"; sourceTree = "<group>"; };
+		9D7B4F1D1FA92C1F00FCABAC /* YLPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPAppDelegate.h; sourceTree = "<group>"; };
+		9D7B4F1E1FA92C1F00FCABAC /* YLPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPAppDelegate.m; sourceTree = "<group>"; };
+		9D7B4F1F1FA92C1F00FCABAC /* YLPBusinessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPBusinessViewController.h; sourceTree = "<group>"; };
+		9D7B4F201FA92C1F00FCABAC /* YLPBusinessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPBusinessViewController.m; sourceTree = "<group>"; };
+		9D7B4F211FA92C1F00FCABAC /* YLPDetailBusinessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPDetailBusinessViewController.h; sourceTree = "<group>"; };
+		9D7B4F221FA92C1F00FCABAC /* YLPDetailBusinessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPDetailBusinessViewController.m; sourceTree = "<group>"; };
+		9D7B4F231FA92C1F00FCABAC /* YLPPhoneSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPPhoneSearchTableViewController.h; sourceTree = "<group>"; };
+		9D7B4F241FA92C1F00FCABAC /* YLPPhoneSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPPhoneSearchTableViewController.m; sourceTree = "<group>"; };
+		9D7B4F251FA92C1F00FCABAC /* YLPSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPSearchTableViewController.h; sourceTree = "<group>"; };
+		9D7B4F261FA92C1F00FCABAC /* YLPSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPSearchTableViewController.m; sourceTree = "<group>"; };
+		9D7B4F271FA92C1F00FCABAC /* YLPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPViewController.h; sourceTree = "<group>"; };
+		9D7B4F281FA92C1F00FCABAC /* YLPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPViewController.m; sourceTree = "<group>"; };
+		9D7B4F361FA92C3600FCABAC /* YLPClient+Business.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YLPClient+Business.h"; sourceTree = "<group>"; };
+		9D7B4F371FA92C3600FCABAC /* YLPClient+Business.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLPClient+Business.m"; sourceTree = "<group>"; };
+		9D7B4F381FA92C3600FCABAC /* YLPClient+PhoneSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YLPClient+PhoneSearch.h"; sourceTree = "<group>"; };
+		9D7B4F391FA92C3600FCABAC /* YLPClient+PhoneSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLPClient+PhoneSearch.m"; sourceTree = "<group>"; };
+		9D7B4F3A1FA92C3600FCABAC /* YLPClient+Reviews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YLPClient+Reviews.h"; sourceTree = "<group>"; };
+		9D7B4F3B1FA92C3600FCABAC /* YLPClient+Reviews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLPClient+Reviews.m"; sourceTree = "<group>"; };
+		9D7B4F3C1FA92C3600FCABAC /* YLPClient+Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YLPClient+Search.h"; sourceTree = "<group>"; };
+		9D7B4F3D1FA92C3600FCABAC /* YLPClient+Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLPClient+Search.m"; sourceTree = "<group>"; };
+		9D7B4F3E1FA92C3600FCABAC /* YLPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPClient.h; sourceTree = "<group>"; };
+		9D7B4F3F1FA92C3600FCABAC /* YLPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPClient.m; sourceTree = "<group>"; };
+		9D7B4F401FA92C3600FCABAC /* YLPClientPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPClientPrivate.h; sourceTree = "<group>"; };
+		9D7B4F421FA92C3600FCABAC /* YLPCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPCoordinate.h; sourceTree = "<group>"; };
+		9D7B4F431FA92C3600FCABAC /* YLPCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPCoordinate.m; sourceTree = "<group>"; };
+		9D7B4F451FA92C3600FCABAC /* YLPQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPQuery.h; sourceTree = "<group>"; };
+		9D7B4F461FA92C3600FCABAC /* YLPQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPQuery.m; sourceTree = "<group>"; };
+		9D7B4F471FA92C3600FCABAC /* YLPQueryPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPQueryPrivate.h; sourceTree = "<group>"; };
+		9D7B4F481FA92C3600FCABAC /* YLPSortType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPSortType.h; sourceTree = "<group>"; };
+		9D7B4F4A1FA92C3600FCABAC /* NSDictionary+YLPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YLPUtils.m"; sourceTree = "<group>"; };
+		9D7B4F4B1FA92C3600FCABAC /* YLPBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPBusiness.h; sourceTree = "<group>"; };
+		9D7B4F4C1FA92C3600FCABAC /* YLPBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPBusiness.m; sourceTree = "<group>"; };
+		9D7B4F4D1FA92C3600FCABAC /* YLPBusinessReviews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPBusinessReviews.h; sourceTree = "<group>"; };
+		9D7B4F4E1FA92C3600FCABAC /* YLPBusinessReviews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPBusinessReviews.m; sourceTree = "<group>"; };
+		9D7B4F4F1FA92C3600FCABAC /* YLPCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPCategory.h; sourceTree = "<group>"; };
+		9D7B4F501FA92C3600FCABAC /* YLPCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPCategory.m; sourceTree = "<group>"; };
+		9D7B4F511FA92C3600FCABAC /* YLPLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPLocation.h; sourceTree = "<group>"; };
+		9D7B4F521FA92C3600FCABAC /* YLPLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPLocation.m; sourceTree = "<group>"; };
+		9D7B4F531FA92C3600FCABAC /* YLPResponsePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPResponsePrivate.h; sourceTree = "<group>"; };
+		9D7B4F541FA92C3600FCABAC /* YLPReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPReview.h; sourceTree = "<group>"; };
+		9D7B4F551FA92C3600FCABAC /* YLPReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPReview.m; sourceTree = "<group>"; };
+		9D7B4F561FA92C3600FCABAC /* YLPSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPSearch.h; sourceTree = "<group>"; };
+		9D7B4F571FA92C3600FCABAC /* YLPSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPSearch.m; sourceTree = "<group>"; };
+		9D7B4F581FA92C3600FCABAC /* YLPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPUser.h; sourceTree = "<group>"; };
+		9D7B4F591FA92C3600FCABAC /* YLPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPUser.m; sourceTree = "<group>"; };
+		9D7B4F5A1FA92C3600FCABAC /* YelpAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YelpAPI.h; sourceTree = "<group>"; };
 		EB1B851E78B18175FBB22903 /* Pods-BBQApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBQApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BBQApp/Pods-BBQApp.release.xcconfig"; sourceTree = "<group>"; };
+		FACED22EAE0911D4B05CF443 /* Pods_BBQApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BBQApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +139,7 @@
 				3F0BF4AC1F83F36C0050B97D /* FBSDKLoginKit.framework in Frameworks */,
 				3F0BF4AB1F83F3690050B97D /* FBSDKCoreKit.framework in Frameworks */,
 				546BD6F69D87E3A5952A2BDF /* Pods_BBQApp.framework in Frameworks */,
+				B3E730B79C822C3979705695 /* Pods_BBQApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +158,6 @@
 			children = (
 				3F59CBCE1F8E9C6D00331B64 /* FacebookSDK */,
 				3F691DE31F8E93EB0032B496 /* Icons */,
-				3F11A5441FA684E000F4D047 /* YelpAPITests */,
 				3F5BD4BE1F69BF2400818174 /* BBQApp */,
 				3F5BD4BD1F69BF2400818174 /* Products */,
 				3F11A48E1FA6677F00F4D047 /* Recovered References */,
@@ -104,14 +177,12 @@
 		3F5BD4BE1F69BF2400818174 /* BBQApp */ = {
 			isa = PBXGroup;
 			children = (
-				3F11A5461FA6851A00F4D047 /* Classes */,
-				3F11A5481FA6853E00F4D047 /* YelpAPI */,
+				9D7B4F151FA92C1F00FCABAC /* YelpAPI */,
 				3F11A4871FA6495200F4D047 /* bbq logo 120x120.jpg */,
 				3F5BD4BF1F69BF2500818174 /* AppDelegate.swift */,
 				3F5BD4C11F69BF2500818174 /* ViewController.swift */,
 				3F5BD4C91F69BF2500818174 /* Assets.xcassets */,
 				3F5BD4C31F69BF2500818174 /* Main.storyboard */,
-				3F11A5561FA6911C00F4D047 /* YLPSearchViewController.swift */,
 				3F11A4881FA64F9B00F4D047 /* RecipeTableViewController.swift */,
 				3F11A48A1FA64FAF00F4D047 /* RecipeTableViewCell.swift */,
 				3F5BD4CB1F69BF2500818174 /* LaunchScreen.storyboard */,
@@ -120,6 +191,7 @@
 				3F5BD4C61F69BF2500818174 /* BBQApp.xcdatamodeld */,
 				3F0BF4A81F83EF150050B97D /* FBSDKCoreKit.framework */,
 				3F0BF4A71F83EF040050B97D /* FBSDKLoginKit.framework */,
+				9D7B4F141FA9279100FCABAC /* BBQApp-Bridging-Header.h */,
 			);
 			path = BBQApp;
 			sourceTree = "<group>";
@@ -149,8 +221,108 @@
 			isa = PBXGroup;
 			children = (
 				1B4CED15292BC1FCB298D4FE /* Pods_BBQApp.framework */,
+				FACED22EAE0911D4B05CF443 /* Pods_BBQApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D7B4F151FA92C1F00FCABAC /* YelpAPI */ = {
+			isa = PBXGroup;
+			children = (
+				9D7B4F341FA92C3600FCABAC /* Classes */,
+				9D7B4F161FA92C1F00FCABAC /* InfoPlist.strings */,
+				9D7B4F181FA92C1F00FCABAC /* Images.xcassets */,
+				9D7B4F191FA92C1F00FCABAC /* main.m */,
+				9D7B4F1A1FA92C1F00FCABAC /* Main.storyboard */,
+				9D7B4F1B1FA92C1F00FCABAC /* YelpAPI-Info.plist */,
+				9D7B4F1C1FA92C1F00FCABAC /* YelpAPI-Prefix.pch */,
+				9D7B4F1D1FA92C1F00FCABAC /* YLPAppDelegate.h */,
+				9D7B4F1E1FA92C1F00FCABAC /* YLPAppDelegate.m */,
+				9D7B4F1F1FA92C1F00FCABAC /* YLPBusinessViewController.h */,
+				9D7B4F201FA92C1F00FCABAC /* YLPBusinessViewController.m */,
+				9D7B4F211FA92C1F00FCABAC /* YLPDetailBusinessViewController.h */,
+				9D7B4F221FA92C1F00FCABAC /* YLPDetailBusinessViewController.m */,
+				9D7B4F231FA92C1F00FCABAC /* YLPPhoneSearchTableViewController.h */,
+				9D7B4F241FA92C1F00FCABAC /* YLPPhoneSearchTableViewController.m */,
+				9D7B4F251FA92C1F00FCABAC /* YLPSearchTableViewController.h */,
+				9D7B4F261FA92C1F00FCABAC /* YLPSearchTableViewController.m */,
+				9D7B4F271FA92C1F00FCABAC /* YLPViewController.h */,
+				9D7B4F281FA92C1F00FCABAC /* YLPViewController.m */,
+			);
+			path = YelpAPI;
+			sourceTree = "<group>";
+		};
+		9D7B4F341FA92C3600FCABAC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9D7B4F351FA92C3600FCABAC /* Client */,
+				9D7B4F411FA92C3600FCABAC /* Common */,
+				9D7B4F441FA92C3600FCABAC /* Request */,
+				9D7B4F491FA92C3600FCABAC /* Response */,
+				9D7B4F5A1FA92C3600FCABAC /* YelpAPI.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9D7B4F351FA92C3600FCABAC /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				9D7B4F361FA92C3600FCABAC /* YLPClient+Business.h */,
+				9D7B4F371FA92C3600FCABAC /* YLPClient+Business.m */,
+				9D7B4F381FA92C3600FCABAC /* YLPClient+PhoneSearch.h */,
+				9D7B4F391FA92C3600FCABAC /* YLPClient+PhoneSearch.m */,
+				9D7B4F3A1FA92C3600FCABAC /* YLPClient+Reviews.h */,
+				9D7B4F3B1FA92C3600FCABAC /* YLPClient+Reviews.m */,
+				9D7B4F3C1FA92C3600FCABAC /* YLPClient+Search.h */,
+				9D7B4F3D1FA92C3600FCABAC /* YLPClient+Search.m */,
+				9D7B4F3E1FA92C3600FCABAC /* YLPClient.h */,
+				9D7B4F3F1FA92C3600FCABAC /* YLPClient.m */,
+				9D7B4F401FA92C3600FCABAC /* YLPClientPrivate.h */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		9D7B4F411FA92C3600FCABAC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9D7B4F421FA92C3600FCABAC /* YLPCoordinate.h */,
+				9D7B4F431FA92C3600FCABAC /* YLPCoordinate.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9D7B4F441FA92C3600FCABAC /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				9D7B4F451FA92C3600FCABAC /* YLPQuery.h */,
+				9D7B4F461FA92C3600FCABAC /* YLPQuery.m */,
+				9D7B4F471FA92C3600FCABAC /* YLPQueryPrivate.h */,
+				9D7B4F481FA92C3600FCABAC /* YLPSortType.h */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		9D7B4F491FA92C3600FCABAC /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				9D7B4F4A1FA92C3600FCABAC /* NSDictionary+YLPUtils.m */,
+				9D7B4F4B1FA92C3600FCABAC /* YLPBusiness.h */,
+				9D7B4F4C1FA92C3600FCABAC /* YLPBusiness.m */,
+				9D7B4F4D1FA92C3600FCABAC /* YLPBusinessReviews.h */,
+				9D7B4F4E1FA92C3600FCABAC /* YLPBusinessReviews.m */,
+				9D7B4F4F1FA92C3600FCABAC /* YLPCategory.h */,
+				9D7B4F501FA92C3600FCABAC /* YLPCategory.m */,
+				9D7B4F511FA92C3600FCABAC /* YLPLocation.h */,
+				9D7B4F521FA92C3600FCABAC /* YLPLocation.m */,
+				9D7B4F531FA92C3600FCABAC /* YLPResponsePrivate.h */,
+				9D7B4F541FA92C3600FCABAC /* YLPReview.h */,
+				9D7B4F551FA92C3600FCABAC /* YLPReview.m */,
+				9D7B4F561FA92C3600FCABAC /* YLPSearch.h */,
+				9D7B4F571FA92C3600FCABAC /* YLPSearch.m */,
+				9D7B4F581FA92C3600FCABAC /* YLPUser.h */,
+				9D7B4F591FA92C3600FCABAC /* YLPUser.m */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,13 +387,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F11A5491FA6853E00F4D047 /* YelpAPI in Resources */,
 				3F5BD4CD1F69BF2500818174 /* LaunchScreen.storyboard in Resources */,
+				9D7B4F2A1FA92C1F00FCABAC /* Images.xcassets in Resources */,
+				9D7B4F291FA92C1F00FCABAC /* InfoPlist.strings in Resources */,
+				9D7B4F2D1FA92C1F00FCABAC /* YelpAPI-Info.plist in Resources */,
 				3F691DE21F8E935A0032B496 /* SettingsIcon.png in Resources */,
 				3F5BD4CA1F69BF2500818174 /* Assets.xcassets in Resources */,
-				3F11A5451FA684E000F4D047 /* YelpAPITests in Resources */,
 				3F11A4861FA6489A00F4D047 /* bbq logo 161px.jpg in Resources */,
-				3F11A5471FA6851A00F4D047 /* Classes in Resources */,
+				9D7B4F2C1FA92C1F00FCABAC /* Main.storyboard in Resources */,
 				3F59CBCF1F8E9C6E00331B64 /* FacebookSDK in Resources */,
 				3F5BD4C51F69BF2500818174 /* Main.storyboard in Resources */,
 			);
@@ -288,13 +461,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D7B4F331FA92C1F00FCABAC /* YLPViewController.m in Sources */,
 				3F5BD4C81F69BF2500818174 /* BBQApp.xcdatamodeld in Sources */,
+				9D7B4F5F1FA92C3700FCABAC /* YLPClient.m in Sources */,
+				9D7B4F651FA92C3700FCABAC /* YLPCategory.m in Sources */,
+				9D7B4F5D1FA92C3700FCABAC /* YLPClient+Reviews.m in Sources */,
+				9D7B4F301FA92C1F00FCABAC /* YLPDetailBusinessViewController.m in Sources */,
 				3F5BD4C21F69BF2500818174 /* ViewController.swift in Sources */,
+				9D7B4F311FA92C1F00FCABAC /* YLPPhoneSearchTableViewController.m in Sources */,
+				9D7B4F641FA92C3700FCABAC /* YLPBusinessReviews.m in Sources */,
 				3F5BD4C01F69BF2500818174 /* AppDelegate.swift in Sources */,
+				9D7B4F5B1FA92C3700FCABAC /* YLPClient+Business.m in Sources */,
 				3F11A48B1FA64FAF00F4D047 /* RecipeTableViewCell.swift in Sources */,
-				3F11A5571FA6911C00F4D047 /* YLPSearchViewController.swift in Sources */,
+				9D7B4F681FA92C3700FCABAC /* YLPSearch.m in Sources */,
+				9D7B4F2E1FA92C1F00FCABAC /* YLPAppDelegate.m in Sources */,
+				9D7B4F321FA92C1F00FCABAC /* YLPSearchTableViewController.m in Sources */,
+				9D7B4F621FA92C3700FCABAC /* NSDictionary+YLPUtils.m in Sources */,
+				9D7B4F631FA92C3700FCABAC /* YLPBusiness.m in Sources */,
+				9D7B4F611FA92C3700FCABAC /* YLPQuery.m in Sources */,
 				3F0BF4AA1F83F0F50050B97D /* SettingsViewController.swift in Sources */,
+				9D7B4F2B1FA92C1F00FCABAC /* main.m in Sources */,
+				9D7B4F691FA92C3700FCABAC /* YLPUser.m in Sources */,
+				9D7B4F2F1FA92C1F00FCABAC /* YLPBusinessViewController.m in Sources */,
 				3F11A4891FA64F9B00F4D047 /* RecipeTableViewController.swift in Sources */,
+				9D7B4F5E1FA92C3700FCABAC /* YLPClient+Search.m in Sources */,
+				9D7B4F661FA92C3700FCABAC /* YLPLocation.m in Sources */,
+				9D7B4F671FA92C3700FCABAC /* YLPReview.m in Sources */,
+				9D7B4F601FA92C3700FCABAC /* YLPCoordinate.m in Sources */,
+				9D7B4F5C1FA92C3700FCABAC /* YLPClient+PhoneSearch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +509,14 @@
 				3F5BD4CC1F69BF2500818174 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9D7B4F161FA92C1F00FCABAC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D7B4F171FA92C1F00FCABAC /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -438,13 +640,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FacebookSDK/**",
 					"$(PROJECT_DIR)/BBQApp/**",
-					"$(inherited)",
+					"$(inherited)/**",
 				);
 				INFOPLIST_FILE = BBQApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JaredBruemmer.BBQApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BBQApp/BBQApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -461,13 +664,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FacebookSDK/**",
 					"$(PROJECT_DIR)/BBQApp/**",
-					"$(inherited)",
+					"$(inherited)/**",
 				);
 				INFOPLIST_FILE = BBQApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JaredBruemmer.BBQApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BBQApp/BBQApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

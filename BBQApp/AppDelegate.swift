@@ -17,14 +17,6 @@ import YelpAPI
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-    //Yelp App Delegate
-    var client: YLPClient?
-    
-    class func sharedClient() -> YLPClient {
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        return (appDelegate?.client)!
-    }
     
     // MARK: UIApplicationDelegate
 //    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
@@ -38,20 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        return true
 //    }
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
-        //#warning Fill in the API keys below with your developer v3 keys.
-        YLPClient.authorize(withAppId: "RS4jBI4iBtuHFTnestIvUQ", secret: "ASUi04wdzwMVuaebZaXZ8oZjddzO9fgs7HMET4AsXG7WE5CgPzReTFDfhLXrlxkj", completionHandler: {(_ client: YLPClient, _ error: Error?) -> Void in
-            //self.client = self.client
-            if self.client == nil {
-                print("Authentication failed: \(String(describing: error))")
-            }
-            } as! (YLPClient?, Error?) -> Void)
-        // Override point for customization after application launch.
-        return true
-    }
-
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         let handeled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
         return handeled
