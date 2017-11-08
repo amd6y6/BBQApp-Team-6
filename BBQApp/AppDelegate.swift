@@ -10,10 +10,8 @@ import UIKit
 import CoreData
 import FBSDKCoreKit
 import YelpAPI
-
-
-//import GooglePlaces
-//import GoogleMaps
+import GooglePlaces
+import GoogleMaps
 
 
 @UIApplicationMain
@@ -38,6 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: UIApplicationDelegate
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
 
+        GMSPlacesClient.provideAPIKey("AIzaSyC_CtjIISM5Z48A_gIt_Qc968Mj1whgv9c")
+        GMSServices.provideAPIKey("AIzaSyC_CtjIISM5Z48A_gIt_Qc968Mj1whgv9c")
+        
         YLPClient.authorize(withAppId: "RS4jBI4iBtuHFTnestIvUQ", secret: "ASUi04wdzwMVuaebZaXZ8oZjddzO9fgs7HMET4AsXG7WE5CgPzReTFDfhLXrlxkj", completionHandler: {(_ client: YLPClient?, _ error: Error?) -> Void in
             self.client = client
             if self.client == nil {
