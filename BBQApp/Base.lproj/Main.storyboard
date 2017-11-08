@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -253,12 +253,30 @@
                                 <segment title="List"/>
                                 <segment title="Map"/>
                             </segments>
+                            <connections>
+                                <segue destination="a2I-L8-XCy" kind="show" id="Kwm-M2-bcj"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWR-iE-exq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-159.19999999999999" y="-484.40779610194909"/>
+        </scene>
+        <!--Google Maps View Controller-->
+        <scene sceneID="XCh-li-ohW">
+            <objects>
+                <viewController id="a2I-L8-XCy" customClass="GoogleMapsViewController" customModule="BBQApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wPH-5L-hfl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="fC3-Ca-1Zg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ye1-Xs-9dp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="598" y="-1040"/>
         </scene>
         <!--Detail Business View Controller-->
         <scene sceneID="Qj7-WW-6kC">
@@ -336,7 +354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HG3-BJ-5Sa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="612" y="-484.40779610194909"/>
+            <point key="canvasLocation" x="633" y="-363"/>
         </scene>
         <!--Restaurants-->
         <scene sceneID="fec-la-eZF">
