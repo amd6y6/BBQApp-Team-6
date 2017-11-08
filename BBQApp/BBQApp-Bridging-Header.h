@@ -10,7 +10,7 @@
 #define BBQApp_Bridging_Header_h
 #endif /* BBQApp_Bridging_Header_h */
 
-#import "YLPAppDelegate.h"
+//#import "YLPAppDelegate.h"
 
 #import "YLPClient.h"
 #import "YLPClient+Business.h"
