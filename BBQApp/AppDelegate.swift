@@ -10,27 +10,44 @@ import UIKit
 import CoreData
 import FBSDKCoreKit
 import YelpAPI
-//import GooglePlaces
-//import GoogleMaps
+import GooglePlaces
+import GoogleMaps
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-    //Yelp App Delegate
     var client: YLPClient?
-    
-    class func sharedClient() -> YLPClient {
+
+    @objc class func sharedClient() -> YLPClient? {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        return (appDelegate?.client)!
+                
+        return appDelegate?.client
     }
     
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        let handeled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+        
+        return handeled
+    }
+
     // MARK: UIApplicationDelegate
-//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-//
-//        return true
-//    }
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+
+        GMSPlacesClient.provideAPIKey("AIzaSyC_CtjIISM5Z48A_gIt_Qc968Mj1whgv9c")
+        GMSServices.provideAPIKey("AIzaSyC_CtjIISM5Z48A_gIt_Qc968Mj1whgv9c")
+        
+        YLPClient.authorize(withAppId: "RS4jBI4iBtuHFTnestIvUQ", secret: "ASUi04wdzwMVuaebZaXZ8oZjddzO9fgs7HMET4AsXG7WE5CgPzReTFDfhLXrlxkj", completionHandler: {(_ client: YLPClient?, _ error: Error?) -> Void in
+            self.client = client
+            if self.client == nil {
+                print("Authentication failed: \(String(describing: error))")
+            }
+        })
+        
+        return true
+    }
 
 //    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 //       GMSPlacesClient.provideAPIKey("AIzaSyC_CtjIISM5Z48A_gIt_Qc968Mj1whgv9c")
@@ -38,24 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        return true
 //    }
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
-        //#warning Fill in the API keys below with your developer v3 keys.
-        YLPClient.authorize(withAppId: "RS4jBI4iBtuHFTnestIvUQ", secret: "ASUi04wdzwMVuaebZaXZ8oZjddzO9fgs7HMET4AsXG7WE5CgPzReTFDfhLXrlxkj", completionHandler: {(_ client: YLPClient, _ error: Error?) -> Void in
-            //self.client = self.client
-            if self.client == nil {
-                print("Authentication failed: \(String(describing: error))")
-            }
-            } as! (YLPClient?, Error?) -> Void)
-        // Override point for customization after application launch.
-        return true
-    }
-
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        let handeled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
-        return handeled
-    }
+    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

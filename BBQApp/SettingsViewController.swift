@@ -12,6 +12,24 @@ import FBSDKCoreKit
 
 class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
 
+    func postToServerFunction(){
+        print("Facebook login button Pressed")
+        var url: NSURL = NSURL(string: "https://mmclaughlin557.com/bbqapp.php")!
+        var request:NSMutableURLRequest = NSMutableURLRequest(url:url as URL)
+        var bodyData = "data=something"
+        request.httpMethod = "POST"
+        
+        
+        request.httpBody = bodyData.data(using: String.Encoding.utf8);
+        NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: OperationQueue.main)
+        {
+            (response, data, error) in
+            print(response)
+            
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,7 +45,9 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        postToServerFunction()
         if error != nil {
             print(error)
         } else if result.isCancelled {
@@ -48,6 +68,9 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
             }
         }
     }
+    
+    
+    
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("logged Out")
