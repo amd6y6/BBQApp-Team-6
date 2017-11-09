@@ -24,6 +24,9 @@ class ViewController: UIViewController {
 
     override func loadView() {
         
+        
+        
+        
 //        var locationManager = CCLocationManager()
 //        var currentLocation: CCLocation?
 //
