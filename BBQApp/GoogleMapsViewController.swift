@@ -16,6 +16,8 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import YelpAPI
+
   
 class GoogleMapsViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
 
@@ -57,6 +59,7 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate, CLLocation
     marker2.title = "Jefferson City"
     marker2.snippet = "Missouri"
     marker2.map = mapView
+    
     
     /*
      let marker = GMSMarker()

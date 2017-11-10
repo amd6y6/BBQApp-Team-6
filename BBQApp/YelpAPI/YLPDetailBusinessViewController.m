@@ -9,6 +9,7 @@
 #import "YLPDetailBusinessViewController.h"
 #import <YelpAPI/YLPBusiness.h>
 #import <YelpAPI/YLPLocation.h>
+#import <YelpAPI/YLPCoordinate.h>
 
 
 
@@ -16,6 +17,7 @@
 @property (nonatomic) IBOutlet UILabel *businessName;
 @property (nonatomic) IBOutlet UILabel *businessAddress;
 @property (nonatomic) IBOutlet UILabel *businessPhone;
+@property (nonatomic) IBOutlet UILabel *businessCoords;
 @end
 
 @implementation YLPDetailBusinessViewController
@@ -26,6 +28,7 @@
     self.businessName.text = self.business.name;
     self.businessPhone.text = self.business.phone;
     self.businessAddress.text = self.business.location.address[0];
+    self.businessCoords.text = [NSString stringWithFormat:@"%f"", "@"%f", self.business.location.coordinate.latitude, self.business.location.coordinate.longitude];
 }
 
 @end
