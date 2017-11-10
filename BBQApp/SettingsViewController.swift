@@ -12,6 +12,35 @@ import FBSDKCoreKit
 
 class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
 
+    func postToServerFunction(){
+        print("Facebook login button Pressed")
+        let url: NSURL = NSURL(string: "https://mmclaughlin557.com/bbqapp.php")!
+        let request:NSMutableURLRequest = NSMutableURLRequest(url:url as URL)
+        let bodyData = "data=something"
+        request.httpMethod = "POST"
+        
+        
+        request.httpBody = bodyData.data(using: String.Encoding.utf8);
+        NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: OperationQueue.main)
+        {
+            (response, data, error) in
+            print(response)
+            
+        }
+        
+        if let HTTPResponse = responds as? HTTPURLResponse {
+            let statusCode = HTTPResponse.statusCode
+            
+            if statusCode == 200 {
+                print("Status Code 200: connection OK")
+            }
+        }
+        
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +57,7 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        postToServerFunction()
         if error != nil {
             print(error)
         } else if result.isCancelled {
