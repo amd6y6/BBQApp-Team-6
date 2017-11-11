@@ -7,152 +7,162 @@
 //
 
 import UIKit
+import WebKit
 
-class RecipeTableViewController: UITableViewController, UISearchResultsUpdating {
-
+class RecipeTableViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
+    
+    struct Recipe {
+        var title : String = ""
+        var socialRank : Double = 0.0
+        var image : UIImage? = nil
+        var imageString : String = ""
+        var url : String = ""
+    }
+    
+    var recipes : [Recipe] = []
+    
     @IBOutlet var recipeTable: UITableView!
     
-    var socialRank = [Double]()
-    var recipeTitle1 = [String]()
-    var recipeURL = [String]()
-    var recipeImage1 = [String]()
+    var yourSearch = "BBQ"
+    var searchActive : Bool = false
+    var selectedItem : Int = 0
     
-    var searchController: UISearchController!
-
-     override func numberOfSections(in tableView: UITableView) -> Int {
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return recipeTitle1.count
+        //if isFiltering() {
+        return recipes.count
+        // }
+        //return self.recipeTitle1.count
     }
     
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "recipecell", for: indexPath) as! RecipeTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-
-        
-
-        cell.textLabel?.text = recipeTitle1[indexPath.row]
-        cell.detailTextLabel?.text = String(socialRank[indexPath.row])
-//        cell.imageView?.image = String(recipeImage1[indexPath.row])
-        
+        let cell = recipeTable.dequeueReusableCell(withIdentifier: "recipecell", for: indexPath)
+        var title : String
+        guard indexPath.row >= 0 && indexPath.row < recipes.count else {return cell}
+        title = recipes[indexPath.row].title
+        cell.textLabel?.text = title
+        cell.detailTextLabel?.text = String(recipes[indexPath.row].socialRank)
+        //cell.imageView?.image = recipeImages[indexPath.row]
         return cell
     }
     
-     override func viewDidLoad() {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) -> Int  {
+        selectedItem = indexPath.row
+        //print(selectedItem)
+        return selectedItem
+    }
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
-        
+        apiSearch(yourSearch)
         recipeTable.delegate = self
         recipeTable.dataSource = self
-        
-
-        searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.sizeToFit()
-        tableView.tableHeaderView = searchController.searchBar
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Recipes"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        searchController.searchBar.delegate = self
+        searchController.delegate = self as? UISearchControllerDelegate
     }
-
-     override func didReceiveMemoryWarning() {
+    
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-   func updateSearchResults(for searchController: UISearchController) {
-    if let searchBar = searchController.searchBar.text {
-//            let scope = searchBar[searchBar.selectedScopeButtonIndex]
-//            filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        print("search active = true")
+        searchActive = true
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        print("search active = false")
+        searchActive = false
+        updateSearchResults(for: searchController)
+    }
+    func updateSearchResults(for searchController: UISearchController) {
+        guard self.searchActive == false else {return}
+        print("update search results called")
+        yourSearch = searchController.searchBar.text!
+        apiSearch(yourSearch)
+    }
+    func searchBarIsEmpty() -> Bool {
+        // Returns true if the text is empty or nil
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    func apiSearch( _:String) {
         
-            let url = URL (string: "http://food2fork.com/api/search?key=6fb8c103dfd7f27b64b5feaf97e65afc&q=pizza")!
-            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if error != nil {
-                    print(error!)
-                } else {
-                    if let urlContent = data {
-                        do {
-                            let jsonResult = try JSONSerialization.jsonObject(with: urlContent, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
-                            var counter = 0
-                            while counter < jsonResult["count"]   as! Int {
-                                var recipeTitle1 = ((jsonResult["recipes"] as? NSArray)?[counter] as? NSDictionary)?["title"] as? String;
-                                var socialRank = ((jsonResult["recipes"] as? NSArray)?[counter] as? NSDictionary)?["social_rank"] as? Double;
-                                var recipeURL = ((jsonResult["recipes"] as? NSArray)?[counter] as? NSDictionary)?["f2f_url"] as? String;
-                                var recipeImage1 = ((jsonResult["recipes"] as? NSArray)?[counter] as? NSDictionary)?["image_url"] as? String;
-                                do {
-                                    
-                                    print(recipeTitle1)
-                                    counter = counter + 1
-                                }
+        let url = URL (string: "http://food2fork.com/api/search?key=6fb8c103dfd7f27b64b5feaf97e65afc&q=" + yourSearch.replacingOccurrences(of: " ", with: "%20") )!
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print(error!)
+            } else {
+                if let urlContent = data {
+                    do {
+                        let jsonResult = try JSONSerialization.jsonObject(with: urlContent, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
+                        var counter = 0
+                        self.recipes.removeAll()
+                        while counter < jsonResult["count"] as! Int {
+                            var newRecipe : Recipe = Recipe()
+                            if let title1 = ((jsonResult["recipes"] as? NSArray)?[counter] as? NSDictionary)?["title"] as? String {
+                                newRecipe.title = title1
+                                //self.recipes.append(title1)
                             }
-                        } catch {
-                            print("JSON Processing Failed")
+                            if let rank = ((jsonResult["recipes"] as? NSArray)?[counter] as? NSDictionary)?["social_rank"] as? Double {
+                                newRecipe.socialRank = rank
+                                //self.socialRank.append(rank)
+                            }
+                            if let path = ((jsonResult["recipes"] as? NSArray)?[counter] as? NSDictionary)?["f2f_url"] as? String {
+                                newRecipe.url = path
+                                //self.recipeURL.append(path)
+                                
+                            }
+                            if let image = ((jsonResult["recipes"] as? NSArray)?[counter] as? NSDictionary)?["image_url"] as? String {
+                                newRecipe.image = UIImage(data: image.data(using: String.Encoding.utf8)!)
+                                //self.recipeImage1.append(image)
+                                /*
+                                 let image = try? Data(contentsOf: url)
+                                 let image1: UIImage = UIImage(data: image!)!
+                                 
+                                 self.recipeImages.append(image1)
+                                 */
+                            }
+                            self.recipes.append(newRecipe)
+                            
+                            counter = counter + 1
                         }
+                        DispatchQueue.main.async {
+                            self.recipeTable.reloadData()
+                        }
+                    } catch {
+                        print("JSON Processing Failed")
                     }
                 }
             }
+        }
         
-            task.resume()
-                self.tableView.reloadData()
-            }
-        
+        task.resume()
+        self.tableView.reloadData()
     }
-    // MARK: - Table view data source
-
     
-
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "recipesegue" {
+            let nextScene = segue.destination as? RecipeWebView
+            if let selectedItem = tableView.indexPathForSelectedRow?.row {
+                nextScene?.website = (recipes[selectedItem].url)
+            }
+        }
     }
-    */
+    
 }
+
+
