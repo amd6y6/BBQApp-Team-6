@@ -45,10 +45,7 @@
 </string>
                                         <attributes>
                                             <font key="NSFont" size="18" name=".SFNSText"/>
-                                            <font key="NSOriginalFont" size="18" name=".SFNSText"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops/>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -152,6 +149,11 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cF-sF-Acf">
+                                            <rect key="frame" x="330" y="17" width="69" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="empty star"/>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -418,5 +420,6 @@
         <image name="RecipesIcon" width="32" height="32"/>
         <image name="SettingsIcon.png" width="32" height="32"/>
         <image name="bbq logo 161px" width="161" height="161"/>
+        <image name="empty star" width="15" height="15"/>
     </resources>
 </document>
