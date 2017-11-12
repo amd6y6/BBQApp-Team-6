@@ -37,6 +37,7 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate {
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
         placesClient = GMSPlacesClient.shared()
+        locationManager.requestAlwaysAuthorization()
         
         
         let camera = GMSCameraPosition.camera(withLatitude: 38.9517, longitude: -92.3341, zoom: zoomLevel)
