@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YLPCoordinate : NSObject
 
-@property (nonatomic, readonly) double latitude;
-@property (nonatomic, readonly) double longitude;
+@property (nonatomic) double latitude;
+@property (nonatomic) double longitude;
 
 - (instancetype)initWithLatitude:(double)latitude longitude:(double)longitude;
 

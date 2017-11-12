@@ -19,11 +19,14 @@
 #import "BBQApp-Swift.h"
 
 @interface YLPSearchTableViewController ()
+
 @property (nonatomic) YLPSearch *search;
+
+@property (nonatomic) YLPCoordinate *coordinates;
+
 @end
 
 @implementation YLPSearchTableViewController
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,7 +39,10 @@
          });
      }];
 
-//    [[AppDelegate sharedClient] searchWithCoordinate:  term:nil limit:50 offset:0 sort:YLPSortTypeDistance completionHandler:^
+//    self.coordinates.latitude = 38.9517;
+//    self.coordinates.longitude = -92.3341;
+    
+//    [[AppDelegate sharedClient] searchWithCoordinate: self.coordinates  term:nil limit:50 offset:0 sort:YLPSortTypeDistance completionHandler:^
 //     (YLPSearch *search, NSError* error) {
 //         self.search = search;
 //         dispatch_async(dispatch_get_main_queue(), ^{

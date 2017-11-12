@@ -11,5 +11,7 @@
 @class YLPClient;
 @class YLPSearch;
 
+@class YLPCoordinate;
+
 @interface YLPSearchTableViewController : UITableViewController <UITableViewDelegate>
 @end
