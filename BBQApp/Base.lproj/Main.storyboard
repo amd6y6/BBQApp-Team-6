@@ -120,7 +120,7 @@
             </objects>
             <point key="canvasLocation" x="-1721" y="-484"/>
         </scene>
-        <!--Recipes-->
+        <!--Recipe Table View Controller-->
         <scene sceneID="OPt-Q4-Y74">
             <objects>
                 <tableViewController id="uWa-wf-Jxs" customClass="RecipeTableViewController" customModule="BBQApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -169,7 +169,17 @@
                             <outlet property="delegate" destination="uWa-wf-Jxs" id="yje-Gj-Cur"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recipes" id="9tA-Jg-GhV"/>
+                    <navigationItem key="navigationItem" id="9tA-Jg-GhV">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="qOC-1k-5VM">
+                            <rect key="frame" x="118" y="7" width="139" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Search"/>
+                                <segment title="Favorites"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
                     <connections>
                         <outlet property="recipeTable" destination="o9K-6f-bCc" id="TZP-Tj-0ej"/>
                     </connections>
