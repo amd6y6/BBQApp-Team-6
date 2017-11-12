@@ -14,6 +14,8 @@
 #import "YLPSortType.h"
 #import "YLPSearch.h"
 #import "YLPBusiness.h"
+#import "YLPCoordinate.h"
+#import "YLPLocation.h"
 
 #import "BBQApp-Swift.h"
 
@@ -33,6 +35,16 @@
                 [self.tableView reloadData];
             });
     }];
+    
+    
+    
+//    [[AppDelegate sharedClient] searchWithCoordinate:  term:nil limit:50 offset:0 sort:YLPSortTypeDistance completionHandler:^
+//     (YLPSearch *search, NSError* error) {
+//         self.search = search;
+//         dispatch_async(dispatch_get_main_queue(), ^{
+//             [self.tableView reloadData];
+//         });
+//     }];
 }
 
 #pragma mark - Table view data source
@@ -52,6 +64,7 @@
     }
     else {
         cell.textLabel.text = self.search.businesses[indexPath.item].name;
+        //NSLog(@"%@", self.search.businesses[indexPath.item].location.coordinate);
     }
     
     return cell;
