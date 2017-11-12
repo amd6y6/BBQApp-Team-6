@@ -22,6 +22,7 @@
 		3F6CDFC71FA949E30057CEDF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6CDFC61FA949E30057CEDF /* Bolts.framework */; };
 		3FA980CE1FB67865009DAAEF /* RecipeWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA980CD1FB67865009DAAEF /* RecipeWebView.swift */; };
 		546BD6F69D87E3A5952A2BDF /* Pods_BBQApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4CED15292BC1FCB298D4FE /* Pods_BBQApp.framework */; };
+		9D31CCA71FB8D8550006DA5F /* MasterRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D31CCA61FB8D8550006DA5F /* MasterRestaurantViewController.swift */; };
 		9D42F20F1FB394F200581079 /* YLPDetailBusinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42F20B1FB394F200581079 /* YLPDetailBusinessViewController.m */; };
 		9D42F2101FB394F200581079 /* YLPSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42F20E1FB394F200581079 /* YLPSearchTableViewController.m */; };
 		9D42F2121FB3956800581079 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D42F2111FB3956800581079 /* AppDelegate.swift */; };
@@ -71,6 +72,7 @@
 		3FA980CD1FB67865009DAAEF /* RecipeWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeWebView.swift; sourceTree = "<group>"; };
 		7A4430A820FBA18FBD46AB0C /* Pods-BBQApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBQApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BBQApp/Pods-BBQApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8B870DEDD20699C239F3E569 /* Pods_BBQApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BBQApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D31CCA61FB8D8550006DA5F /* MasterRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterRestaurantViewController.swift; sourceTree = "<group>"; };
 		9D42F20B1FB394F200581079 /* YLPDetailBusinessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPDetailBusinessViewController.m; sourceTree = "<group>"; };
 		9D42F20C1FB394F200581079 /* YLPDetailBusinessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPDetailBusinessViewController.h; sourceTree = "<group>"; };
 		9D42F20D1FB394F200581079 /* YLPSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPSearchTableViewController.h; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				3F5BD4C11F69BF2500818174 /* ViewController.swift */,
 				3F5BD4C91F69BF2500818174 /* Assets.xcassets */,
 				3F5BD4C31F69BF2500818174 /* Main.storyboard */,
+				9D31CCA61FB8D8550006DA5F /* MasterRestaurantViewController.swift */,
 				9D42F2111FB3956800581079 /* AppDelegate.swift */,
 				3F11A4881FA64F9B00F4D047 /* RecipeTableViewController.swift */,
 				3FA980CD1FB67865009DAAEF /* RecipeWebView.swift */,
@@ -451,6 +454,7 @@
 				9D7B4F651FA92C3700FCABAC /* YLPCategory.m in Sources */,
 				9D7B4F5D1FA92C3700FCABAC /* YLPClient+Reviews.m in Sources */,
 				3F5BD4C21F69BF2500818174 /* ViewController.swift in Sources */,
+				9D31CCA71FB8D8550006DA5F /* MasterRestaurantViewController.swift in Sources */,
 				9D7B4F641FA92C3700FCABAC /* YLPBusinessReviews.m in Sources */,
 				3FA980CE1FB67865009DAAEF /* RecipeWebView.swift in Sources */,
 				9D42F2101FB394F200581079 /* YLPSearchTableViewController.m in Sources */,

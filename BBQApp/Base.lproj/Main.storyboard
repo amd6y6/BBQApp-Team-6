@@ -216,7 +216,7 @@
         <!--Search Table View Controller-->
         <scene sceneID="QPV-9v-PTo">
             <objects>
-                <tableViewController id="c0y-Eq-OHs" customClass="YLPSearchTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="YLPSearchTableViewController" id="c0y-Eq-OHs" customClass="YLPSearchTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Ru-uJ-ZIH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -247,27 +247,16 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="vJ9-D7-MHi">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="jIC-Yj-9jy">
-                            <rect key="frame" x="100" y="7" width="175" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="List"/>
-                                <segment title="Map"/>
-                            </segments>
-                            <connections>
-                                <segue destination="a2I-L8-XCy" kind="show" id="Kwm-M2-bcj"/>
-                            </connections>
-                        </segmentedControl>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWR-iE-exq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-159.19999999999999" y="-484.40779610194909"/>
+            <point key="canvasLocation" x="938" y="-484"/>
         </scene>
         <!--Google Maps View Controller-->
         <scene sceneID="XCh-li-ohW">
             <objects>
-                <viewController id="a2I-L8-XCy" customClass="GoogleMapsViewController" customModule="BBQApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoogleMapsViewController" id="a2I-L8-XCy" customClass="GoogleMapsViewController" customModule="BBQApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wPH-5L-hfl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -277,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ye1-Xs-9dp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="936.79999999999995" y="-1040.3298350824589"/>
+            <point key="canvasLocation" x="465" y="-1225"/>
         </scene>
         <!--Detail Business View Controller-->
         <scene sceneID="Qj7-WW-6kC">
@@ -373,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HG3-BJ-5Sa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="632.79999999999995" y="-363.86806596701655"/>
+            <point key="canvasLocation" x="1610" y="-484"/>
         </scene>
         <!--Restaurants-->
         <scene sceneID="fec-la-eZF">
@@ -387,12 +376,41 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="c0y-Eq-OHs" kind="relationship" relationship="rootViewController" id="Dhc-33-rSp"/>
+                        <segue destination="8Ed-PU-e8a" kind="relationship" relationship="rootViewController" id="ukB-cv-PMr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdq-j2-xNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-924" y="-484"/>
+        </scene>
+        <!--Master Restaurant View Controller-->
+        <scene sceneID="5du-li-bDg">
+            <objects>
+                <viewController id="8Ed-PU-e8a" customClass="MasterRestaurantViewController" customModule="BBQApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8d0-Wt-o99">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="nwD-pa-gJe"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dLU-Lw-B4h">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="GkV-IK-VjD">
+                            <rect key="frame" x="127" y="7" width="121" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="List"/>
+                                <segment title="Map"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="GkV-IK-VjD" id="dwU-Qx-O4u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lXd-na-eA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6" y="-484"/>
         </scene>
         <!--Recipes-->
         <scene sceneID="Cv1-yb-Nsm">

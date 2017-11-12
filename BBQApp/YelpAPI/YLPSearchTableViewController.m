@@ -16,7 +16,6 @@
 #import "YLPBusiness.h"
 #import "YLPCoordinate.h"
 #import "YLPLocation.h"
-
 #import "BBQApp-Swift.h"
 
 @interface YLPSearchTableViewController ()
@@ -25,19 +24,18 @@
 
 @implementation YLPSearchTableViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [[AppDelegate sharedClient] searchWithLocation:@"Columbia, MO" term:nil limit:50 offset:0 categoryFilter:@[@"bbq"] sort:YLPSortTypeDistance completionHandler:^
-        (YLPSearch *search, NSError* error) {
-            self.search = search;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView reloadData];
-            });
-    }];
-    
-    
-    
+     (YLPSearch *search, NSError* error) {
+         self.search = search;
+         dispatch_async(dispatch_get_main_queue(), ^{
+             [self.tableView reloadData];
+         });
+     }];
+
 //    [[AppDelegate sharedClient] searchWithCoordinate:  term:nil limit:50 offset:0 sort:YLPSortTypeDistance completionHandler:^
 //     (YLPSearch *search, NSError* error) {
 //         self.search = search;
@@ -45,6 +43,7 @@
 //             [self.tableView reloadData];
 //         });
 //     }];
+    
 }
 
 #pragma mark - Table view data source
