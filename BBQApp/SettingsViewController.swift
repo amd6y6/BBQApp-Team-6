@@ -10,13 +10,27 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
 
-class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
+let useremail : String = ""
+let userid : String = ""
+let username : String = ""
 
+class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
+   
+    struct User {
+        var useremail : String = ""
+        var userid : String = ""
+        var username : String = ""
+    }
+    
+    var user : [User] = []
+    var newUser : User = User()
+    
     func postToServerFunction(){
-        print("Facebook login button Pressed")
+        //print(newUser.userid)
         let url: NSURL = NSURL(string: "https://mmclaughlin557.com/bbqapp.php")!
         let request:NSMutableURLRequest = NSMutableURLRequest(url:url as URL)
-        let bodyData = "data=something"
+        let bodyData = ("data=" + "&id=" + newUser.userid + "&name=" + newUser.username + "&email=" + newUser.useremail)
+        print(bodyData)
         request.httpMethod = "POST"
         
         
@@ -25,9 +39,7 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
         {
             (response, data, error) in
             print(response)
-            
         }
-        
         if let HTTPResponse = responds as? HTTPURLResponse {
             let statusCode = HTTPResponse.statusCode
             
@@ -57,7 +69,7 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        postToServerFunction()
+        //postToServerFunction()
         if error != nil {
             print(error)
         } else if result.isCancelled {
@@ -65,13 +77,27 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
         } else {
             if result.grantedPermissions.contains("email") {
                 if let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name"]) {
-                    graphRequest.start(completionHandler: { (connection, result, error) in
+                    graphRequest.start(completionHandler: { (connection, result, error) -> Void in
                         if error != nil {
                             print(error!)
                         } else {
-                            if let userDeets = result {
-                                print(userDeets)
+                            let result = result as? NSDictionary
+                            if let useremail = result!["email"] as? String{
+                                self.newUser.useremail = useremail
+                                //print(useremail)
                             }
+                            if let username = result!["name"] as? String{
+                                self.newUser.username = username
+                                //print(username)
+                            }
+                            if let userid = result!["id"] as? String{
+                                self.newUser.userid = userid
+                                //print(userid)
+                            }
+                            self.postToServerFunction()
+                            //if let userDeets = result {
+                             //   print(userDeets)
+                            //}
                         }
                     })
                 }
