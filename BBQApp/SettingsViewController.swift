@@ -30,7 +30,10 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
         let url: NSURL = NSURL(string: "https://mmclaughlin557.com/bbqapp.php")!
         let request:NSMutableURLRequest = NSMutableURLRequest(url:url as URL)
         let bodyData = ("data=" + "&id=" + newUser.userid + "&name=" + newUser.username + "&email=" + newUser.useremail)
-        print(bodyData)
+        //useremail = newUser.useremail
+        //User.user.userid = newUser.userid
+        //User.user.userName = newUser.username
+        //print(bodyData)
         request.httpMethod = "POST"
         
         
