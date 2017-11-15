@@ -26,7 +26,11 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     var yourSearch = "BBQ"
     var searchActive : Bool = false
     var selectedItem : Int = 0
-    
+    //var userEmail : String = ""
+    //var userId : String = ""
+    //var userName : String = ""
+
+  
     let searchController = UISearchController(searchResultsController: nil)
     
     
@@ -51,8 +55,20 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         title = recipes[indexPath.row].title
         cell.textLabel?.text = title
         cell.detailTextLabel?.text = String(recipes[indexPath.row].socialRank)
+        cell.accessoryType = .detailDisclosureButton
         //cell.imageView?.image = recipeImages[indexPath.row]
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        doSomethingWithItem(index: indexPath.row)
+    }
+    
+    func doSomethingWithItem(index: Int ){
+    print(recipes[index].title)
+    print(recipes[index].url)
+    //let userId = SettingsViewController.User.userid
+    //print(userId)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) -> Int  {
