@@ -8,6 +8,8 @@
 
 import UIKit
 import WebKit
+import CoreData
+
 
 class RecipeTableViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
     
@@ -27,8 +29,9 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     var searchActive : Bool = false
     var selectedItem : Int = 0
     //var userEmail : String = ""
-    //var userId : String = ""
+    var userId : String = ""
     //var userName : String = ""
+    var people: [NSManagedObject] = []
 
   
     let searchController = UISearchController(searchResultsController: nil)
@@ -62,13 +65,15 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         doSomethingWithItem(index: indexPath.row)
+        
     }
     
     func doSomethingWithItem(index: Int ){
-    print(recipes[index].title)
-    print(recipes[index].url)
-    //let userId = SettingsViewController.User.userid
+    //print(recipes[index].title)
+    //print(recipes[index].url)
     //print(userId)
+    
+        postToServerFunction(index: index)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) -> Int  {
@@ -89,6 +94,33 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         definesPresentationContext = true
         searchController.searchBar.delegate = self
         searchController.delegate = self as? UISearchControllerDelegate
+        fetchUserData()
+        //print(userId)
+    }
+ 
+    func fetchUserData(){
+        //1
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        //2
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "User")
+        
+        //3
+        do {
+            people = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        let index = people.count
+        let person = people[index - 1]
+        userId = (person.value(forKeyPath: "id") as? String)!
     }
     
     override func didReceiveMemoryWarning() {
@@ -168,6 +200,29 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         
         task.resume()
         self.tableView.reloadData()
+    }
+    
+    func postToServerFunction(index: Int){
+        let url: NSURL = NSURL(string: "https://mmclaughlin557.com/bbqapp.php")!
+        let request:NSMutableURLRequest = NSMutableURLRequest(url:url as URL)
+        let bodyData = ("recipedata=" + "&id=" + userId + "&recipeurl=" + recipes[index].url)
+        print(bodyData)
+        request.httpMethod = "POST"
+        //save(userid: users[0].userid)
+        request.httpBody = bodyData.data(using: String.Encoding.utf8);
+        NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: OperationQueue.main)
+        {
+            (response, data, error) in
+            print(response)
+        }
+        if let HTTPResponse = responds as? HTTPURLResponse {
+            let statusCode = HTTPResponse.statusCode
+            
+            if statusCode == 200 {
+                print("Status Code 200: connection OK")
+            }
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

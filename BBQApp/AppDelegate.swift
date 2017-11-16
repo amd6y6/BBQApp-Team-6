@@ -32,8 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return handeled
     }
-
-    // MARK: UIApplicationDelegate
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
 
         GMSPlacesClient.provideAPIKey("AIzaSyC_CtjIISM5Z48A_gIt_Qc968Mj1whgv9c")
@@ -109,6 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
+
 
     // MARK: - Core Data Saving support
 
