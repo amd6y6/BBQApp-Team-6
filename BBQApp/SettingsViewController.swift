@@ -9,10 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
-
-let useremail : String = ""
-let userid : String = ""
-let username : String = ""
+import CoreData
 
 class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
    
@@ -20,23 +17,19 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
         var useremail : String = ""
         var userid : String = ""
         var username : String = ""
-    }
+        }
     
-    var user : [User] = []
+    var users : [User] = []
     var newUser : User = User()
+    var people: [NSManagedObject] = []
     
     func postToServerFunction(){
-        //print(newUser.userid)
         let url: NSURL = NSURL(string: "https://mmclaughlin557.com/bbqapp.php")!
         let request:NSMutableURLRequest = NSMutableURLRequest(url:url as URL)
-        let bodyData = ("data=" + "&id=" + newUser.userid + "&name=" + newUser.username + "&email=" + newUser.useremail)
-        //useremail = newUser.useremail
-        //User.user.userid = newUser.userid
-        //User.user.userName = newUser.username
+        let bodyData = ("data=" + "&id=" + users[0].userid + "&name=" + users[0].username + "&email=" + users[0].useremail)
         //print(bodyData)
         request.httpMethod = "POST"
-        
-        
+        save(userid: users[0].userid)
         request.httpBody = bodyData.data(using: String.Encoding.utf8);
         NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: OperationQueue.main)
         {
@@ -53,12 +46,39 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
-    
+    func save(userid: String){
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        // 1
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        // 2
+        let entity =
+            NSEntityDescription.entity(forEntityName: "User",
+                                       in: managedContext)!
+        
+        let User = NSManagedObject(entity: entity,
+                                     insertInto: managedContext)
+        
+        // 3
+        User.setValue(userid, forKeyPath: "id")
+        
+        // 4
+        do {
+            try managedContext.save()
+            people.append(User)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         let loginButton = FBSDKLoginButton()
         loginButton.center = view.center
         loginButton.readPermissions = ["public_profile", "email"]
@@ -84,19 +104,22 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
                         if error != nil {
                             print(error!)
                         } else {
+                            var newUser : User = User()
                             let result = result as? NSDictionary
                             if let useremail = result!["email"] as? String{
-                                self.newUser.useremail = useremail
+                                newUser.useremail = useremail
                                 //print(useremail)
                             }
                             if let username = result!["name"] as? String{
-                                self.newUser.username = username
+                                newUser.username = username
                                 //print(username)
                             }
                             if let userid = result!["id"] as? String{
-                                self.newUser.userid = userid
+                                newUser.userid = userid
                                 //print(userid)
                             }
+                            self.users.append(newUser)
+                            print(self.users[0])
                             self.postToServerFunction()
                             //if let userDeets = result {
                              //   print(userDeets)
