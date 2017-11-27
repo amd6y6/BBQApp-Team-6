@@ -137,15 +137,12 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
              
                 //getting the JSON array teams from the response
                 let favoriteRecipes: NSArray = RecipeJSON["recipes"] as! NSArray
-                //print(favoriteRecipes.description)
+                print(favoriteRecipes.description)
                 print("Recipes returned ", favoriteRecipes.count)
                 self.recipes.removeAll()
                 var counter = 0
                 while counter < favoriteRecipes.count{
                     var newRecipe : Recipe = Recipe()
-                    
-                    //looping through all the json objects in the array teams
-                //for i in 0 ..< favoriteRecipes.count{
                     print(counter)
                 
                     //getting the data at each index
@@ -153,13 +150,31 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
                     {
                     newRecipe.url = RecipeUrl
                     //displaying the data
-                    print("recipeURL -> ", RecipeUrl)
-                    //print("userId -> ", self.userId)
-                    //print("member -> ", teamMember)
-                    print("===================")
-                    print("")
+                    //print("recipeURL -> ", RecipeUrl)
+                    //print("===================")
+                    //print("")
                         
                     }
+                    if let RecipeTitle = ((RecipeJSON["recipes"] as? NSArray)?[counter] as? NSDictionary)?["Title"] as? String
+                    {
+                        newRecipe.title = RecipeTitle
+                        //displaying the data
+                        //print("recipeTitle -> ", RecipeTitle)
+                        //print("===================")
+                        //print("")
+                        
+                    }
+                    if let RecipeRank = ((RecipeJSON["recipes"] as? NSArray)?[counter] as? NSDictionary)?["SocialRank"] as? String
+                    {
+                        newRecipe.socialRank = Double(RecipeRank)!
+                        //displaying the data
+                        //print("recipeRank -> ", RecipeRank)
+                        //print("===================")
+                        //print("")
+                        
+                    }
+
+
                     self.recipes.append(newRecipe)
                     counter = counter + 1
                 }
@@ -296,7 +311,9 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     func postToServerFunction(index: Int){
         let url: NSURL = NSURL(string: "https://mmclaughlin557.com/bbqapp.php")!
         let request:NSMutableURLRequest = NSMutableURLRequest(url:url as URL)
-        let bodyData = ("recipedata=" + "&id=" + userId + "&recipeurl=" + recipes[index].url)
+        let string1 = ("recipedata=" + "&id=" + userId + "&recipeurl=" + recipes[index].url)
+        let string2 =  ("&title=" + recipes[index].title + "&socialrank=" + (recipes[index].socialRank.description))
+        let bodyData = string1 + string2
         print(bodyData)
         request.httpMethod = "POST"
         //save(userid: users[0].userid)
