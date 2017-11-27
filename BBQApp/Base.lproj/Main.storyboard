@@ -137,14 +137,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RtX-IF-bEC">
-                                            <rect key="frame" x="16" y="10" width="33" height="20"/>
+                                            <rect key="frame" x="16" y="10" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jLh-79-ECj">
-                                            <rect key="frame" x="16" y="33" width="44" height="15"/>
+                                            <rect key="frame" x="16" y="33.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -177,6 +177,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="recipeTable" destination="o9K-6f-bCc" id="TZP-Tj-0ej"/>
+                        <outlet property="segmentedControl" destination="qOC-1k-5VM" id="yIi-vQ-9Ie"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZj-7w-K2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
