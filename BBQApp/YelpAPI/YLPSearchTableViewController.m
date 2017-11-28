@@ -49,6 +49,14 @@
 //             [self.tableView reloadData];
 //         });
 //     }];
+
+    [[AppDelegate sharedClient] searchWithCoordinate: coordinate term:nil limit:50 offset:0 categoryFilter:@[@"bbq"] sort:YLPSortTypeDistance completionHandler:^
+     (YLPSearch *search, NSError* error) {
+         self.search = search;
+         dispatch_async(dispatch_get_main_queue(), ^{
+             [self.tableView reloadData];
+         });
+     }];
     
 }
 
@@ -80,5 +88,7 @@
     vc.business = self.search.businesses[indexPath.item];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+
 
 @end

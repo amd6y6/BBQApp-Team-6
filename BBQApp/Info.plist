@@ -68,12 +68,10 @@
 		<string>googlechromes</string>
 		<string>comgooglemaps</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>MOBBQ will use your location to find nearby restaurants</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<array>
-		<string>Location</string>
-	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Use Location</string>
+	<string>MOBBQ will use your location to find nearby restaurants</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
