@@ -19,30 +19,21 @@
 #import "BBQApp-Swift.h"
 
 @interface YLPSearchTableViewController ()
-
 @property (nonatomic) YLPSearch *search;
-
-@property (nonatomic) YLPCoordinate *coordinates;
-
 @end
 
 @implementation YLPSearchTableViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [[AppDelegate sharedClient] searchWithLocation:@"Columbia, MO" term:nil limit:50 offset:0 categoryFilter:@[@"bbq"] sort:YLPSortTypeDistance completionHandler:^
-     (YLPSearch *search, NSError* error) {
-         self.search = search;
-         dispatch_async(dispatch_get_main_queue(), ^{
-             [self.tableView reloadData];
-         });
-     }];
 
-//    self.coordinates.latitude = 38.9517;
-//    self.coordinates.longitude = -92.3341;
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-//    [[AppDelegate sharedClient] searchWithCoordinate: self.coordinates  term:nil limit:50 offset:0 sort:YLPSortTypeDistance completionHandler:^
+    YLPCoordinate *coordinate = [[YLPCoordinate alloc] initWithLatitude:(double)_userLocation.coordinate.latitude longitude:(double)_userLocation.coordinate.longitude];
+    
+    
+   // YLPCoordinate *coordinate = [[YLPCoordinate alloc] initWithLatitude:38.940384 longitude:-92.327748];
+//
+//    [[AppDelegate sharedClient] searchWithLocation:@"Columbia, MO" term:nil limit:50 offset:0 categoryFilter:@[@"bbq"] sort:YLPSortTypeDistance completionHandler:^
 //     (YLPSearch *search, NSError* error) {
 //         self.search = search;
 //         dispatch_async(dispatch_get_main_queue(), ^{
