@@ -67,6 +67,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         cell.textLabel?.text = title
         cell.detailTextLabel?.text = String(recipes[indexPath.row].socialRank)
         cell.accessoryType = .detailDisclosureButton
+
         //cell.imageView?.image = recipeImages[indexPath.row]
         return cell
     }
@@ -97,13 +98,18 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     private func updateView() {
         if segmentedControl.selectedSegmentIndex == 0 {
             updateSearchResults(for: searchController)
-            
+            if (userId == ""){
+                fetchUserData()
+            }
         } else {
             //print("Favorite recipes clicked")
             recipes.removeAll()
             self.tableView.reloadData()
+            if (userId != ""){
             fetchUsersFavorites()
-        
+            }else {
+                fetchUserData()
+            }
         }
     }
     
@@ -149,31 +155,15 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
                     if let RecipeUrl = ((RecipeJSON["recipes"] as? NSArray)?[counter] as? NSDictionary)?["RecipeURL"] as? String
                     {
                     newRecipe.url = RecipeUrl
-                    //displaying the data
-                    //print("recipeURL -> ", RecipeUrl)
-                    //print("===================")
-                    //print("")
-                        
                     }
                     if let RecipeTitle = ((RecipeJSON["recipes"] as? NSArray)?[counter] as? NSDictionary)?["Title"] as? String
                     {
-                        newRecipe.title = RecipeTitle
-                        //displaying the data
-                        //print("recipeTitle -> ", RecipeTitle)
-                        //print("===================")
-                        //print("")
-                        
+                    newRecipe.title = RecipeTitle
                     }
                     if let RecipeRank = ((RecipeJSON["recipes"] as? NSArray)?[counter] as? NSDictionary)?["SocialRank"] as? String
                     {
-                        newRecipe.socialRank = Double(RecipeRank)!
-                        //displaying the data
-                        //print("recipeRank -> ", RecipeRank)
-                        //print("===================")
-                        //print("")
-                        
+                    newRecipe.socialRank = Double(RecipeRank)!
                     }
-
 
                     self.recipes.append(newRecipe)
                     counter = counter + 1
@@ -204,7 +194,6 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         searchController.searchBar.delegate = self
         searchController.delegate = self as? UISearchControllerDelegate
         fetchUserData()
-       
     }
  
     func fetchUserData(){
@@ -225,8 +214,10 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
             print("Could not fetch. \(error), \(error.userInfo)")
         }
         let index = people.count
+        if (index != 0){
         let person = people[index - 1]
         userId = (person.value(forKeyPath: "id") as? String)!
+        }
     }
     
     override func didReceiveMemoryWarning() {
