@@ -39,14 +39,17 @@
 }
 
 - (void)searchWithCoordinate:(YLPCoordinate *)coordinate
-                        term:(NSString *)term limit:(NSUInteger)limit
+                        term:(NSString *)term
+                       limit:(NSUInteger)limit
                       offset:(NSUInteger)offset
+              categoryFilter:(NSArray<NSString *>*)categoryFilter
                         sort:(YLPSortType)sort
            completionHandler:(YLPSearchCompletionHandler)completionHandler {
     YLPQuery *query = [[YLPQuery alloc] initWithCoordinate:coordinate];
     query.term = term;
     query.limit = limit;
     query.offset = offset;
+    query.categoryFilter = categoryFilter;
     query.sort = sort;
     [self searchWithQuery:query completionHandler:completionHandler];
 }
