@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 //import YelpAPI
 //import GoogleMaps
 //import GooglePlaces
@@ -16,6 +18,8 @@ class MasterRestaurantViewController: UIViewController {
 
    
     @IBOutlet var segmentedControl: UISegmentedControl!
+    
+    let viewControllers = [UIViewController]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +59,7 @@ class MasterRestaurantViewController: UIViewController {
         // Instantiate View Controller
         var viewController = storyboard.instantiateViewController(withIdentifier: "YLPSearchTableViewController") as! YLPSearchTableViewController
         
+        
         // Add View Controller as Child View Controller
         self.add(asChildViewController: viewController)
         
@@ -67,6 +72,7 @@ class MasterRestaurantViewController: UIViewController {
         
         // Instantiate View Controller
         var viewController = storyboard.instantiateViewController(withIdentifier: "GoogleMapsViewController") as! GoogleMapsViewController
+        
         
         // Add View Controller as Child View Controller
         self.add(asChildViewController: viewController)
@@ -109,7 +115,5 @@ class MasterRestaurantViewController: UIViewController {
             add(asChildViewController: googleMapsViewController)
         }
     }
-
-
 
 }

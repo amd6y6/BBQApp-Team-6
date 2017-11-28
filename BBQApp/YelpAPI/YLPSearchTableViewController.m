@@ -28,21 +28,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[AppDelegate sharedClient] searchWithLocation:@"Columbia, MO" term:nil limit:50 offset:0 categoryFilter:@[@"bbq"] sort:YLPSortTypeDistance completionHandler:^
-     (YLPSearch *search, NSError* error) {
-         self.search = search;
-         dispatch_async(dispatch_get_main_queue(), ^{
-             [self.tableView reloadData];
-         });
-     }];
-
-//    [[AppDelegate sharedClient] searchWithCoordinate:  term:nil limit:50 offset:0 sort:YLPSortTypeDistance completionHandler:^
+    CLLocation *userLocation;
+    
+//    YLPCoordinate *coordinate = [[YLPCoordinate alloc] initWithLatitude:(double)userLocation.coordinate.latitude longitude:(double)userLocation.coordinate.longitude];
+    
+    YLPCoordinate *coordinate = [[YLPCoordinate alloc] initWithLatitude:38.940384 longitude:-92.327748];
+//
+//    [[AppDelegate sharedClient] searchWithLocation:@"Columbia, MO" term:nil limit:50 offset:0 categoryFilter:@[@"bbq"] sort:YLPSortTypeDistance completionHandler:^
 //     (YLPSearch *search, NSError* error) {
 //         self.search = search;
 //         dispatch_async(dispatch_get_main_queue(), ^{
 //             [self.tableView reloadData];
 //         });
 //     }];
+
+    [[AppDelegate sharedClient] searchWithCoordinate: coordinate term:nil limit:50 offset:0 categoryFilter:@[@"bbq"] sort:YLPSortTypeDistance completionHandler:^
+     (YLPSearch *search, NSError* error) {
+         self.search = search;
+         dispatch_async(dispatch_get_main_queue(), ^{
+             [self.tableView reloadData];
+         });
+     }];
     
 }
 
@@ -74,5 +80,7 @@
     vc.business = self.search.businesses[indexPath.item];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+
 
 @end

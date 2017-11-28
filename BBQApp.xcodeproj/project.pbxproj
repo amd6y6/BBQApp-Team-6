@@ -26,6 +26,7 @@
 		9D42F20F1FB394F200581079 /* YLPDetailBusinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42F20B1FB394F200581079 /* YLPDetailBusinessViewController.m */; };
 		9D42F2101FB394F200581079 /* YLPSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D42F20E1FB394F200581079 /* YLPSearchTableViewController.m */; };
 		9D42F2121FB3956800581079 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D42F2111FB3956800581079 /* AppDelegate.swift */; };
+		9D744F951FCCEC9900C71856 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D744F941FCCEC8A00C71856 /* CoreLocation.framework */; };
 		9D7B4F291FA92C1F00FCABAC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D7B4F161FA92C1F00FCABAC /* InfoPlist.strings */; };
 		9D7B4F2A1FA92C1F00FCABAC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7B4F181FA92C1F00FCABAC /* Images.xcassets */; };
 		9D7B4F2D1FA92C1F00FCABAC /* YelpAPI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D7B4F1B1FA92C1F00FCABAC /* YelpAPI-Info.plist */; };
@@ -78,6 +79,7 @@
 		9D42F20D1FB394F200581079 /* YLPSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPSearchTableViewController.h; sourceTree = "<group>"; };
 		9D42F20E1FB394F200581079 /* YLPSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPSearchTableViewController.m; sourceTree = "<group>"; };
 		9D42F2111FB3956800581079 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9D744F941FCCEC8A00C71856 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9D7B4F141FA9279100FCABAC /* BBQApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BBQApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		9D7B4F171FA92C1F00FCABAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9D7B4F181FA92C1F00FCABAC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D744F951FCCEC9900C71856 /* CoreLocation.framework in Frameworks */,
 				3F0BF4AC1F83F36C0050B97D /* FBSDKLoginKit.framework in Frameworks */,
 				3F0BF4AB1F83F3690050B97D /* FBSDKCoreKit.framework in Frameworks */,
 				546BD6F69D87E3A5952A2BDF /* Pods_BBQApp.framework in Frameworks */,
@@ -213,6 +216,7 @@
 		863FD58484BE052F262F477B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D744F941FCCEC8A00C71856 /* CoreLocation.framework */,
 				3F6CDFC61FA949E30057CEDF /* Bolts.framework */,
 				1B4CED15292BC1FCB298D4FE /* Pods_BBQApp.framework */,
 				8B870DEDD20699C239F3E569 /* Pods_BBQApp.framework */,
@@ -618,6 +622,7 @@
 			baseConfigurationReference = 7A4430A820FBA18FBD46AB0C /* Pods-BBQApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
@@ -676,6 +681,7 @@
 			baseConfigurationReference = EB1B851E78B18175FBB22903 /* Pods-BBQApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;

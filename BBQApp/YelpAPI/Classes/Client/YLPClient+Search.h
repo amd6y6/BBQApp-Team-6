@@ -37,6 +37,7 @@ typedef void(^YLPSearchCompletionHandler)(YLPSearch *_Nullable search, NSError *
                         term:(nullable NSString *)term
                        limit:(NSUInteger)limit
                       offset:(NSUInteger)offset
+              categoryFilter:(NSArray<NSString *>*)categoryFilter
                         sort:(YLPSortType)sort
            completionHandler:(YLPSearchCompletionHandler)completionHandler;
 

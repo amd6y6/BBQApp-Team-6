@@ -9,6 +9,7 @@
 #import "YLPCoordinate.h"
 
 @implementation YLPCoordinate
+
 - (instancetype)initWithLatitude:(double)latitude longitude:(double)longitude {
     if (self = [super init]) {
         _latitude = latitude;
