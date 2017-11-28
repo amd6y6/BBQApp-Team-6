@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @class YLPClient;
 @class YLPSearch;
@@ -14,4 +15,6 @@
 @class YLPCoordinate;
 
 @interface YLPSearchTableViewController : UITableViewController <UITableViewDelegate>
+@property (strong, nonatomic) CLLocation *userLocation;
+
 @end

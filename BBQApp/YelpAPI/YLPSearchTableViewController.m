@@ -50,7 +50,7 @@
 //         });
 //     }];
 
-    [[AppDelegate sharedClient] searchWithCoordinate: coordinate term:nil limit:50 offset:0 categoryFilter:@[@"bbq"] sort:YLPSortTypeDistance completionHandler:^
+    [[AppDelegate sharedClient] searchWithCoordinate: coordinate  term:nil limit:50 offset:0 categoryFilter:@[@"bbq"] sort:YLPSortTypeDistance completionHandler:^
      (YLPSearch *search, NSError* error) {
          self.search = search;
          dispatch_async(dispatch_get_main_queue(), ^{

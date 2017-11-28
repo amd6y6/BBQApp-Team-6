@@ -113,6 +113,47 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         }
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if segmentedControl.selectedSegmentIndex == 1 {
+        return true
+        }
+        return false
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            unfavoriteRecipe(index: indexPath.row)
+            self.recipes.remove(at: indexPath.row)
+            self.recipeTable.reloadData()
+        }
+    }
+    
+    func unfavoriteRecipe(index: Int){
+        let doDelete = 1
+        let url: NSURL = NSURL(string: "https://mmclaughlin557.com/bbqapp.php")!
+        let request:NSMutableURLRequest = NSMutableURLRequest(url:url as URL)
+        let string1 = ("recipedata=" + "&id=" + userId + "&recipeurl=" + recipes[index].url + "&delete=" + (doDelete.description))
+        //let string2 =  ("&title=" + recipes[index].title + "&socialrank=" + (recipes[index].socialRank.description))
+        let bodyData = string1
+        print(bodyData)
+        request.httpMethod = "POST"
+        //save(userid: users[0].userid)
+        request.httpBody = bodyData.data(using: String.Encoding.utf8);
+        NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: OperationQueue.main)
+        {
+            (response, data, error) in
+            print(response)
+        }
+        if let HTTPResponse = responds as? HTTPURLResponse {
+            let statusCode = HTTPResponse.statusCode
+            
+            if statusCode == 200 {
+                print("Status Code 200: connection OK")
+            }
+        }
+        
+    }
+    
     func fetchUsersFavorites(){
         
         let URL_GET_FAVORITES:String = "https://mmclaughlin557.com/getRecipes.php"
