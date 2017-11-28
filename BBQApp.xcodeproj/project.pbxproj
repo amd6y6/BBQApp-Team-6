@@ -20,7 +20,6 @@
 		3F5BD4CD1F69BF2500818174 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BD4CB1F69BF2500818174 /* LaunchScreen.storyboard */; };
 		3F691DE21F8E935A0032B496 /* SettingsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F691DE11F8E935A0032B496 /* SettingsIcon.png */; };
 		3F6CDFC71FA949E30057CEDF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6CDFC61FA949E30057CEDF /* Bolts.framework */; };
-		3F7C85CA1FCE2AEA00EAAF4F /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3F7C85C91FCE2AEA00EAAF4F /* Location.gpx */; };
 		3FA980CE1FB67865009DAAEF /* RecipeWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA980CD1FB67865009DAAEF /* RecipeWebView.swift */; };
 		546BD6F69D87E3A5952A2BDF /* Pods_BBQApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4CED15292BC1FCB298D4FE /* Pods_BBQApp.framework */; };
 		9D31CCA71FB8D8550006DA5F /* MasterRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D31CCA61FB8D8550006DA5F /* MasterRestaurantViewController.swift */; };
@@ -71,7 +70,6 @@
 		3F691DE61F8E94DC0032B496 /* MapIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapIcon.png; sourceTree = "<group>"; };
 		3F691DE71F8E95830032B496 /* HistoryIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HistoryIcon.png; sourceTree = "<group>"; };
 		3F6CDFC61FA949E30057CEDF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
-		3F7C85C91FCE2AEA00EAAF4F /* Location.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Location.gpx; path = "../../../Downloads/BBQApp-Team-6-master/Location.gpx"; sourceTree = "<group>"; };
 		3FA980CD1FB67865009DAAEF /* RecipeWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeWebView.swift; sourceTree = "<group>"; };
 		7A4430A820FBA18FBD46AB0C /* Pods-BBQApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBQApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BBQApp/Pods-BBQApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8B870DEDD20699C239F3E569 /* Pods_BBQApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BBQApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,7 +181,6 @@
 				3F11A4881FA64F9B00F4D047 /* RecipeTableViewController.swift */,
 				3FA980CD1FB67865009DAAEF /* RecipeWebView.swift */,
 				BB471B281FB3AAF1002F3296 /* GoogleMapsViewController.swift */,
-				3F7C85C91FCE2AEA00EAAF4F /* Location.gpx */,
 				3F5BD4CB1F69BF2500818174 /* LaunchScreen.storyboard */,
 				3F0BF4A91F83F0F50050B97D /* SettingsViewController.swift */,
 				3F5BD4CE1F69BF2500818174 /* Info.plist */,
@@ -380,7 +377,6 @@
 			files = (
 				3F5BD4CD1F69BF2500818174 /* LaunchScreen.storyboard in Resources */,
 				9D7B4F2A1FA92C1F00FCABAC /* Images.xcassets in Resources */,
-				3F7C85CA1FCE2AEA00EAAF4F /* Location.gpx in Resources */,
 				9D7B4F291FA92C1F00FCABAC /* InfoPlist.strings in Resources */,
 				9D7B4F2D1FA92C1F00FCABAC /* YelpAPI-Info.plist in Resources */,
 				3F691DE21F8E935A0032B496 /* SettingsIcon.png in Resources */,
