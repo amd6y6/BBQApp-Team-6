@@ -11,7 +11,7 @@
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipes" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="Recipes" positionX="160" positionY="17" width="128" height="73"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="103"/>
     </elements>
 </model>
