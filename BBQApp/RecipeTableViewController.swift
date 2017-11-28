@@ -8,6 +8,8 @@
 
 import UIKit
 import WebKit
+import CoreData
+
 
 class RecipeTableViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
     
@@ -19,6 +21,16 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         var url : String = ""
     }
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    private func setupSegmentedControl(){
+        segmentedControl.removeAllSegments()
+        segmentedControl.insertSegment(withTitle: "Search", at: 0, animated: false)
+        segmentedControl.insertSegment(withTitle: "Favorites", at: 1, animated: false)
+        segmentedControl.addTarget(self, action: #selector(selectionDidChange(_:)), for: .valueChanged)
+        segmentedControl.selectedSegmentIndex = 0
+    }
+    
     var recipes : [Recipe] = []
     
     @IBOutlet var recipeTable: UITableView!
@@ -26,7 +38,10 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     var yourSearch = "BBQ"
     var searchActive : Bool = false
     var selectedItem : Int = 0
-    
+    var userId : String = ""
+    var people: [NSManagedObject] = []
+
+  
     let searchController = UISearchController(searchResultsController: nil)
     
     
@@ -51,8 +66,27 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         title = recipes[indexPath.row].title
         cell.textLabel?.text = title
         cell.detailTextLabel?.text = String(recipes[indexPath.row].socialRank)
+        cell.accessoryType = .detailDisclosureButton
         //cell.imageView?.image = recipeImages[indexPath.row]
         return cell
+    }
+    
+    private func setupView(){
+        setupSegmentedControl()
+        updateView()
+    }
+    
+    @objc func selectionDidChange(_ sender: UISegmentedControl) {
+        updateView()
+    }
+    
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        doSomethingWithItem(index: indexPath.row)
+        
+    }
+    
+    func doSomethingWithItem(index: Int ){
+        postToServerFunction(index: index)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) -> Int  {
@@ -60,9 +94,105 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         //print(selectedItem)
         return selectedItem
     }
+    private func updateView() {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            updateSearchResults(for: searchController)
+            
+        } else {
+            //print("Favorite recipes clicked")
+            recipes.removeAll()
+            self.tableView.reloadData()
+            fetchUsersFavorites()
+        
+        }
+    }
+    
+    func fetchUsersFavorites(){
+        
+        let URL_GET_FAVORITES:String = "https://mmclaughlin557.com/getRecipes.php"
+        //created NSURL
+        let requestURL = NSURL(string: URL_GET_FAVORITES)
+        //creating NSMutableURLRequest
+        let request = NSMutableURLRequest(url: requestURL! as URL)
+        //setting the method to post
+        request.httpMethod = "POST"
+        let bodyData = "data=&userid=" + userId
+        //print(bodyData)
+        request.httpBody = bodyData.data(using: String.Encoding.utf8);
+        //request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        //creating a task to send the post request
+        //NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: OperationQueue.main)
+        let task = URLSession.shared.dataTask(with: request as URLRequest){
+            data, response, error in
+            //exiting if there is some error
+            if error != nil{
+                print("error is \(error)")
+                return;
+            }
+            //parsing the response
+            do {
+                //converting resonse to NSDictionary
+                var RecipeJSON: NSDictionary!
+                RecipeJSON =  try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+             
+                //getting the JSON array teams from the response
+                let favoriteRecipes: NSArray = RecipeJSON["recipes"] as! NSArray
+                print(favoriteRecipes.description)
+                print("Recipes returned ", favoriteRecipes.count)
+                self.recipes.removeAll()
+                var counter = 0
+                while counter < favoriteRecipes.count{
+                    var newRecipe : Recipe = Recipe()
+                    print(counter)
+                
+                    //getting the data at each index
+                    if let RecipeUrl = ((RecipeJSON["recipes"] as? NSArray)?[counter] as? NSDictionary)?["RecipeURL"] as? String
+                    {
+                    newRecipe.url = RecipeUrl
+                    //displaying the data
+                    //print("recipeURL -> ", RecipeUrl)
+                    //print("===================")
+                    //print("")
+                        
+                    }
+                    if let RecipeTitle = ((RecipeJSON["recipes"] as? NSArray)?[counter] as? NSDictionary)?["Title"] as? String
+                    {
+                        newRecipe.title = RecipeTitle
+                        //displaying the data
+                        //print("recipeTitle -> ", RecipeTitle)
+                        //print("===================")
+                        //print("")
+                        
+                    }
+                    if let RecipeRank = ((RecipeJSON["recipes"] as? NSArray)?[counter] as? NSDictionary)?["SocialRank"] as? String
+                    {
+                        newRecipe.socialRank = Double(RecipeRank)!
+                        //displaying the data
+                        //print("recipeRank -> ", RecipeRank)
+                        //print("===================")
+                        //print("")
+                        
+                    }
+
+
+                    self.recipes.append(newRecipe)
+                    counter = counter + 1
+                }
+                DispatchQueue.main.async {
+                    self.recipeTable.reloadData()
+                }
+            } catch {
+                print(error)
+            }
+        }
+        //executing the task
+        task.resume()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         apiSearch(yourSearch)
         recipeTable.delegate = self
         recipeTable.dataSource = self
@@ -73,6 +203,30 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         definesPresentationContext = true
         searchController.searchBar.delegate = self
         searchController.delegate = self as? UISearchControllerDelegate
+        fetchUserData()
+       
+    }
+ 
+    func fetchUserData(){
+        //1
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        //2
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "User")
+        //3
+        do {
+            people = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        let index = people.count
+        let person = people[index - 1]
+        userId = (person.value(forKeyPath: "id") as? String)!
     }
     
     override func didReceiveMemoryWarning() {
@@ -152,6 +306,31 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         
         task.resume()
         self.tableView.reloadData()
+    }
+    
+    func postToServerFunction(index: Int){
+        let url: NSURL = NSURL(string: "https://mmclaughlin557.com/bbqapp.php")!
+        let request:NSMutableURLRequest = NSMutableURLRequest(url:url as URL)
+        let string1 = ("recipedata=" + "&id=" + userId + "&recipeurl=" + recipes[index].url)
+        let string2 =  ("&title=" + recipes[index].title + "&socialrank=" + (recipes[index].socialRank.description))
+        let bodyData = string1 + string2
+        print(bodyData)
+        request.httpMethod = "POST"
+        //save(userid: users[0].userid)
+        request.httpBody = bodyData.data(using: String.Encoding.utf8);
+        NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: OperationQueue.main)
+        {
+            (response, data, error) in
+            print(response)
+        }
+        if let HTTPResponse = responds as? HTTPURLResponse {
+            let statusCode = HTTPResponse.statusCode
+            
+            if statusCode == 200 {
+                print("Status Code 200: connection OK")
+            }
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
