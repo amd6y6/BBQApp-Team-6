@@ -30,7 +30,6 @@
     
     YLPCoordinate *coordinate = [[YLPCoordinate alloc] initWithLatitude:(double)_userLocation.coordinate.latitude longitude:(double)_userLocation.coordinate.longitude];
     
-//    YLPCoordinate *coordinate = [[YLPCoordinate alloc] initWithLatitude:(double)userLocation.coordinate.latitude longitude:(double)userLocation.coordinate.longitude];
     
    // YLPCoordinate *coordinate = [[YLPCoordinate alloc] initWithLatitude:38.940384 longitude:-92.327748];
 //
