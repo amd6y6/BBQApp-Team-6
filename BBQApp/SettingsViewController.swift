@@ -70,7 +70,9 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
         // 4
         do {
             try managedContext.save()
+            if (people.count == 0){
             people.append(User)
+            }
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
