@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MapKit
+//import MapKit
 import CoreLocation
 //import YelpAPI
 //import GoogleMaps
@@ -16,14 +16,21 @@ import CoreLocation
 
 class MasterRestaurantViewController: UIViewController {
 
-   
+    var locationManager = CLLocationManager()
+    var userLocation: CLLocation?
+    
     @IBOutlet var segmentedControl: UISegmentedControl!
     
-    let viewControllers = [UIViewController]()
+    //let viewControllers = [UIViewController]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        
         setupView()
         // Do any additional setup after loading the view.
     }
@@ -41,11 +48,14 @@ class MasterRestaurantViewController: UIViewController {
     
     private func setupSegmentedControl(){
         segmentedControl.removeAllSegments()
+        segmentedControl.isUserInteractionEnabled = false
         segmentedControl.insertSegment(withTitle: "List", at: 0, animated: false)
         segmentedControl.insertSegment(withTitle: "Map", at: 1, animated: false)
         segmentedControl.addTarget(self, action: #selector(selectionDidChange(_:)), for: .valueChanged)
         
-        segmentedControl.selectedSegmentIndex = 0
+        //segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.selectedSegmentIndex = 1
+
     }
     
     @objc func selectionDidChange(_ sender: UISegmentedControl) {
@@ -116,4 +126,19 @@ class MasterRestaurantViewController: UIViewController {
         }
     }
 
+}
+extension MasterRestaurantViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else { return }
+        
+        self.userLocation = location
+        self.ylpTableViewController.userLocation = location
+        self.ylpTableViewController.tableView.reloadData()
+        self.googleMapsViewController.userLocation = location
+        self.segmentedControl.isUserInteractionEnabled = true
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
 }
