@@ -51,19 +51,15 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
             UIApplication.shared.delegate as? AppDelegate else {
                 return
         }
-        
         // 1
         let managedContext =
             appDelegate.persistentContainer.viewContext
-        
         // 2
         let entity =
             NSEntityDescription.entity(forEntityName: "User",
                                        in: managedContext)!
-        
         let User = NSManagedObject(entity: entity,
                                      insertInto: managedContext)
-        
         // 3
         User.setValue(userid, forKeyPath: "id")
         
