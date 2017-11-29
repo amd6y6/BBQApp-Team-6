@@ -44,7 +44,8 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     var userId : String = ""
     var people: [NSManagedObject] = []
 
-  
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     let searchController = UISearchController(searchResultsController: nil)
     
     //setting up the table view
@@ -94,16 +95,24 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         //print(selectedItem)
         return selectedItem
     }
-    
     //update the search results based on users search
     private func updateView() {
+        if (userId == ""){
+            fetchUserData()
+        }
         if segmentedControl.selectedSegmentIndex == 0 {
             updateSearchResults(for: searchController)
-            if (userId == ""){
-                fetchUserData()
-            }
+            
         } else {
             //print("Favorite recipes clicked")
+            if(userId == ""){
+                let alert = UIAlertController(title: "Attention!", message: "You must be logged in to access your favorite recipes", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { ACTION in
+                    self.segmentedControl.selectedSegmentIndex = 0
+                    self.updateSearchResults(for: self.searchController)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
             recipes.removeAll()
             self.tableView.reloadData()
             if (userId != ""){
@@ -243,6 +252,9 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        view.addSubview(activityIndicator)
+        activityIndicator.bringSubview(toFront: self.view)
+        activityIndicator.startAnimating()
         apiSearch(yourSearch)
         recipeTable.delegate = self
         recipeTable.dataSource = self
@@ -309,7 +321,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     
     //Food2Fork API call
     func apiSearch( _:String) {
-        
+    
         let url = URL (string: "http://food2fork.com/api/search?key=6fb8c103dfd7f27b64b5feaf97e65afc&q=" + yourSearch.replacingOccurrences(of: " ", with: "%20") )!
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -350,6 +362,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         }
         
         task.resume()
+        activityIndicator.stopAnimating()
         self.tableView.reloadData()
     }
     
