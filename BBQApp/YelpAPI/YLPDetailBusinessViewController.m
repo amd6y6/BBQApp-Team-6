@@ -12,7 +12,7 @@
 #import <YelpAPI/YLPCoordinate.h>
 
 
-
+//outlets for the information presented about the selected business
 @interface YLPDetailBusinessViewController ()
 @property (nonatomic) IBOutlet UILabel *businessName;
 @property (nonatomic) IBOutlet UILabel *businessAddress;
@@ -21,7 +21,7 @@
 @end
 
 @implementation YLPDetailBusinessViewController
-
+//display the information
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];

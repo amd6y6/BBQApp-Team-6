@@ -8,8 +8,6 @@
 
 #import "YLPSearchTableViewController.h"
 #import "YLPDetailBusinessViewController.h"
-//#import "YLPAppDelegate.h"
-
 #import "YLPClient+Search.h"
 #import "YLPSortType.h"
 #import "YLPSearch.h"
@@ -30,18 +28,8 @@
     
     YLPCoordinate *coordinate = [[YLPCoordinate alloc] initWithLatitude:(double)_userLocation.coordinate.latitude longitude:(double)_userLocation.coordinate.longitude];
     
-    
-   // YLPCoordinate *coordinate = [[YLPCoordinate alloc] initWithLatitude:38.940384 longitude:-92.327748];
-//
-//    [[AppDelegate sharedClient] searchWithLocation:@"Columbia, MO" term:nil limit:50 offset:0 categoryFilter:@[@"bbq"] sort:YLPSortTypeDistance completionHandler:^
-//     (YLPSearch *search, NSError* error) {
-//         self.search = search;
-//         dispatch_async(dispatch_get_main_queue(), ^{
-//             [self.tableView reloadData];
-//         });
-//     }];
-
-    [[AppDelegate sharedClient] searchWithCoordinate: coordinate  term:nil limit:50 offset:0 categoryFilter:@[@"bbq"] sort:YLPSortTypeDistance completionHandler:^
+    //use the coordinate of the users location to make the API call and generate relative results based on their location
+   [[AppDelegate sharedClient] searchWithCoordinate: coordinate  term:nil limit:50 offset:0 categoryFilter:@[@"bbq"] sort:YLPSortTypeDistance completionHandler:^
      (YLPSearch *search, NSError* error) {
          self.search = search;
          dispatch_async(dispatch_get_main_queue(), ^{
@@ -52,7 +40,7 @@
 }
 
 #pragma mark - Table view data source
-
+//fill the table view in accordance with the data returned
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -60,7 +48,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.search.businesses.count;
 }
-
+//load each cell with name of each business
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchCell" forIndexPath:indexPath];
     if (indexPath.item > [self.search.businesses count]) {
@@ -68,12 +56,11 @@
     }
     else {
         cell.textLabel.text = self.search.businesses[indexPath.item].name;
-        //NSLog(@"%@", self.search.businesses[indexPath.item].location.coordinate);
     }
     
     return cell;
 }
-
+//prepare the segue for when a user clicks on a specific cell in the table view and take them to more detail of selection
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     YLPDetailBusinessViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"YLPDetailBusinessViewController"];
     vc.business = self.search.businesses[indexPath.item];

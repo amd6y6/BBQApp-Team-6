@@ -13,6 +13,7 @@ import CoreData
 
 class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
    
+    //struct to hold the information returned from the facebook API to save recipes in the database
     struct User {
         var useremail : String = ""
         var userid : String = ""
@@ -23,6 +24,7 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
     var newUser : User = User()
     var people: [NSManagedObject] = []
     
+    //same concept as on recipe tab, storing all necesary information about the user to the database, gets connection with database and sends error otherwise
     func postToServerFunction(){
         let url: NSURL = NSURL(string: "https://mmclaughlin557.com/bbqapp.php")!
         let request:NSMutableURLRequest = NSMutableURLRequest(url:url as URL)
@@ -46,6 +48,7 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
+    //save function that performs the actual saving of the information
     func save(userid: String){
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -74,7 +77,7 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
-    
+    //display the view when the tab is selected
     override func viewDidLoad() {
         super.viewDidLoad()
         let loginButton = FBSDKLoginButton()
@@ -89,6 +92,7 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    //delegates what happens when the user clicks on the facebook button
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         //postToServerFunction()
         if error != nil {
@@ -97,6 +101,7 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
             print("User has canceled login")
         } else {
             if result.grantedPermissions.contains("email") {
+               //allows facebook login to open in app rather than taking the user off site to log in
                 if let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name"]) {
                     graphRequest.start(completionHandler: { (connection, result, error) -> Void in
                         if error != nil {
@@ -133,24 +138,6 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
         print("logged Out")
     }
     
-//    // Add this to the header of your file, e.g. in ViewController.m
-//    // after #import "ViewController.h"
-//    #import <FBSDKCoreKit/FBSDKCoreKit.h>
-//    #import <FBSDKLoginKit/FBSDKLoginKit.h>
-//
-//    // Add this to the body
-//    @implementation ViewController
-//
-//    - (void)viewDidLoad {
-//    [super viewDidLoad];
-//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-//    // Optional: Place the button in the center of your view.
-//    loginButton.center = self.view.center;
-//    [self.view addSubview:loginButton];
-//    }
-//
-//    @end
-
     /*
     // MARK: - Navigation
 

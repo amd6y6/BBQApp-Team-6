@@ -11,28 +11,28 @@ import WebKit
 
 class RecipeWebView: UIViewController, WKUIDelegate{
     
+    //variables and outlets fro the webview of the recipe
     var webView: WKWebView!
     
     @IBOutlet weak var webViewOutlet: WKWebView!
     
     var website: String = ""
 
-    
+    //setting up the delegates and the frame size of the webview
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
         webView.uiDelegate = self
         view = webView
     }
+    
+    //loading the actual webview
     override func viewDidLoad() {
         super.viewDidLoad()
         print(website)
         let url:URL = URL(string: website)!
         let urlRequest: URLRequest = URLRequest(url: url)
         webView.load(urlRequest)
-        
-        
-        
     }
     
     
