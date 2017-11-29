@@ -14,8 +14,6 @@
    */
   
   import UIKit
-  import GoogleMaps
-  import GooglePlaces
   import YelpAPI
   import MapKit
   import CoreLocation
@@ -23,11 +21,12 @@
   
   class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{//GMSMapViewDelegate {
     
+    //outlets and location variables
     @IBOutlet weak var map: MKMapView!
     var userLocation: CLLocation? {
         didSet {
             guard let userLocation = userLocation else { return }
-            
+            //setting the view of the map to direct to the users location
             let latitude = userLocation.coordinate.latitude
             let longitude = userLocation.coordinate.longitude
             let latDelta: CLLocationDegrees = 0.15
@@ -38,7 +37,7 @@
             
             self.map.setRegion(region, animated: true)
             self.map.showsUserLocation = true
-            
+            //displaying correct markers based on the users location
             let coordinate = YLPCoordinate(latitude: latitude, longitude: longitude)
             AppDelegate.sharedClient()?.search(with: coordinate, term: nil, limit: 50, offset: 0, categoryFilter: ["bbq"], sort: YLPSortType.distance, completionHandler: { (search, error) in
                 for business in search?.businesses ?? [] {
@@ -53,6 +52,7 @@
                 }
             })
             
+            //finding the exact location of the user and printing it to the console for testing purposes
             CLGeocoder().reverseGeocodeLocation(userLocation) { (placemarks, error) in
                 if error != nil {
                     print(error!)
@@ -93,28 +93,12 @@
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //struct to hold the name, latitude, and longitude of the array sent from yelp
         struct Location {
             let name: String
             let latitude: Double
             let longitude: Double
         }
-        
-        
-        
-        //        let locations = [
-        //            Location(name: "University of Missouri", latitude: 38.940389, longitude:  -92.327748),
-        //            Location(name: "Jared's Jefferson City House", latitude: 38.505166, longitude:  -92.140403),
-        //            Location(name: "Jared's Columbia House", latitude: 38.924261, longitude:  -92.329040),
-        //            Location(name: "Sandman Tiger Express", latitude: 38.909146, longitude:  -92.334114)
-        //        ]
-        //
-        //        for location in locations {
-        //            let annotation = MKPointAnnotation()
-        //            annotation.title = location.name
-        //            annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-        //            map.addAnnotation(annotation)
-        //        }
-        
     }
     
   }

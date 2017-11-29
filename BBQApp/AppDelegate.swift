@@ -10,8 +10,6 @@ import UIKit
 import CoreData
 import FBSDKCoreKit
 import YelpAPI
-import GooglePlaces
-import GoogleMaps
 
 
 @UIApplicationMain
@@ -20,12 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var client: YLPClient?
 
+    //sets up the yelp client to be used in the application
     @objc class func sharedClient() -> YLPClient? {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
                 
         return appDelegate?.client
     }
     
+    //allows the facebook login screen to pop up in app rather than take the user out of the app
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
         let handeled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
@@ -35,9 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
 
-        GMSPlacesClient.provideAPIKey("AIzaSyC_CtjIISM5Z48A_gIt_Qc968Mj1whgv9c")
-        GMSServices.provideAPIKey("AIzaSyC_CtjIISM5Z48A_gIt_Qc968Mj1whgv9c")
-        
+        //contains the yelp secret keys to be able to have access to the API
         YLPClient.authorize(withAppId: "RS4jBI4iBtuHFTnestIvUQ", secret: "ASUi04wdzwMVuaebZaXZ8oZjddzO9fgs7HMET4AsXG7WE5CgPzReTFDfhLXrlxkj", completionHandler: {(_ client: YLPClient?, _ error: Error?) -> Void in
             self.client = client
             if self.client == nil {
@@ -47,14 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
-//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//       GMSPlacesClient.provideAPIKey("AIzaSyC_CtjIISM5Z48A_gIt_Qc968Mj1whgv9c")
-//       GMSServices.provideAPIKey("AIzaSyC_CtjIISM5Z48A_gIt_Qc968Mj1whgv9c")
-//        return true
-//    }
-    
-    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

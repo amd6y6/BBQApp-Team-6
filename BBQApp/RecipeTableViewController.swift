@@ -13,6 +13,7 @@ import CoreData
 
 class RecipeTableViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
     
+    //creates a struct to hold the information returned from the Food2Fork API
     struct Recipe {
         var title : String = ""
         var socialRank : Double = 0.0
@@ -20,9 +21,10 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         var imageString : String = ""
         var url : String = ""
     }
-    
+    //segment control for recipes and favorited recipes
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    //delegates which table view to display
     private func setupSegmentedControl(){
         segmentedControl.removeAllSegments()
         segmentedControl.insertSegment(withTitle: "Search", at: 0, animated: false)
@@ -35,6 +37,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     
     @IBOutlet var recipeTable: UITableView!
     
+    //other variables to determine what user is doing on the app
     var yourSearch = "BBQ"
     var searchActive : Bool = false
     var selectedItem : Int = 0
@@ -44,7 +47,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
   
     let searchController = UISearchController(searchResultsController: nil)
     
-    
+    //setting up the table view
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -52,11 +55,8 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        //if isFiltering() {
         return recipes.count
-        // }
-        //return self.recipeTitle1.count
-    }
+        }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -66,12 +66,11 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         title = recipes[indexPath.row].title
         cell.textLabel?.text = title
         cell.detailTextLabel?.text = String(recipes[indexPath.row].socialRank)
-        cell.accessoryType = .detailDisclosureButton
 
-        //cell.imageView?.image = recipeImages[indexPath.row]
         return cell
     }
     
+    //display correct view based on segment control option selected
     private func setupView(){
         setupSegmentedControl()
         updateView()
@@ -83,9 +82,9 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         doSomethingWithItem(index: indexPath.row)
-        
     }
     
+    //sends favorited recipe to database
     func doSomethingWithItem(index: Int ){
         postToServerFunction(index: index)
     }
@@ -95,6 +94,8 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         //print(selectedItem)
         return selectedItem
     }
+    
+    //update the search results based on users search
     private func updateView() {
         if segmentedControl.selectedSegmentIndex == 0 {
             updateSearchResults(for: searchController)
@@ -119,6 +120,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
   
     }
     
+    //provides either a delete or favorite option when cell is slid to the left
     override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         if segmentedControl.selectedSegmentIndex == 1 {
         return "Delete"
@@ -128,6 +130,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         }
     }
 
+    //actually removes the cell from the table view if favorited and selected to unfavorite
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if segmentedControl.selectedSegmentIndex == 1 {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
@@ -141,6 +144,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         }
     }
     
+    //action of unfavoriting the recipe from the database
     func unfavoriteRecipe(index: Int){
         let doDelete = 1
         let url: NSURL = NSURL(string: "https://mmclaughlin557.com/bbqapp.php")!
@@ -167,6 +171,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         
     }
     
+    //fetching the users favorites from the database
     func fetchUsersFavorites(){
         
         let URL_GET_FAVORITES:String = "https://mmclaughlin557.com/getRecipes.php"
@@ -234,6 +239,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         
     }
     
+    //displaying the view to appear on initial load
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -250,6 +256,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         fetchUserData()
     }
  
+    //getting the user data from when they log in to be able to save their recipes to their id in the database
     func fetchUserData(){
         //1
         guard let appDelegate =
@@ -278,6 +285,8 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //search bar delegation
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         print("search active = true")
         searchActive = true
@@ -297,6 +306,8 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         // Returns true if the text is empty or nil
         return searchController.searchBar.text?.isEmpty ?? true
     }
+    
+    //Food2Fork API call
     func apiSearch( _:String) {
         
         let url = URL (string: "http://food2fork.com/api/search?key=6fb8c103dfd7f27b64b5feaf97e65afc&q=" + yourSearch.replacingOccurrences(of: " ", with: "%20") )!
@@ -314,26 +325,15 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
                             var newRecipe : Recipe = Recipe()
                             if let title1 = ((jsonResult["recipes"] as? NSArray)?[counter] as? NSDictionary)?["title"] as? String {
                                 newRecipe.title = title1
-                                //self.recipes.append(title1)
                             }
                             if let rank = ((jsonResult["recipes"] as? NSArray)?[counter] as? NSDictionary)?["social_rank"] as? Double {
                                 newRecipe.socialRank = rank
-                                //self.socialRank.append(rank)
                             }
                             if let path = ((jsonResult["recipes"] as? NSArray)?[counter] as? NSDictionary)?["f2f_url"] as? String {
                                 newRecipe.url = path
-                                //self.recipeURL.append(path)
-                                
                             }
                             if let image = ((jsonResult["recipes"] as? NSArray)?[counter] as? NSDictionary)?["image_url"] as? String {
                                 newRecipe.image = UIImage(data: image.data(using: String.Encoding.utf8)!)
-                                //self.recipeImage1.append(image)
-                                /*
-                                 let image = try? Data(contentsOf: url)
-                                 let image1: UIImage = UIImage(data: image!)!
-                                 
-                                 self.recipeImages.append(image1)
-                                 */
                             }
                             self.recipes.append(newRecipe)
                             
@@ -353,6 +353,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         self.tableView.reloadData()
     }
     
+    //saves all necessary data to the database, gets connection with database and sends error otherwise
     func postToServerFunction(index: Int){
         let url: NSURL = NSURL(string: "https://mmclaughlin557.com/bbqapp.php")!
         let request:NSMutableURLRequest = NSMutableURLRequest(url:url as URL)
@@ -378,6 +379,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         
     }
     
+    //send the user to appropriate webview based on the title selected from the tableview
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "recipesegue" {
             let nextScene = segue.destination as? RecipeWebView
