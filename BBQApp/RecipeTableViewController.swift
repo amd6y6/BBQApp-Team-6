@@ -286,11 +286,16 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
+        
         let index = people.count
         if (index != 0){
         let person = people[index - 1]
         userId = (person.value(forKeyPath: "id") as? String)!
+        } else {
+            userId = ""
         }
+
+        
     }
     
     override func didReceiveMemoryWarning() {
