@@ -328,13 +328,10 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     func updateSearchResults(for searchController: UISearchController) {
         guard self.searchActive == false else {return}
         print("update search results called")
-        if searchController.searchBar.text == "" {
-            apiSearch("BBQ")
-        } else {
         yourSearch = searchController.searchBar.text!
         apiSearch(yourSearch)
-        }
     }
+    
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
         return searchController.searchBar.text?.isEmpty ?? true
@@ -342,7 +339,9 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     
     //Food2Fork API call
     func apiSearch( _:String) {
-    
+        if(yourSearch == ""){
+            yourSearch = "BBQ"
+        }
         let url = URL (string: "http://food2fork.com/api/search?key=6fb8c103dfd7f27b64b5feaf97e65afc&q=" + yourSearch.replacingOccurrences(of: " ", with: "%20") )!
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -379,11 +378,14 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
                     } catch {
                         print("JSON Processing Failed")
                     }
+                    if(self.recipes.count == 0){
+                        let alert = UIAlertController(title: "No recipes found", message: "Try a different search.", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
                 }
             }
         }
-        
-        
+        }
         task.resume()
         self.tableView.reloadData()
     }
