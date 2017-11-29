@@ -114,17 +114,30 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if segmentedControl.selectedSegmentIndex == 1 {
+
         return true
-        }
-        return false
+  
     }
     
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        if segmentedControl.selectedSegmentIndex == 1 {
+        return "Delete"
+        }
+        else {
+            return "Favorite"
+        }
+    }
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if segmentedControl.selectedSegmentIndex == 1 {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             unfavoriteRecipe(index: indexPath.row)
             self.recipes.remove(at: indexPath.row)
             self.recipeTable.reloadData()
+        }
+        } else
+        {
+            doSomethingWithItem(index: indexPath.row)
         }
     }
     
