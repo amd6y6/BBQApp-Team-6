@@ -15,8 +15,8 @@
 //outlets for the information presented about the selected business
 @interface YLPDetailBusinessViewController ()
 @property (nonatomic) IBOutlet UILabel *businessName;
-@property (nonatomic) IBOutlet UILabel *businessAddress;
-@property (nonatomic) IBOutlet UILabel *businessPhone;
+@property (nonatomic) IBOutlet UITextField *businessAddress;
+@property (nonatomic) IBOutlet UITextField *businessPhone;
 @property (nonatomic) IBOutlet UILabel *businessCoords;
 @end
 
