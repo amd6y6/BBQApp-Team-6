@@ -25,14 +25,13 @@
 @implementation YLPSearchTableViewController
 
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-    CLLocation *userLocation;
+    YLPCoordinate *coordinate = [[YLPCoordinate alloc] initWithLatitude:(double)_userLocation.coordinate.latitude longitude:(double)_userLocation.coordinate.longitude];
     
-//    YLPCoordinate *coordinate = [[YLPCoordinate alloc] initWithLatitude:(double)userLocation.coordinate.latitude longitude:(double)userLocation.coordinate.longitude];
     
-    YLPCoordinate *coordinate = [[YLPCoordinate alloc] initWithLatitude:38.940384 longitude:-92.327748];
+   // YLPCoordinate *coordinate = [[YLPCoordinate alloc] initWithLatitude:38.940384 longitude:-92.327748];
 //
 //    [[AppDelegate sharedClient] searchWithLocation:@"Columbia, MO" term:nil limit:50 offset:0 categoryFilter:@[@"bbq"] sort:YLPSortTypeDistance completionHandler:^
 //     (YLPSearch *search, NSError* error) {
@@ -42,7 +41,7 @@
 //         });
 //     }];
 
-    [[AppDelegate sharedClient] searchWithCoordinate: coordinate term:nil limit:50 offset:0 categoryFilter:@[@"bbq"] sort:YLPSortTypeDistance completionHandler:^
+    [[AppDelegate sharedClient] searchWithCoordinate: coordinate  term:nil limit:50 offset:0 categoryFilter:@[@"bbq"] sort:YLPSortTypeDistance completionHandler:^
      (YLPSearch *search, NSError* error) {
          self.search = search;
          dispatch_async(dispatch_get_main_queue(), ^{
