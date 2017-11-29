@@ -359,7 +359,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         let request:NSMutableURLRequest = NSMutableURLRequest(url:url as URL)
         let string1 = ("recipedata=" + "&id=" + userId + "&recipeurl=" + recipes[index].url)
         let string2 =  ("&title=" + recipes[index].title + "&socialrank=" + (recipes[index].socialRank.description))
-        let bodyData = string1 + string2
+        let bodyData = (string1 + string2).replacingOccurrences(of: "'", with: " ")
         print(bodyData)
         request.httpMethod = "POST"
         //save(userid: users[0].userid)
