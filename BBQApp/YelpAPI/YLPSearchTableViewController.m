@@ -26,16 +26,21 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [_activityIndicator startAnimating];
 
+    UIActivityIndicatorView * activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    activityIndicator.center = CGPointMake(self.view.frame.size.width /2.0, self.view.frame.size.height / 2.0);
+    [self.view addSubview: activityIndicator];
+    [activityIndicator startAnimating];
+  
+    
     YLPCoordinate *coordinate = [[YLPCoordinate alloc] initWithLatitude:(double)_userLocation.coordinate.latitude longitude:(double)_userLocation.coordinate.longitude];
     
     //use the coordinate of the users location to make the API call and generate relative results based on their location
    [[AppDelegate sharedClient] searchWithCoordinate: coordinate  term:nil limit:50 offset:0 categoryFilter:@[@"bbq"] sort:YLPSortTypeDistance completionHandler:^
      (YLPSearch *search, NSError* error) {
          self.search = search;
-         [_activityIndicator stopAnimating];
          dispatch_async(dispatch_get_main_queue(), ^{
+             [activityIndicator stopAnimating];
              [self.tableView reloadData];
          });
      }];

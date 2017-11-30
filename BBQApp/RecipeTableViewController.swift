@@ -136,10 +136,24 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-
         return true
-  
     }
+    
+    //changes the color of the button for favorite and delete to avoid confusion
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]{
+        if segmentedControl.selectedSegmentIndex == 0{
+        let favoriteButton = UITableViewRowAction(style: .default, title: "Favorite"){ACTION,IndexPath in
+            tableView.dataSource?.tableView?(self.tableView,commit: .delete, forRowAt: IndexPath)
+        }
+          favoriteButton.backgroundColor = UIColor.blue
+            return [favoriteButton]
+        } else{
+            let deleteButton = UITableViewRowAction(style: .default, title: "Delete"){ACTION,IndexPath in
+                tableView.dataSource?.tableView?(self.tableView,commit: .delete, forRowAt: IndexPath)
+            }
+        return [deleteButton]
+        }
+}
     
     //provides either a delete or favorite option when cell is slid to the left
     override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
