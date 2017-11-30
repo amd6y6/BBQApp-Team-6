@@ -73,7 +73,7 @@
         } else {
             originalImage = [UIImage imageWithData: imageData];
         }
-        UIImage *resizedImage = [YLPSearchTableViewController imageWithImage: originalImage scaledToSize: CGSizeMake(75, 75)];
+        UIImage *resizedImage = [YLPSearchTableViewController imageWithImage: originalImage scaledToSize: CGSizeMake(70, 70)];
         cell.imageView.image = resizedImage;
         [cell.imageView.layer setCornerRadius:8.0f];
         [cell.imageView.layer setMasksToBounds:YES];
