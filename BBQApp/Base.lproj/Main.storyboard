@@ -33,7 +33,7 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hK0-4Z-Xt0">
                                 <rect key="frame" x="8" y="230" width="359" height="388"/>
-                                <color key="backgroundColor" red="0.73830688" green="0.097476668660000002" blue="0.001489462913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.89983757289999999" green="0.1200424855" blue="0.010220569279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
@@ -53,7 +53,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.73830687999725342" green="0.097476668655872345" blue="0.0014894629130139947" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.89983757289999999" green="0.1200424855" blue="0.010220569279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wYZ-xW-qdo" firstAttribute="centerX" secondItem="GU1-3j-esV" secondAttribute="centerX" id="7gn-59-I1P"/>
                             <constraint firstItem="GU1-3j-esV" firstAttribute="bottom" secondItem="hK0-4Z-Xt0" secondAttribute="bottom" id="Q0m-Xw-mep"/>
@@ -107,7 +107,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.73830688" green="0.097476668660000002" blue="0.001489462913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.89983757289999999" green="0.1200424855" blue="0.010220569279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PeP-4j-Xzt" firstAttribute="top" secondItem="nff-Q2-3DC" secondAttribute="bottom" constant="10" id="1jf-AP-JVU"/>
                             <constraint firstItem="PeP-4j-Xzt" firstAttribute="leading" secondItem="w4C-aX-w6T" secondAttribute="leading" id="BKd-6e-6Ed"/>
@@ -157,6 +157,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="recipecell" textLabel="RtX-IF-bEC" detailTextLabel="jLh-79-ECj" rowHeight="61" style="IBUITableViewCellStyleSubtitle" id="fXk-yq-07A" customClass="RecipeTableViewCell" customModule="BBQApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="61"/>
@@ -180,9 +182,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.73830688" green="0.097476668660000002" blue="0.001489462913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.89983757286507471" green="0.12004248550781796" blue="0.010220569281886213" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.73830688" green="0.097476668660000002" blue="0.001489462913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.89983757289999999" green="0.1200424855" blue="0.010220569279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="AoD-Ak-NIX" kind="show" identifier="recipesegue" id="h0x-nd-ItJ"/>
                                 </connections>
@@ -259,10 +261,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="S5H-WN-n3L">
-                            <rect key="frame" x="0.0" y="72" width="375" height="20"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SearchCell" textLabel="RwC-Xv-qxW" style="IBUITableViewCellStyleDefault" id="5R6-Qs-Zlq">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -279,9 +277,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.73830688" green="0.097476668660000002" blue="0.001489462913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.89983757289999999" green="0.1200424855" blue="0.010220569279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.73830688" green="0.097476668660000002" blue="0.001489462913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.89983757289999999" green="0.1200424855" blue="0.010220569279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -292,9 +290,6 @@
                     <navigationItem key="navigationItem" id="vJ9-D7-MHi">
                         <nil key="title"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="activityIndicator" destination="S5H-WN-n3L" id="yaq-xm-Mca"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWR-iE-exq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -404,7 +399,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.89983757289999999" green="0.1200424855" blue="0.010220569279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="JrQ-w9-mel"/>
                     </view>
                     <connections>

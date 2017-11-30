@@ -287,6 +287,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         definesPresentationContext = true
         searchController.searchBar.delegate = self
         searchController.delegate = self as? UISearchControllerDelegate
+        recipeTable.backgroundColor = UIColor.darkGray
         fetchUserData()
     }
  

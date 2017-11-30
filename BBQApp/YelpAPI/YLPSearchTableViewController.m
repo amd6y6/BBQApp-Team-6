@@ -27,6 +27,9 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
+    UIView *myView = [[UIView alloc] init];
+    myView.backgroundColor = [UIColor darkGrayColor];
+    
     UIActivityIndicatorView * activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     activityIndicator.center = CGPointMake(self.view.frame.size.width /2.0, self.view.frame.size.height / 2.0);
     [self.view addSubview: activityIndicator];
@@ -45,6 +48,7 @@
          });
      }];
 }
+
 
 #pragma mark - Table view data source
 //fill the table view in accordance with the data returned
