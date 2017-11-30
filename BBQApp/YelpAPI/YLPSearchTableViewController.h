@@ -14,4 +14,6 @@
 @interface YLPSearchTableViewController : UITableViewController <UITableViewDelegate>
 @property (strong, nonatomic) CLLocation *userLocation;
 
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)size;
+
 @end
