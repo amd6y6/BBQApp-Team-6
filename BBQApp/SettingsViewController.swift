@@ -38,7 +38,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         var newUser : User = User()
         
-        if(people.count == 0 && userNameField.text != "" && userEmailField.text != ""){
+        if(people.count == 0 ){
+            if(userNameField.text != "" && userEmailField.text != ""){
             newUser.username = userNameField.text!
             newUser.useremail = userEmailField.text!
             newUser.userid = randomId.description
@@ -51,6 +52,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             }))
             self.present(alert, animated: true, completion: nil)
             sender.setTitle("Logged in", for: .normal)
+            }else
+            {
+                let alert = UIAlertController(title: "Attention!", message: "You must fill out fields to register.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { ACTION in
+                }))
+                
+                self.present(alert, animated: true, completion: nil)
+            }
         }
         let alert = UIAlertController(title: "Attention!", message: "You are already Logged in.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { ACTION in
@@ -128,6 +137,11 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         loginButton.delegate = self
         view.addSubview(loginButton)
         fetchUserData()
+        let newCenter = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height - 200)
+        loginButton.center = newCenter
+        loginButton.delegate = self
+        view.addSubview(loginButton)
+        
     }
 
     override func didReceiveMemoryWarning() {
