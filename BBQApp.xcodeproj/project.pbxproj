@@ -12,6 +12,7 @@
 		3F0BF4AC1F83F36C0050B97D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0BF4A71F83EF040050B97D /* FBSDKLoginKit.framework */; };
 		3F11A4861FA6489A00F4D047 /* bbq logo 161px.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F11A4851FA6489A00F4D047 /* bbq logo 161px.jpg */; };
 		3F11A4891FA64F9B00F4D047 /* RecipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F11A4881FA64F9B00F4D047 /* RecipeTableViewController.swift */; };
+		3F11CEBC1FCFE1EE00308BF7 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F11CEBB1FCFE1EE00308BF7 /* TeamViewController.swift */; };
 		3F59CBCF1F8E9C6E00331B64 /* FacebookSDK in Resources */ = {isa = PBXBuildFile; fileRef = 3F59CBCE1F8E9C6D00331B64 /* FacebookSDK */; };
 		3F5BD4C21F69BF2500818174 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BD4C11F69BF2500818174 /* ViewController.swift */; };
 		3F5BD4C51F69BF2500818174 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5BD4C31F69BF2500818174 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		3F11A4851FA6489A00F4D047 /* bbq logo 161px.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bbq logo 161px.jpg"; sourceTree = "<group>"; };
 		3F11A4871FA6495200F4D047 /* bbq logo 120x120.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bbq logo 120x120.jpg"; sourceTree = "<group>"; };
 		3F11A4881FA64F9B00F4D047 /* RecipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewController.swift; sourceTree = "<group>"; };
+		3F11CEBB1FCFE1EE00308BF7 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		3F59CBCE1F8E9C6D00331B64 /* FacebookSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FacebookSDK; sourceTree = "<group>"; };
 		3F5BD4BC1F69BF2400818174 /* BBQApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBQApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5BD4C11F69BF2500818174 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				3F5BD4C11F69BF2500818174 /* ViewController.swift */,
 				3F5BD4C91F69BF2500818174 /* Assets.xcassets */,
 				3F5BD4C31F69BF2500818174 /* Main.storyboard */,
+				3F11CEBB1FCFE1EE00308BF7 /* TeamViewController.swift */,
 				9D31CCA61FB8D8550006DA5F /* MasterRestaurantViewController.swift */,
 				9D42F2111FB3956800581079 /* AppDelegate.swift */,
 				3F11A4881FA64F9B00F4D047 /* RecipeTableViewController.swift */,
@@ -459,6 +462,7 @@
 				9D7B4F5D1FA92C3700FCABAC /* YLPClient+Reviews.m in Sources */,
 				3F5BD4C21F69BF2500818174 /* ViewController.swift in Sources */,
 				9D31CCA71FB8D8550006DA5F /* MasterRestaurantViewController.swift in Sources */,
+				3F11CEBC1FCFE1EE00308BF7 /* TeamViewController.swift in Sources */,
 				9D7B4F641FA92C3700FCABAC /* YLPBusinessReviews.m in Sources */,
 				3FA980CE1FB67865009DAAEF /* RecipeWebView.swift in Sources */,
 				9D42F2101FB394F200581079 /* YLPSearchTableViewController.m in Sources */,
