@@ -17,6 +17,7 @@
 #import "BBQApp-Swift.h"
 
 @interface YLPSearchTableViewController ()
+@property (nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic) YLPSearch *search;
 @end
 
@@ -25,6 +26,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
+    UIActivityIndicatorView * activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    activityIndicator.center = CGPointMake(self.view.frame.size.width /2.0, self.view.frame.size.height / 2.0);
+    [self.view addSubview: activityIndicator];
+    [activityIndicator startAnimating];
+  
     
     YLPCoordinate *coordinate = [[YLPCoordinate alloc] initWithLatitude:(double)_userLocation.coordinate.latitude longitude:(double)_userLocation.coordinate.longitude];
     
@@ -33,10 +40,10 @@
      (YLPSearch *search, NSError* error) {
          self.search = search;
          dispatch_async(dispatch_get_main_queue(), ^{
+             [activityIndicator stopAnimating];
              [self.tableView reloadData];
          });
      }];
-    
 }
 
 #pragma mark - Table view data source

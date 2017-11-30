@@ -16,7 +16,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     //creates a struct to hold the information returned from the Food2Fork API
     struct Recipe {
         var title : String = ""
-        var socialRank : Double = 0.0
+        var socialRank : String = ""
         var image : UIImage? = nil
         var imageString : String = ""
         var url : String = ""
@@ -44,7 +44,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     var userId : String = ""
     var people: [NSManagedObject] = []
 
-  
+    
     let searchController = UISearchController(searchResultsController: nil)
     
     //setting up the table view
@@ -65,7 +65,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         guard indexPath.row >= 0 && indexPath.row < recipes.count else {return cell}
         title = recipes[indexPath.row].title
         cell.textLabel?.text = title
-        cell.detailTextLabel?.text = String(recipes[indexPath.row].socialRank)
+        cell.detailTextLabel?.text = "Rating: " + (recipes[indexPath.row].socialRank)
 
         return cell
     }
@@ -94,16 +94,37 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         //print(selectedItem)
         return selectedItem
     }
-    
+    var indicator: UIActivityIndicatorView = UIActivityIndicatorView()
+
+    func showActivityIndicator(uiView: UIView) {
+        indicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        indicator.center = uiView.center
+        indicator.hidesWhenStopped = true
+        indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        uiView.addSubview(indicator)
+        indicator.startAnimating()
+    }
     //update the search results based on users search
     private func updateView() {
+        showActivityIndicator(uiView: view)
+        if (userId == ""){
+            fetchUserData()
+        }
+        
         if segmentedControl.selectedSegmentIndex == 0 {
             updateSearchResults(for: searchController)
-            if (userId == ""){
-                fetchUserData()
-            }
+            
         } else {
             //print("Favorite recipes clicked")
+            if(userId == ""){
+                let alert = UIAlertController(title: "Attention!", message: "You must be logged in to access your favorite recipes", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { ACTION in
+                    self.segmentedControl.selectedSegmentIndex = 0
+                    self.updateSearchResults(for: self.searchController)
+                }))
+                
+                self.present(alert, animated: true, completion: nil)
+            }
             recipes.removeAll()
             self.tableView.reloadData()
             if (userId != ""){
@@ -115,10 +136,24 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-
         return true
-  
     }
+    
+    //changes the color of the button for favorite and delete to avoid confusion
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]{
+        if segmentedControl.selectedSegmentIndex == 0{
+        let favoriteButton = UITableViewRowAction(style: .default, title: "Favorite"){ACTION,IndexPath in
+            tableView.dataSource?.tableView?(self.tableView,commit: .delete, forRowAt: IndexPath)
+        }
+          favoriteButton.backgroundColor = UIColor.blue
+            return [favoriteButton]
+        } else{
+            let deleteButton = UITableViewRowAction(style: .default, title: "Delete"){ACTION,IndexPath in
+                tableView.dataSource?.tableView?(self.tableView,commit: .delete, forRowAt: IndexPath)
+            }
+        return [deleteButton]
+        }
+}
     
     //provides either a delete or favorite option when cell is slid to the left
     override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
@@ -219,15 +254,15 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
                     {
                     newRecipe.title = RecipeTitle
                     }
-                    if let RecipeRank = ((RecipeJSON["recipes"] as? NSArray)?[counter] as? NSDictionary)?["SocialRank"] as? String
-                    {
-                    newRecipe.socialRank = Double(RecipeRank)!
+                    if let RecipeRank = ((RecipeJSON["recipes"] as? NSArray)?[counter] as? NSDictionary)?["SocialRank"] as? String {
+                    newRecipe.socialRank = RecipeRank
                     }
 
                     self.recipes.append(newRecipe)
                     counter = counter + 1
                 }
                 DispatchQueue.main.async {
+                    self.indicator.stopAnimating()
                     self.recipeTable.reloadData()
                 }
             } catch {
@@ -243,7 +278,6 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        apiSearch(yourSearch)
         recipeTable.delegate = self
         recipeTable.dataSource = self
         searchController.searchResultsUpdater = self
@@ -274,11 +308,16 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
+        
         let index = people.count
         if (index != 0){
         let person = people[index - 1]
         userId = (person.value(forKeyPath: "id") as? String)!
+        } else {
+            userId = ""
         }
+
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -291,17 +330,22 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         print("search active = true")
         searchActive = true
     }
+    
+    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         print("search active = false")
         searchActive = false
         updateSearchResults(for: searchController)
-    }
+        showActivityIndicator(uiView: view)
+        }
+    
     func updateSearchResults(for searchController: UISearchController) {
         guard self.searchActive == false else {return}
         print("update search results called")
         yourSearch = searchController.searchBar.text!
         apiSearch(yourSearch)
     }
+    
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
         return searchController.searchBar.text?.isEmpty ?? true
@@ -309,7 +353,9 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
     
     //Food2Fork API call
     func apiSearch( _:String) {
-        
+        if(yourSearch == ""){
+            yourSearch = "BBQ"
+        }
         let url = URL (string: "http://food2fork.com/api/search?key=6fb8c103dfd7f27b64b5feaf97e65afc&q=" + yourSearch.replacingOccurrences(of: " ", with: "%20") )!
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -327,7 +373,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
                                 newRecipe.title = title1
                             }
                             if let rank = ((jsonResult["recipes"] as? NSArray)?[counter] as? NSDictionary)?["social_rank"] as? Double {
-                                newRecipe.socialRank = rank
+                                newRecipe.socialRank = String (format: "%.2f",rank)
                             }
                             if let path = ((jsonResult["recipes"] as? NSArray)?[counter] as? NSDictionary)?["f2f_url"] as? String {
                                 newRecipe.url = path
@@ -340,15 +386,20 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
                             counter = counter + 1
                         }
                         DispatchQueue.main.async {
+                            self.indicator.stopAnimating()
                             self.recipeTable.reloadData()
                         }
                     } catch {
                         print("JSON Processing Failed")
                     }
+                    if(self.recipes.count == 0){
+                        let alert = UIAlertController(title: "No recipes found", message: "Try a different search.", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
                 }
             }
         }
-        
+        }
         task.resume()
         self.tableView.reloadData()
     }
@@ -358,9 +409,9 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         let url: NSURL = NSURL(string: "https://mmclaughlin557.com/bbqapp.php")!
         let request:NSMutableURLRequest = NSMutableURLRequest(url:url as URL)
         let string1 = ("recipedata=" + "&id=" + userId + "&recipeurl=" + recipes[index].url)
-        let string2 =  ("&title=" + recipes[index].title + "&socialrank=" + (recipes[index].socialRank.description))
-        let bodyData = string1 + string2
-        print(bodyData)
+        let string2 =  ("&title=" + recipes[index].title + "&socialrank=" + (recipes[index].socialRank))
+        let bodyData = (string1 + string2).replacingOccurrences(of: "'", with: " ")
+        //print(bodyData)
         request.httpMethod = "POST"
         //save(userid: users[0].userid)
         request.httpBody = bodyData.data(using: String.Encoding.utf8);

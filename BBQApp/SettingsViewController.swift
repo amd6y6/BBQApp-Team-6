@@ -134,6 +134,7 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
+    
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("logged Out")
     }

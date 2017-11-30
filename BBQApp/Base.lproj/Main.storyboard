@@ -86,11 +86,40 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Copyright: Team 6 The Rejects" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BR9-EL-Ujf">
+                                <rect key="frame" x="10" y="409" width="355" height="199"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PeP-4j-Xzt">
+                                <rect key="frame" x="0.0" y="59" width="375" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9Xr-TN-fpC">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Xr-TN-fpC" id="AqO-64-QdJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.73830688" green="0.097476668660000002" blue="0.001489462913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="PeP-4j-Xzt" firstAttribute="top" secondItem="nff-Q2-3DC" secondAttribute="bottom" constant="10" id="1jf-AP-JVU"/>
+                            <constraint firstItem="PeP-4j-Xzt" firstAttribute="leading" secondItem="w4C-aX-w6T" secondAttribute="leading" id="BKd-6e-6Ed"/>
+                            <constraint firstItem="BR9-EL-Ujf" firstAttribute="top" secondItem="nff-Q2-3DC" secondAttribute="bottom" constant="360" id="BVG-kg-5Jg"/>
+                            <constraint firstItem="BR9-EL-Ujf" firstAttribute="centerX" secondItem="w4C-aX-w6T" secondAttribute="centerX" id="Csm-0B-cev"/>
+                            <constraint firstItem="BR9-EL-Ujf" firstAttribute="leading" secondItem="w4C-aX-w6T" secondAttribute="leading" constant="10" id="FNb-eO-Qo7"/>
+                            <constraint firstItem="BR9-EL-Ujf" firstAttribute="top" secondItem="PeP-4j-Xzt" secondAttribute="bottom" constant="100" id="JDX-7E-Sym"/>
                             <constraint firstItem="nff-Q2-3DC" firstAttribute="centerX" secondItem="w4C-aX-w6T" secondAttribute="centerX" id="Ng2-ml-DED"/>
                             <constraint firstItem="nff-Q2-3DC" firstAttribute="top" secondItem="w4C-aX-w6T" secondAttribute="top" constant="8" id="Nn4-49-oXS"/>
+                            <constraint firstItem="w4C-aX-w6T" firstAttribute="trailing" secondItem="BR9-EL-Ujf" secondAttribute="trailing" constant="10" id="SY9-Dy-QlY"/>
+                            <constraint firstItem="w4C-aX-w6T" firstAttribute="bottom" secondItem="BR9-EL-Ujf" secondAttribute="bottom" constant="10" id="UFF-zK-qtS"/>
+                            <constraint firstItem="w4C-aX-w6T" firstAttribute="trailing" secondItem="PeP-4j-Xzt" secondAttribute="trailing" id="yrg-we-LE1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w4C-aX-w6T"/>
                     </view>
@@ -98,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSC-E9-82f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-959" y="1041"/>
+            <point key="canvasLocation" x="-959.20000000000005" y="1040.3298350824589"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PQh-xs-Jjc">
@@ -230,6 +259,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="S5H-WN-n3L">
+                            <rect key="frame" x="0.0" y="72" width="375" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SearchCell" textLabel="RwC-Xv-qxW" style="IBUITableViewCellStyleDefault" id="5R6-Qs-Zlq">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -259,6 +292,9 @@
                     <navigationItem key="navigationItem" id="vJ9-D7-MHi">
                         <nil key="title"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="S5H-WN-n3L" id="yaq-xm-Mca"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWR-iE-exq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
