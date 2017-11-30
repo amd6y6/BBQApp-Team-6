@@ -11,7 +11,7 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 import CoreData
 
-class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
+class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FBSDKLoginButtonDelegate {
    
     //struct to hold the information returned from the facebook API to save recipes in the database
     struct User {
@@ -23,8 +23,12 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
     var users : [User] = []
     var newUser : User = User()
     var people: [NSManagedObject] = []
+    
+    @IBOutlet weak var settingsTable: UITableView!
+    
     var text = ["About this Version", "The Developers", "Terms of Use/Copyrights"]
     var segueID = ["about", "developer", "terms"]
+    
     //same concept as on recipe tab, storing all necesary information about the user to the database, gets connection with database and sends error otherwise
     func postToServerFunction(){
         let url: NSURL = NSURL(string: "https://mmclaughlin557.com/bbqapp.php")!
@@ -91,6 +95,22 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return text.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = settingsTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = text[indexPath.row]
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: segueID[indexPath.row], sender: self)
+        settingsTable.deselectRow(at: indexPath, animated: true)
     }
     
     //delegates what happens when the user clicks on the facebook button
