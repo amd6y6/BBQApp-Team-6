@@ -358,7 +358,7 @@ class RecipeTableViewController: UITableViewController, UISearchResultsUpdating,
         if(yourSearch == ""){
             yourSearch = "BBQ"
         }
-        let url = URL (string: "http://food2fork.com/api/search?key=6fb8c103dfd7f27b64b5feaf97e65afc&q=" + yourSearch.replacingOccurrences(of: " ", with: "%20") )!
+        let url = URL (string: "http://food2fork.com/api/search?key=580679b41f5f512a9dda10940d2129ff&q=" + yourSearch.replacingOccurrences(of: " ", with: "%20") )!
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
