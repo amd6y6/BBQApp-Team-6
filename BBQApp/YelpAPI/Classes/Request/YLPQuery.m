@@ -2,7 +2,6 @@
 //  YLPQuery.m
 //  YelpAPI
 //
-//  Created by Steven Sheldon on 6/26/16.
 //
 //
 

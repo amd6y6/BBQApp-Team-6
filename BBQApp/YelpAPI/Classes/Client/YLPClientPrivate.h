@@ -2,7 +2,6 @@
 //  YLPClientPrivate.h
 //  Pods
 //
-//  Created by David Chen on 1/8/16.
 //
 //
 #import "YLPClient.h"

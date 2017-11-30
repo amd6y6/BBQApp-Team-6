@@ -2,7 +2,6 @@
 //  YLPLocation.m
 //  Pods
 //
-//  Created by David Chen on 1/12/16.
 //
 //
 

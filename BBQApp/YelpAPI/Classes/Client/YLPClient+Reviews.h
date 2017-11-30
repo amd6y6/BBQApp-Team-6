@@ -2,7 +2,6 @@
 //  YLPClient+Reviews.h
 //  YelpAPI
 //
-//  Created by Steven Sheldon on 10/21/16.
 //
 //
 
