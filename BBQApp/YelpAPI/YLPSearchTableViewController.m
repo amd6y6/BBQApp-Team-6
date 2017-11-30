@@ -65,9 +65,19 @@
     else {
         cell.textLabel.text = self.search.businesses[indexPath.item].name;
         
+        UIImage * originalImage;
         NSString * imageString = self.search.businesses[indexPath.item].imageURL.absoluteString;
         NSData * imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString: imageString]];
-        cell.imageView.image = [UIImage imageWithData: imageData];
+        if(imageString.length == 0){
+            originalImage = [UIImage imageNamed:@"bbq logo 161px"];
+        } else {
+            originalImage = [UIImage imageWithData: imageData];
+        }
+        UIImage *resizedImage = [YLPSearchTableViewController imageWithImage: originalImage scaledToSize: CGSizeMake(75, 75)];
+        cell.imageView.image = resizedImage;
+        [cell.imageView.layer setCornerRadius:8.0f];
+        [cell.imageView.layer setMasksToBounds:YES];
+        
     }
     
     return cell;
@@ -79,6 +89,17 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)size {
+    if([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+        UIGraphicsBeginImageContextWithOptions(size, NO, [[UIScreen mainScreen] scale]);
+    } else {
+        UIGraphicsBeginImageContext(size);
+    }
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
 
 @end

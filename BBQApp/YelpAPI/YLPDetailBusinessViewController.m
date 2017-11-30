@@ -14,20 +14,22 @@
 //outlets for the information presented about the selected business
 @interface YLPDetailBusinessViewController ()
 @property (nonatomic) IBOutlet UILabel *businessName;
-@property (nonatomic) IBOutlet UITextField *businessAddress;
+@property (nonatomic) IBOutlet UITextView *businessAddress;
 @property (nonatomic) IBOutlet UITextField *businessPhone;
-@property (nonatomic) IBOutlet UILabel *businessCoords;
 @end
 
 @implementation YLPDetailBusinessViewController
 //display the information
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
     self.businessName.text = self.business.name;
     self.businessPhone.text = self.business.phone;
-    self.businessAddress.text = self.business.location.address[0];
-    self.businessCoords.text = [NSString stringWithFormat:@"%f"", "@"%f", self.business.location.coordinate.latitude, self.business.location.coordinate.longitude];
-}
+    
+    for (int x = 0; x < self.business.location.address.count; x++) {
+        self.businessAddress.text = [NSString stringWithFormat:@"%@" " " @"%@" "\n", self.businessAddress.text, self.business.location.address[x]];
+    }
+    self.businessAddress.text = [NSString stringWithFormat:@"%@" @"%@" ", " @"%@" " " @"%@", self.businessAddress.text, self.business.location.city, self.business.location.stateCode, self.business.location.postalCode];
+ }
+
 
 @end

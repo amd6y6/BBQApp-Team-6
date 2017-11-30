@@ -25,6 +25,42 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     var people: [NSManagedObject] = []
     
     @IBOutlet weak var settingsTable: UITableView!
+    @IBOutlet weak var userNameField: UITextField!
+    @IBOutlet weak var userEmailField: UITextField!
+    
+    @IBAction func registerUser(_ sender: UIButton) {
+        
+        let random1 = Int(arc4random_uniform(10000))
+        let random2 = Int(arc4random_uniform(10000))
+        let random3 = Int(arc4random_uniform(10000))
+        let random4 = Int(arc4random_uniform(10000))
+        let randomId = random1 + random2 + random3 + random4
+        
+        var newUser : User = User()
+        
+        if(people.count == 0){
+            newUser.username = userNameField.text!
+            newUser.useremail = userEmailField.text!
+            newUser.userid = randomId.description
+            self.users.append(newUser)
+            print(users[0].userid,users[0].useremail,users[0].useremail)
+            postToServerFunction()
+            
+            let alert = UIAlertController(title: "Success!", message: "You have successfully logged in", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { ACTION in
+            }))
+            self.present(alert, animated: true, completion: nil)
+            sender.setTitle("Logged in", for: .normal)
+        }
+        let alert = UIAlertController(title: "Attention!", message: "You are already Logged in.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { ACTION in
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+        userNameField.text = ""
+        userEmailField.text = ""
+        
+    }
     
     var text = ["About this Version", "The Developers", "Terms of Use/Copyrights"]
     var segueID = ["about", "developer", "terms"]
@@ -87,9 +123,11 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         let loginButton = FBSDKLoginButton()
         loginButton.center = view.center
+        //loginButton.addConstraint(NSLayoutConstraint.)
         loginButton.readPermissions = ["public_profile", "email"]
         loginButton.delegate = self
         view.addSubview(loginButton)
+        fetchUserData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -158,6 +196,30 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("logged Out")
+    }
+    
+    //getting the user data from when they log in to be able to save their recipes to their id in the database
+    func fetchUserData(){
+        //1
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        //2
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "User")
+        //3
+        do {
+            people = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+       // let index = people.count
+      
+        
     }
     
     /*
