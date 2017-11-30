@@ -2,7 +2,6 @@
 //  YelpAPI.h
 //  YelpAPI
 //
-//  Created by Steven Sheldon on 4/13/16.
 //
 //
 

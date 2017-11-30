@@ -2,7 +2,6 @@
 //  YLPSearchTableViewController.m
 //  YelpAPI
 //
-//  Created by David Chen on 3/31/16.
 //  Copyright © 2016 Yelp. All rights reserved.
 //
 
@@ -27,6 +26,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
+    
     UIActivityIndicatorView * activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     activityIndicator.center = CGPointMake(self.view.frame.size.width /2.0, self.view.frame.size.height / 2.0);
     [self.view addSubview: activityIndicator];
@@ -46,6 +46,7 @@
      }];
 }
 
+
 #pragma mark - Table view data source
 //fill the table view in accordance with the data returned
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -63,6 +64,10 @@
     }
     else {
         cell.textLabel.text = self.search.businesses[indexPath.item].name;
+        
+        NSString * imageString = self.search.businesses[indexPath.item].imageURL.absoluteString;
+        NSData * imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString: imageString]];
+        cell.imageView.image = [UIImage imageWithData: imageData];
     }
     
     return cell;

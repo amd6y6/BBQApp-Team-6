@@ -20,6 +20,7 @@ class MasterRestaurantViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = UIColor.darkGray
         //set up the delegates and request user access first time app is ran
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest

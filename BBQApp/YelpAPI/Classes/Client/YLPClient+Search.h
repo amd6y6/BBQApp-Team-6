@@ -2,7 +2,6 @@
 //  YLPClient+Search.h
 //  Pods
 //
-//  Created by David Chen on 1/22/16.
 //
 //
 

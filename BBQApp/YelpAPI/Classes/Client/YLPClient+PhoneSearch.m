@@ -2,7 +2,6 @@
 //  YLPClient+PhoneSearch.m
 //  Pods
 //
-//  Created by David Chen on 1/19/16.
 //
 //
 

@@ -2,7 +2,6 @@
 //  NSDictionary+YLPUtils.m
 //  YelpAPI
 //
-//  Created by Steven Sheldon on 11/17/16.
 //
 //
 

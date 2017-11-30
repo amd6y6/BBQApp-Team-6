@@ -23,7 +23,8 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
     var users : [User] = []
     var newUser : User = User()
     var people: [NSManagedObject] = []
-    
+    var text = ["About this Version", "The Developers", "Terms of Use/Copyrights"]
+    var segueID = ["about", "developer", "terms"]
     //same concept as on recipe tab, storing all necesary information about the user to the database, gets connection with database and sends error otherwise
     func postToServerFunction(){
         let url: NSURL = NSURL(string: "https://mmclaughlin557.com/bbqapp.php")!
