@@ -31,4 +31,5 @@
     self.businessAddress.text = [NSString stringWithFormat:@"%@" @"%@" ", " @"%@" " " @"%@", self.businessAddress.text, self.business.location.city, self.business.location.stateCode, self.business.location.postalCode];
  }
 
+
 @end

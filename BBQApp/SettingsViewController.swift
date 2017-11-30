@@ -25,6 +25,27 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     var people: [NSManagedObject] = []
     
     @IBOutlet weak var settingsTable: UITableView!
+    @IBOutlet weak var userNameField: UITextField!
+    @IBOutlet weak var userEmailField: UITextField!
+    
+    @IBAction func registerUser(_ sender: UIButton) {
+        
+        let random1 = Int(arc4random_uniform(10000))
+        let random2 = Int(arc4random_uniform(10000))
+        let randomId = random1 + random2
+        
+        var newUser : User = User()
+        
+        if(people.count != 1){
+            newUser.username = userNameField.text!
+            newUser.useremail = userEmailField.text!
+            newUser.userid = randomId.description
+            self.users.append(newUser)
+            
+            print(users[0].userid,users[0].useremail,users[0].useremail)
+        postToServerFunction()
+        }
+    }
     
     var text = ["About this Version", "The Developers", "Terms of Use/Copyrights"]
     var segueID = ["about", "developer", "terms"]
@@ -87,6 +108,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         let loginButton = FBSDKLoginButton()
         loginButton.center = view.center
+        //loginButton.addConstraint(NSLayoutConstraint.)
         loginButton.readPermissions = ["public_profile", "email"]
         loginButton.delegate = self
         view.addSubview(loginButton)
