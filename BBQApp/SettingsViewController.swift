@@ -38,7 +38,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         var newUser : User = User()
         
-        if(people.count == 0){
+        if(people.count == 0 && userNameField.text != "" && userEmailField.text != ""){
             newUser.username = userNameField.text!
             newUser.useremail = userEmailField.text!
             newUser.userid = randomId.description
